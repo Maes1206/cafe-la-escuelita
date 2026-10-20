@@ -1,0 +1,14 @@
+# Herramientas binarias (no se versionan)
+herramientas/tailwindcss.exe
+
+# Carpeta interna de Claude/agentes
+.claude/
+
+# Archivos de sistema Windows
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+*.pyo

@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Café la Escuelita — Página en proceso</title>
+    <meta name="description"
+        content="Café la Escuelita. Nuestra página está en proceso, muy pronto estaremos en línea." />
+    <meta name="theme-color" content="#78350f" />
+    <link rel="canonical" href="https://cafelaescuelita.site/" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png?v=e731b4c83d" />
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png?v=aecf07cb11" />
+
+    <!-- Vista previa al compartir el enlace (WhatsApp, Facebook, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Café la Escuelita" />
+    <meta property="og:title" content="Café la Escuelita — Del corazón del Huila, a tu taza" />
+    <meta property="og:description"
+        content="Bourbon Rosado cultivado a mano por nuestra familia, a 1.350 metros, en las montañas cafeteras de Iquira, Huila." />
+    <meta property="og:url" content="https://cafelaescuelita.site/" />
+    <meta property="og:image" content="https://cafelaescuelita.site/assets/images/compartir.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- CSS compilado con Tailwind (fuente: src/estilos.css → python construir.py) -->
+    <link rel="stylesheet" href="./assets/css/estilos.css?v=087d4f1306" />
+
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..600,0..100,0..1&family=Instrument+Sans:wght@400..700&display=swap"
+        rel="stylesheet" />
+    <!-- Imagen principal del banner: se pide de primera -->
+    <link rel="preload" as="image" type="image/webp" fetchpriority="high"
+        imagesrcset="./assets/images/empaque-hero-480.webp?v=74cd92ebc8 480w, ./assets/images/empaque-hero-800.webp?v=4257b0ed06 800w"
+        imagesizes="(min-width: 640px) 24rem, 56vw" />
+</head>
+
+<body
+    class="antialiased text-stone-900 min-h-screen flex flex-col relative overflow-x-hidden bg-white">
+    <!-- Barra de navegación -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md">
+        <!-- Franja dorada, como la del empaque -->
+        <div class="franja-dorada absolute inset-x-0 bottom-0 h-1" aria-hidden="true"></div>
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
+            <a href="./" class="flex items-center gap-3" aria-label="Café la Escuelita, inicio">
+                <img src="./assets/images/logo-web.webp?v=3f88972a7d" width="160" height="160" alt="Logo de Café la Escuelita"
+                    class="h-14 w-14 object-contain mix-blend-multiply md:h-16 md:w-16" />
+                <span class="hidden text-lg font-bold tracking-tight text-amber-950 sm:block">Café la Escuelita</span>
+            </a>
+            <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Caf%C3%A9%20la%20Escuelita"
+                target="_blank" rel="noopener"
+                class="inline-flex items-center gap-2 rounded-md bg-amber-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-espresso-900">
+                <svg class="h-4 w-4" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                    <path
+                        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                </svg>
+                Escríbenos
+            </a>
+        </nav>
+    </header>
+
+    <!-- Banner principal -->
+    <!-- Fondo de montañas y mesa: fotos temporales de Unsplash (licencia libre); reemplazar por fotos reales de la finca. -->
+    <section aria-labelledby="hero-titulo" class="relative isolate overflow-hidden bg-white font-texto text-espresso-900">
+        <!-- Ramas de café (dibujadas): hojas opuestas y racimos de cerezas -->
+        <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+            <defs>
+                <linearGradient id="hoja-a" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#3f7d3f" /><stop offset="1" stop-color="#1c4826" />
+                </linearGradient>
+                <linearGradient id="hoja-b" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#2f6a35" /><stop offset="1" stop-color="#143a1e" />
+                </linearGradient>
+                <radialGradient id="cereza-roja" cx="38%" cy="35%" r="70%">
+                    <stop offset="0" stop-color="#f0473a" /><stop offset=".7" stop-color="#b3161b" /><stop offset="1" stop-color="#6e0b10" />
+                </radialGradient>
+                <radialGradient id="cereza-vino" cx="38%" cy="35%" r="70%">
+                    <stop offset="0" stop-color="#b42a3a" /><stop offset=".7" stop-color="#6d0f1f" /><stop offset="1" stop-color="#3e0610" />
+                </radialGradient>
+                <radialGradient id="cereza-verde" cx="38%" cy="35%" r="70%">
+                    <stop offset="0" stop-color="#b9d46a" /><stop offset=".7" stop-color="#6f9a2c" /><stop offset="1" stop-color="#3f5f17" />
+                </radialGradient>
+                <radialGradient id="cereza-amarilla" cx="38%" cy="35%" r="70%">
+                    <stop offset="0" stop-color="#ffd25a" /><stop offset=".7" stop-color="#e09a1c" /><stop offset="1" stop-color="#9a5a0c" />
+                </radialGradient>
+                <symbol id="rama-cafe-1" viewBox="-40 -40 640 360"><path d="M0 150 Q260.0 90.0 520.0 126.0" stroke="#5b4630" stroke-width="5" fill="none" stroke-linecap="round" /><g transform="translate(62.4 137.0) rotate(-59.0)"><path d="M0 0 C28.9 -33.3 89.5 -30.6 131.6 0 C92.1 27.8 31.6 33.8 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q65.8 -1.9 127.6 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M26.3 0 Q35.5 -14.5 47.4 -20.8 M26.3 0 Q35.5 14.5 47.4 20.8 M47.4 0 Q56.6 -14.5 68.4 -19.0 M47.4 0 Q56.6 14.5 68.4 19.0 M68.4 0 Q77.6 -14.5 89.5 -17.1 M68.4 0 Q77.6 14.5 89.5 17.1 M89.5 0 Q98.7 -14.5 110.5 -15.3 M89.5 0 Q98.7 14.5 110.5 15.3" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M15.8 -11.3 Q59.2 -25.1 105.3 -10.3" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(62.4 137.0) rotate(32.9)"><path d="M0 0 C31.1 -31.1 96.2 -30.6 141.4 0 C99.0 30.0 33.9 33.8 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q70.7 -1.9 137.2 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M28.3 0 Q38.2 -14.5 50.9 -20.8 M28.3 0 Q38.2 14.5 50.9 20.8 M50.9 0 Q60.8 -14.5 73.5 -19.0 M50.9 0 Q60.8 14.5 73.5 19.0 M73.5 0 Q83.4 -14.5 96.2 -17.1 M73.5 0 Q83.4 14.5 96.2 17.1 M96.2 0 Q106.0 -14.5 118.8 -15.3 M96.2 0 Q106.0 14.5 118.8 15.3" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M17.0 -11.3 Q63.6 -25.1 113.1 -10.3" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(149.8 123.4) rotate(-50.3)"><path d="M0 0 C28.5 -26.3 88.0 -28.1 129.4 0 C90.6 29.9 31.1 31.1 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q64.7 -1.8 125.5 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M25.9 0 Q34.9 -13.3 46.6 -19.2 M25.9 0 Q34.9 13.3 46.6 19.2 M46.6 0 Q55.7 -13.3 67.3 -17.5 M46.6 0 Q55.7 13.3 67.3 17.5 M67.3 0 Q76.4 -13.3 88.0 -15.8 M67.3 0 Q76.4 13.3 88.0 15.8 M88.0 0 Q97.1 -13.3 108.7 -14.1 M88.0 0 Q97.1 13.3 108.7 14.1" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M15.5 -10.4 Q58.2 -23.1 103.5 -9.5" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(149.8 123.4) rotate(43.6)"><path d="M0 0 C26.2 -26.7 81.0 -28.1 119.1 0 C83.4 29.5 28.6 31.1 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q59.6 -1.8 115.6 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M23.8 0 Q32.2 -13.3 42.9 -19.2 M23.8 0 Q32.2 13.3 42.9 19.2 M42.9 0 Q51.2 -13.3 62.0 -17.5 M42.9 0 Q51.2 13.3 62.0 17.5 M62.0 0 Q70.3 -13.3 81.0 -15.8 M62.0 0 Q70.3 13.3 81.0 15.8 M81.0 0 Q89.4 -13.3 100.1 -14.1 M81.0 0 Q89.4 13.3 100.1 14.1" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M14.3 -10.4 Q53.6 -23.1 95.3 -9.5" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(237.1 115.2) rotate(-54.1)"><path d="M0 0 C27.5 -24.6 85.0 -25.7 125.0 0 C87.5 26.8 30.0 28.4 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q62.5 -1.6 121.3 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M25.0 0 Q33.8 -12.2 45.0 -17.5 M25.0 0 Q33.8 12.2 45.0 17.5 M45.0 0 Q53.8 -12.2 65.0 -16.0 M45.0 0 Q53.8 12.2 65.0 16.0 M65.0 0 Q73.8 -12.2 85.0 -14.4 M65.0 0 Q73.8 12.2 85.0 14.4 M85.0 0 Q93.8 -12.2 105.0 -12.8 M85.0 0 Q93.8 12.2 105.0 12.8" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M15.0 -9.5 Q56.3 -21.1 100.0 -8.6" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(237.1 115.2) rotate(42.9)"><path d="M0 0 C26.6 -29.9 82.1 -25.7 120.8 0 C84.5 21.4 29.0 28.4 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q60.4 -1.6 117.1 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M24.2 0 Q32.6 -12.2 43.5 -17.5 M24.2 0 Q32.6 12.2 43.5 17.5 M43.5 0 Q51.9 -12.2 62.8 -16.0 M43.5 0 Q51.9 12.2 62.8 16.0 M62.8 0 Q71.2 -12.2 82.1 -14.4 M62.8 0 Q71.2 12.2 82.1 14.4 M82.1 0 Q90.6 -12.2 101.4 -12.8 M82.1 0 Q90.6 12.2 101.4 12.8" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M14.5 -9.5 Q54.3 -21.1 96.6 -8.6" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(324.5 112.5) rotate(-52.3)"><path d="M0 0 C22.1 -23.5 68.2 -23.2 100.3 0 C70.2 22.9 24.1 25.7 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q50.1 -1.5 97.3 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M20.1 0 Q27.1 -11.0 36.1 -15.8 M20.1 0 Q27.1 11.0 36.1 15.8 M36.1 0 Q43.1 -11.0 52.2 -14.4 M36.1 0 Q43.1 11.0 52.2 14.4 M52.2 0 Q59.2 -11.0 68.2 -13.0 M52.2 0 Q59.2 11.0 68.2 13.0 M68.2 0 Q75.2 -11.0 84.2 -11.6 M68.2 0 Q75.2 11.0 84.2 11.6" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M12.0 -8.6 Q45.1 -19.1 80.2 -7.8" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(324.5 112.5) rotate(60.6)"><path d="M0 0 C23.2 -27.2 71.6 -23.2 105.3 0 C73.7 19.3 25.3 25.7 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q52.6 -1.5 102.1 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M21.1 0 Q28.4 -11.0 37.9 -15.8 M21.1 0 Q28.4 11.0 37.9 15.8 M37.9 0 Q45.3 -11.0 54.7 -14.4 M37.9 0 Q45.3 11.0 54.7 14.4 M54.7 0 Q62.1 -11.0 71.6 -13.0 M54.7 0 Q62.1 11.0 71.6 13.0 M71.6 0 Q79.0 -11.0 88.4 -11.6 M71.6 0 Q79.0 11.0 88.4 11.6" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M12.6 -8.6 Q47.4 -19.1 84.2 -7.8" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(411.8 115.2) rotate(-38.9)"><path d="M0 0 C20.9 -20.1 64.5 -20.8 94.9 0 C66.4 21.4 22.8 23.0 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q47.5 -1.3 92.1 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M19.0 0 Q25.6 -9.8 34.2 -14.2 M19.0 0 Q25.6 9.8 34.2 14.2 M34.2 0 Q40.8 -9.8 49.4 -12.9 M34.2 0 Q40.8 9.8 49.4 12.9 M49.4 0 Q56.0 -9.8 64.5 -11.7 M49.4 0 Q56.0 9.8 64.5 11.7 M64.5 0 Q71.2 -9.8 79.7 -10.4 M64.5 0 Q71.2 9.8 79.7 10.4" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M11.4 -7.7 Q42.7 -17.1 75.9 -7.0" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(411.8 115.2) rotate(47.9)"><path d="M0 0 C19.3 -23.3 59.8 -20.8 87.9 0 C61.5 18.3 21.1 23.0 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q44.0 -1.3 85.3 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M17.6 0 Q23.7 -9.8 31.6 -14.2 M17.6 0 Q23.7 9.8 31.6 14.2 M31.6 0 Q37.8 -9.8 45.7 -12.9 M31.6 0 Q37.8 9.8 45.7 12.9 M45.7 0 Q51.9 -9.8 59.8 -11.7 M45.7 0 Q51.9 9.8 59.8 11.7 M59.8 0 Q65.9 -9.8 73.8 -10.4 M59.8 0 Q65.9 9.8 73.8 10.4" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M10.5 -7.7 Q39.6 -17.1 70.3 -7.0" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(499.2 123.3) rotate(-47.1)"><path d="M0 0 C17.9 -17.6 55.5 -18.3 81.6 0 C57.1 19.1 19.6 20.3 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q40.8 -1.2 79.1 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M16.3 0 Q22.0 -8.7 29.4 -12.5 M16.3 0 Q22.0 8.7 29.4 12.5 M29.4 0 Q35.1 -8.7 42.4 -11.4 M29.4 0 Q35.1 8.7 42.4 11.4 M42.4 0 Q48.1 -8.7 55.5 -10.3 M42.4 0 Q48.1 8.7 55.5 10.3 M55.5 0 Q61.2 -8.7 68.5 -9.2 M55.5 0 Q61.2 8.7 68.5 9.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M9.8 -6.8 Q36.7 -15.1 65.3 -6.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(499.2 123.3) rotate(66.2)"><path d="M0 0 C20.1 -20.0 62.1 -18.3 91.3 0 C63.9 16.7 21.9 20.3 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q45.6 -1.2 88.5 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M18.3 0 Q24.6 -8.7 32.9 -12.5 M18.3 0 Q24.6 8.7 32.9 12.5 M32.9 0 Q39.2 -8.7 47.5 -11.4 M32.9 0 Q39.2 8.7 47.5 11.4 M47.5 0 Q53.8 -8.7 62.1 -10.3 M47.5 0 Q53.8 8.7 62.1 10.3 M62.1 0 Q68.4 -8.7 76.7 -9.2 M62.1 0 Q68.4 8.7 76.7 9.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M11.0 -6.8 Q41.1 -15.1 73.0 -6.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(520.0 126.0) rotate(-0.1)"><path d="M0 0 C15.4 -16.9 47.6 -15.2 70.0 0 C49.0 13.5 16.8 16.8 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q35.0 -1.0 67.9 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M14.0 0 Q18.9 -7.2 25.2 -10.4 M14.0 0 Q18.9 7.2 25.2 10.4 M25.2 0 Q30.1 -7.2 36.4 -9.4 M25.2 0 Q30.1 7.2 36.4 9.4 M36.4 0 Q41.3 -7.2 47.6 -8.5 M36.4 0 Q41.3 7.2 47.6 8.5 M47.6 0 Q52.5 -7.2 58.8 -7.6 M47.6 0 Q52.5 7.2 58.8 7.6" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M8.4 -5.6 Q31.5 -12.5 56.0 -5.1" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><circle cx="229.0" cy="111.3" r="6.0" fill="url(#cereza-roja)" /><circle cx="226.9" cy="108.9" r="1.7" fill="#fff" opacity=".55" /><circle cx="235.7" cy="115.8" r="6.0" fill="url(#cereza-vino)" /><circle cx="233.6" cy="113.4" r="1.7" fill="#fff" opacity=".55" /><circle cx="240.4" cy="109.7" r="6.0" fill="url(#cereza-roja)" /><circle cx="238.3" cy="107.3" r="1.7" fill="#fff" opacity=".55" /><circle cx="229.9" cy="118.2" r="6.0" fill="url(#cereza-vino)" /><circle cx="227.8" cy="115.8" r="1.7" fill="#fff" opacity=".55" /><circle cx="237.1" cy="115.7" r="6.4" fill="url(#cereza-roja)" /><circle cx="234.8" cy="113.1" r="1.8" fill="#fff" opacity=".55" /><circle cx="244.7" cy="113.3" r="5.4" fill="url(#cereza-roja)" /><circle cx="242.8" cy="111.1" r="1.5" fill="#fff" opacity=".55" /><circle cx="242.2" cy="109.4" r="5.5" fill="url(#cereza-roja)" /><circle cx="240.2" cy="107.2" r="1.6" fill="#fff" opacity=".55" /><circle cx="234.3" cy="114.5" r="6.1" fill="url(#cereza-roja)" /><circle cx="232.2" cy="112.1" r="1.7" fill="#fff" opacity=".55" /><circle cx="329.2" cy="113.5" r="6.6" fill="url(#cereza-roja)" /><circle cx="326.9" cy="110.9" r="1.8" fill="#fff" opacity=".55" /><circle cx="328.0" cy="113.8" r="6.0" fill="url(#cereza-roja)" /><circle cx="325.9" cy="111.4" r="1.7" fill="#fff" opacity=".55" /><circle cx="330.6" cy="118.7" r="5.9" fill="url(#cereza-vino)" /><circle cx="328.6" cy="116.4" r="1.6" fill="#fff" opacity=".55" /><circle cx="316.6" cy="115.3" r="6.2" fill="url(#cereza-amarilla)" /><circle cx="314.4" cy="112.9" r="1.7" fill="#fff" opacity=".55" /><circle cx="330.3" cy="109.5" r="5.7" fill="url(#cereza-verde)" /><circle cx="328.3" cy="107.2" r="1.6" fill="#fff" opacity=".55" /><circle cx="416.1" cy="113.7" r="6.7" fill="url(#cereza-roja)" /><circle cx="413.8" cy="111.1" r="1.9" fill="#fff" opacity=".55" /><circle cx="405.8" cy="113.8" r="5.5" fill="url(#cereza-roja)" /><circle cx="403.9" cy="111.6" r="1.5" fill="#fff" opacity=".55" /><circle cx="410.6" cy="115.9" r="6.3" fill="url(#cereza-amarilla)" /><circle cx="408.4" cy="113.4" r="1.8" fill="#fff" opacity=".55" /><circle cx="415.1" cy="113.5" r="5.4" fill="url(#cereza-roja)" /><circle cx="413.2" cy="111.3" r="1.5" fill="#fff" opacity=".55" /><circle cx="405.6" cy="117.4" r="5.0" fill="url(#cereza-verde)" /><circle cx="403.8" cy="115.4" r="1.4" fill="#fff" opacity=".55" /><circle cx="406.1" cy="112.1" r="5.3" fill="url(#cereza-vino)" /><circle cx="404.3" cy="110.0" r="1.5" fill="#fff" opacity=".55" /></symbol>
+                <symbol id="rama-cafe-2" viewBox="-40 -40 640 360"><path d="M0 150 Q240.0 200.0 480.0 170.0" stroke="#5b4630" stroke-width="5" fill="none" stroke-linecap="round" /><g transform="translate(57.6 160.8) rotate(-41.6)"><path d="M0 0 C33.0 -35.7 102.0 -30.6 150.0 0 C105.0 25.5 36.0 33.8 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q75.0 -1.9 145.5 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M30.0 0 Q40.5 -14.5 54.0 -20.8 M30.0 0 Q40.5 14.5 54.0 20.8 M54.0 0 Q64.5 -14.5 78.0 -19.0 M54.0 0 Q64.5 14.5 78.0 19.0 M78.0 0 Q88.5 -14.5 102.0 -17.1 M78.0 0 Q88.5 14.5 102.0 17.1 M102.0 0 Q112.5 -14.5 126.0 -15.3 M102.0 0 Q112.5 14.5 126.0 15.3" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M18.0 -11.3 Q67.5 -25.1 120.0 -10.3" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(57.6 160.8) rotate(65.2)"><path d="M0 0 C31.2 -31.4 96.6 -30.6 142.0 0 C99.4 29.7 34.1 33.8 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q71.0 -1.9 137.7 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M28.4 0 Q38.3 -14.5 51.1 -20.8 M28.4 0 Q38.3 14.5 51.1 20.8 M51.1 0 Q61.1 -14.5 73.8 -19.0 M51.1 0 Q61.1 14.5 73.8 19.0 M73.8 0 Q83.8 -14.5 96.6 -17.1 M73.8 0 Q83.8 14.5 96.6 17.1 M96.6 0 Q106.5 -14.5 119.3 -15.3 M96.6 0 Q106.5 14.5 119.3 15.3" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M17.0 -11.3 Q63.9 -25.1 113.6 -10.3" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(158.4 174.3) rotate(-44.3)"><path d="M0 0 C27.7 -28.3 85.7 -27.5 126.0 0 C88.2 26.7 30.2 30.4 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q63.0 -1.7 122.2 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M25.2 0 Q34.0 -13.0 45.4 -18.8 M25.2 0 Q34.0 13.0 45.4 18.8 M45.4 0 Q54.2 -13.0 65.5 -17.1 M45.4 0 Q54.2 13.0 65.5 17.1 M65.5 0 Q74.4 -13.0 85.7 -15.4 M65.5 0 Q74.4 13.0 85.7 15.4 M85.7 0 Q94.5 -13.0 105.9 -13.8 M85.7 0 Q94.5 13.0 105.9 13.8" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M15.1 -10.1 Q56.7 -22.6 100.8 -9.3" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(158.4 174.3) rotate(51.4)"><path d="M0 0 C30.3 -28.5 93.6 -27.5 137.6 0 C96.3 26.5 33.0 30.4 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q68.8 -1.7 133.5 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M27.5 0 Q37.1 -13.0 49.5 -18.8 M27.5 0 Q37.1 13.0 49.5 18.8 M49.5 0 Q59.2 -13.0 71.5 -17.1 M49.5 0 Q59.2 13.0 71.5 17.1 M71.5 0 Q81.2 -13.0 93.6 -15.4 M71.5 0 Q81.2 13.0 93.6 15.4 M93.6 0 Q103.2 -13.0 115.6 -13.8 M93.6 0 Q103.2 13.0 115.6 13.8" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M16.5 -10.1 Q61.9 -22.6 110.1 -9.3" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(259.2 180.7) rotate(-47.2)"><path d="M0 0 C23.7 -27.8 73.2 -24.5 107.6 0 C75.3 21.1 25.8 27.0 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q53.8 -1.5 104.4 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M21.5 0 Q29.1 -11.6 38.7 -16.7 M21.5 0 Q29.1 11.6 38.7 16.7 M38.7 0 Q46.3 -11.6 56.0 -15.2 M38.7 0 Q46.3 11.6 56.0 15.2 M56.0 0 Q63.5 -11.6 73.2 -13.7 M56.0 0 Q63.5 11.6 73.2 13.7 M73.2 0 Q80.7 -11.6 90.4 -12.2 M73.2 0 Q80.7 11.6 90.4 12.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M12.9 -9.0 Q48.4 -20.1 86.1 -8.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(259.2 180.7) rotate(46.9)"><path d="M0 0 C22.6 -28.5 69.8 -24.5 102.7 0 C71.9 20.4 24.6 27.0 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q51.3 -1.5 99.6 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M20.5 0 Q27.7 -11.6 37.0 -16.7 M20.5 0 Q27.7 11.6 37.0 16.7 M37.0 0 Q44.1 -11.6 53.4 -15.2 M37.0 0 Q44.1 11.6 53.4 15.2 M53.4 0 Q60.6 -11.6 69.8 -13.7 M53.4 0 Q60.6 11.6 69.8 13.7 M69.8 0 Q77.0 -11.6 86.2 -12.2 M69.8 0 Q77.0 11.6 86.2 12.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M12.3 -9.0 Q46.2 -20.1 82.1 -8.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(360.0 180.0) rotate(-58.2)"><path d="M0 0 C23.4 -22.2 72.5 -21.4 106.5 0 C74.6 20.6 25.6 23.7 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q53.3 -1.4 103.4 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M21.3 0 Q28.8 -10.1 38.4 -14.6 M21.3 0 Q28.8 10.1 38.4 14.6 M38.4 0 Q45.8 -10.1 55.4 -13.3 M38.4 0 Q45.8 10.1 55.4 13.3 M55.4 0 Q62.9 -10.1 72.5 -12.0 M55.4 0 Q62.9 10.1 72.5 12.0 M72.5 0 Q79.9 -10.1 89.5 -10.7 M72.5 0 Q79.9 10.1 89.5 10.7" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M12.8 -7.9 Q47.9 -17.6 85.2 -7.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(360.0 180.0) rotate(58.4)"><path d="M0 0 C23.6 -25.0 72.8 -21.4 107.1 0 C75.0 17.8 25.7 23.7 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q53.6 -1.4 103.9 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M21.4 0 Q28.9 -10.1 38.6 -14.6 M21.4 0 Q28.9 10.1 38.6 14.6 M38.6 0 Q46.1 -10.1 55.7 -13.3 M38.6 0 Q46.1 10.1 55.7 13.3 M55.7 0 Q63.2 -10.1 72.8 -12.0 M55.7 0 Q63.2 10.1 72.8 12.0 M72.8 0 Q80.3 -10.1 90.0 -10.7 M72.8 0 Q80.3 10.1 90.0 10.7" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M12.9 -7.9 Q48.2 -17.6 85.7 -7.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(460.8 172.3) rotate(-60.2)"><path d="M0 0 C18.4 -20.0 57.0 -18.3 83.8 0 C58.7 16.7 20.1 20.3 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q41.9 -1.2 81.3 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M16.8 0 Q22.6 -8.7 30.2 -12.5 M16.8 0 Q22.6 8.7 30.2 12.5 M30.2 0 Q36.0 -8.7 43.6 -11.4 M30.2 0 Q36.0 8.7 43.6 11.4 M43.6 0 Q49.5 -8.7 57.0 -10.3 M43.6 0 Q49.5 8.7 57.0 10.3 M57.0 0 Q62.9 -8.7 70.4 -9.2 M57.0 0 Q62.9 8.7 70.4 9.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M10.1 -6.8 Q37.7 -15.1 67.1 -6.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(460.8 172.3) rotate(47.9)"><path d="M0 0 C18.9 -19.2 58.4 -18.3 85.8 0 C60.1 17.5 20.6 20.3 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q42.9 -1.2 83.2 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M17.2 0 Q23.2 -8.7 30.9 -12.5 M17.2 0 Q23.2 8.7 30.9 12.5 M30.9 0 Q36.9 -8.7 44.6 -11.4 M30.9 0 Q36.9 8.7 44.6 11.4 M44.6 0 Q50.6 -8.7 58.4 -10.3 M44.6 0 Q50.6 8.7 58.4 10.3 M58.4 0 Q64.4 -8.7 72.1 -9.2 M58.4 0 Q64.4 8.7 72.1 9.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M10.3 -6.8 Q38.6 -15.1 68.7 -6.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(480.0 170.0) rotate(-15.1)"><path d="M0 0 C15.4 -17.7 47.6 -15.2 70.0 0 C49.0 12.7 16.8 16.8 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q35.0 -1.0 67.9 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M14.0 0 Q18.9 -7.2 25.2 -10.4 M14.0 0 Q18.9 7.2 25.2 10.4 M25.2 0 Q30.1 -7.2 36.4 -9.4 M25.2 0 Q30.1 7.2 36.4 9.4 M36.4 0 Q41.3 -7.2 47.6 -8.5 M36.4 0 Q41.3 7.2 47.6 8.5 M47.6 0 Q52.5 -7.2 58.8 -7.6 M47.6 0 Q52.5 7.2 58.8 7.6" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M8.4 -5.6 Q31.5 -12.5 56.0 -5.1" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><circle cx="155.5" cy="168.0" r="5.0" fill="url(#cereza-roja)" /><circle cx="153.8" cy="166.0" r="1.4" fill="#fff" opacity=".55" /><circle cx="151.2" cy="172.4" r="5.0" fill="url(#cereza-amarilla)" /><circle cx="149.5" cy="170.4" r="1.4" fill="#fff" opacity=".55" /><circle cx="160.5" cy="169.4" r="5.5" fill="url(#cereza-roja)" /><circle cx="158.5" cy="167.2" r="1.5" fill="#fff" opacity=".55" /><circle cx="156.0" cy="169.0" r="6.5" fill="url(#cereza-amarilla)" /><circle cx="153.7" cy="166.4" r="1.8" fill="#fff" opacity=".55" /><circle cx="157.8" cy="174.1" r="5.2" fill="url(#cereza-roja)" /><circle cx="156.0" cy="172.0" r="1.4" fill="#fff" opacity=".55" /><circle cx="252.8" cy="181.3" r="5.0" fill="url(#cereza-vino)" /><circle cx="251.1" cy="179.3" r="1.4" fill="#fff" opacity=".55" /><circle cx="267.8" cy="185.8" r="6.3" fill="url(#cereza-roja)" /><circle cx="265.6" cy="183.3" r="1.8" fill="#fff" opacity=".55" /><circle cx="256.8" cy="176.0" r="6.4" fill="url(#cereza-vino)" /><circle cx="254.6" cy="173.5" r="1.8" fill="#fff" opacity=".55" /><circle cx="264.2" cy="178.3" r="5.4" fill="url(#cereza-verde)" /><circle cx="262.3" cy="176.1" r="1.5" fill="#fff" opacity=".55" /><circle cx="267.9" cy="185.6" r="6.5" fill="url(#cereza-verde)" /><circle cx="265.7" cy="183.0" r="1.8" fill="#fff" opacity=".55" /><circle cx="263.5" cy="176.8" r="5.9" fill="url(#cereza-roja)" /><circle cx="261.4" cy="174.5" r="1.7" fill="#fff" opacity=".55" /><circle cx="250.7" cy="174.1" r="5.5" fill="url(#cereza-roja)" /><circle cx="248.8" cy="171.9" r="1.5" fill="#fff" opacity=".55" /><circle cx="352.4" cy="174.4" r="5.8" fill="url(#cereza-roja)" /><circle cx="350.4" cy="172.1" r="1.6" fill="#fff" opacity=".55" /><circle cx="359.7" cy="186.8" r="6.1" fill="url(#cereza-roja)" /><circle cx="357.6" cy="184.4" r="1.7" fill="#fff" opacity=".55" /><circle cx="367.4" cy="177.8" r="6.2" fill="url(#cereza-amarilla)" /><circle cx="365.2" cy="175.4" r="1.7" fill="#fff" opacity=".55" /><circle cx="353.2" cy="178.4" r="6.3" fill="url(#cereza-roja)" /><circle cx="351.0" cy="175.9" r="1.8" fill="#fff" opacity=".55" /><circle cx="367.0" cy="179.1" r="6.1" fill="url(#cereza-roja)" /><circle cx="364.9" cy="176.6" r="1.7" fill="#fff" opacity=".55" /><circle cx="368.0" cy="183.1" r="5.8" fill="url(#cereza-verde)" /><circle cx="366.0" cy="180.8" r="1.6" fill="#fff" opacity=".55" /><circle cx="352.5" cy="175.2" r="6.8" fill="url(#cereza-roja)" /><circle cx="350.2" cy="172.5" r="1.9" fill="#fff" opacity=".55" /></symbol>
+                <symbol id="rama-cafe-3" viewBox="-40 -40 640 360"><path d="M0 150 Q270.0 120.0 540.0 138.0" stroke="#5b4630" stroke-width="5" fill="none" stroke-linecap="round" /><g transform="translate(64.8 143.5) rotate(-50.2)"><path d="M0 0 C31.2 -28.5 96.4 -30.6 141.7 0 C99.2 32.6 34.0 33.8 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q70.9 -1.9 137.5 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M28.3 0 Q38.3 -14.5 51.0 -20.8 M28.3 0 Q38.3 14.5 51.0 20.8 M51.0 0 Q60.9 -14.5 73.7 -19.0 M51.0 0 Q60.9 14.5 73.7 19.0 M73.7 0 Q83.6 -14.5 96.4 -17.1 M73.7 0 Q83.6 14.5 96.4 17.1 M96.4 0 Q106.3 -14.5 119.0 -15.3 M96.4 0 Q106.3 14.5 119.0 15.3" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M17.0 -11.3 Q63.8 -25.1 113.4 -10.3" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(64.8 143.5) rotate(52.9)"><path d="M0 0 C32.2 -29.1 99.5 -30.6 146.3 0 C102.4 32.0 35.1 33.8 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q73.1 -1.9 141.9 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M29.3 0 Q39.5 -14.5 52.7 -20.8 M29.3 0 Q39.5 14.5 52.7 20.8 M52.7 0 Q62.9 -14.5 76.1 -19.0 M52.7 0 Q62.9 14.5 76.1 19.0 M76.1 0 Q86.3 -14.5 99.5 -17.1 M76.1 0 Q86.3 14.5 99.5 17.1 M99.5 0 Q109.7 -14.5 122.9 -15.3 M99.5 0 Q109.7 14.5 122.9 15.3" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M17.6 -11.3 Q65.8 -25.1 117.0 -10.3" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(140.4 137.6) rotate(-60.7)"><path d="M0 0 C27.0 -33.5 83.3 -28.5 122.5 0 C85.8 23.5 29.4 31.5 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q61.3 -1.8 118.8 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M24.5 0 Q33.1 -13.5 44.1 -19.5 M24.5 0 Q33.1 13.5 44.1 19.5 M44.1 0 Q52.7 -13.5 63.7 -17.7 M44.1 0 Q52.7 13.5 63.7 17.7 M63.7 0 Q72.3 -13.5 83.3 -16.0 M63.7 0 Q72.3 13.5 83.3 16.0 M83.3 0 Q91.9 -13.5 102.9 -14.3 M83.3 0 Q91.9 13.5 102.9 14.3" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M14.7 -10.5 Q55.1 -23.4 98.0 -9.6" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(140.4 137.6) rotate(42.2)"><path d="M0 0 C30.8 -26.6 95.2 -28.5 140.0 0 C98.0 30.4 33.6 31.5 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q70.0 -1.8 135.8 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M28.0 0 Q37.8 -13.5 50.4 -19.5 M28.0 0 Q37.8 13.5 50.4 19.5 M50.4 0 Q60.2 -13.5 72.8 -17.7 M50.4 0 Q60.2 13.5 72.8 17.7 M72.8 0 Q82.6 -13.5 95.2 -16.0 M72.8 0 Q82.6 13.5 95.2 16.0 M95.2 0 Q105.0 -13.5 117.6 -14.3 M95.2 0 Q105.0 13.5 117.6 14.3" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M16.8 -10.5 Q63.0 -23.4 112.0 -9.6" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(216.0 133.7) rotate(-48.5)"><path d="M0 0 C26.8 -29.6 82.8 -26.5 121.8 0 C85.3 23.3 29.2 29.3 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q60.9 -1.7 118.1 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M24.4 0 Q32.9 -12.5 43.8 -18.1 M24.4 0 Q32.9 12.5 43.8 18.1 M43.8 0 Q52.4 -12.5 63.3 -16.5 M43.8 0 Q52.4 12.5 63.3 16.5 M63.3 0 Q71.9 -12.5 82.8 -14.9 M63.3 0 Q71.9 12.5 82.8 14.9 M82.8 0 Q91.3 -12.5 102.3 -13.2 M82.8 0 Q91.3 12.5 102.3 13.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M14.6 -9.8 Q54.8 -21.7 97.4 -8.9" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(216.0 133.7) rotate(46.2)"><path d="M0 0 C27.0 -30.1 83.5 -26.5 122.8 0 C85.9 22.9 29.5 29.3 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q61.4 -1.7 119.1 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M24.6 0 Q33.1 -12.5 44.2 -18.1 M24.6 0 Q33.1 12.5 44.2 18.1 M44.2 0 Q52.8 -12.5 63.8 -16.5 M44.2 0 Q52.8 12.5 63.8 16.5 M63.8 0 Q72.4 -12.5 83.5 -14.9 M63.8 0 Q72.4 12.5 83.5 14.9 M83.5 0 Q92.1 -12.5 103.1 -13.2 M83.5 0 Q92.1 12.5 103.1 13.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M14.7 -9.8 Q55.2 -21.7 98.2 -8.9" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(291.6 131.6) rotate(-44.1)"><path d="M0 0 C25.8 -28.2 79.8 -24.5 117.3 0 C82.1 20.7 28.2 27.0 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q58.7 -1.5 113.8 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M23.5 0 Q31.7 -11.6 42.2 -16.7 M23.5 0 Q31.7 11.6 42.2 16.7 M42.2 0 Q50.4 -11.6 61.0 -15.2 M42.2 0 Q50.4 11.6 61.0 15.2 M61.0 0 Q69.2 -11.6 79.8 -13.7 M61.0 0 Q69.2 11.6 79.8 13.7 M79.8 0 Q88.0 -11.6 98.5 -12.2 M79.8 0 Q88.0 11.6 98.5 12.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M14.1 -9.0 Q52.8 -20.1 93.9 -8.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(291.6 131.6) rotate(54.4)"><path d="M0 0 C26.1 -25.8 80.8 -24.5 118.9 0 C83.2 23.1 28.5 27.0 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q59.4 -1.5 115.3 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M23.8 0 Q32.1 -11.6 42.8 -16.7 M23.8 0 Q32.1 11.6 42.8 16.7 M42.8 0 Q51.1 -11.6 61.8 -15.2 M42.8 0 Q51.1 11.6 61.8 15.2 M61.8 0 Q70.1 -11.6 80.8 -13.7 M61.8 0 Q70.1 11.6 80.8 13.7 M80.8 0 Q89.1 -11.6 99.8 -12.2 M80.8 0 Q89.1 11.6 99.8 12.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M14.3 -9.0 Q53.5 -20.1 95.1 -8.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(367.2 131.4) rotate(-50.3)"><path d="M0 0 C23.1 -23.6 71.5 -22.4 105.2 0 C73.6 21.2 25.2 24.8 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q52.6 -1.4 102.0 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M21.0 0 Q28.4 -10.6 37.9 -15.3 M21.0 0 Q28.4 10.6 37.9 15.3 M37.9 0 Q45.2 -10.6 54.7 -13.9 M37.9 0 Q45.2 10.6 54.7 13.9 M54.7 0 Q62.0 -10.6 71.5 -12.6 M54.7 0 Q62.0 10.6 71.5 12.6 M71.5 0 Q78.9 -10.6 88.3 -11.2 M71.5 0 Q78.9 10.6 88.3 11.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M12.6 -8.3 Q47.3 -18.4 84.1 -7.6" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(367.2 131.4) rotate(52.8)"><path d="M0 0 C23.5 -23.3 72.5 -22.4 106.7 0 C74.7 21.5 25.6 24.8 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q53.3 -1.4 103.5 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M21.3 0 Q28.8 -10.6 38.4 -15.3 M21.3 0 Q28.8 10.6 38.4 15.3 M38.4 0 Q45.9 -10.6 55.5 -13.9 M38.4 0 Q45.9 10.6 55.5 13.9 M55.5 0 Q62.9 -10.6 72.5 -12.6 M55.5 0 Q62.9 10.6 72.5 12.6 M72.5 0 Q80.0 -10.6 89.6 -11.2 M72.5 0 Q80.0 10.6 89.6 11.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M12.8 -8.3 Q48.0 -18.4 85.3 -7.6" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(442.8 133.1) rotate(-48.1)"><path d="M0 0 C20.3 -20.7 62.8 -20.4 92.4 0 C64.7 20.0 22.2 22.5 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q46.2 -1.3 89.6 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M18.5 0 Q24.9 -9.7 33.3 -13.9 M18.5 0 Q24.9 9.7 33.3 13.9 M33.3 0 Q39.7 -9.7 48.0 -12.7 M33.3 0 Q39.7 9.7 48.0 12.7 M48.0 0 Q54.5 -9.7 62.8 -11.4 M48.0 0 Q54.5 9.7 62.8 11.4 M62.8 0 Q69.3 -9.7 77.6 -10.2 M62.8 0 Q69.3 9.7 77.6 10.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M11.1 -7.5 Q41.6 -16.7 73.9 -6.9" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(442.8 133.1) rotate(45.8)"><path d="M0 0 C20.1 -20.6 62.2 -20.4 91.4 0 C64.0 20.1 21.9 22.5 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q45.7 -1.3 88.7 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M18.3 0 Q24.7 -9.7 32.9 -13.9 M18.3 0 Q24.7 9.7 32.9 13.9 M32.9 0 Q39.3 -9.7 47.5 -12.7 M32.9 0 Q39.3 9.7 47.5 12.7 M47.5 0 Q53.9 -9.7 62.2 -11.4 M47.5 0 Q53.9 9.7 62.2 11.4 M62.2 0 Q68.6 -9.7 76.8 -10.2 M62.2 0 Q68.6 9.7 76.8 10.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M11.0 -7.5 Q41.1 -16.7 73.1 -6.9" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(518.4 136.6) rotate(-55.7)"><path d="M0 0 C17.1 -21.0 52.8 -18.3 77.7 0 C54.4 15.7 18.6 20.3 0 0Z" fill="url(#hoja-a)" /><path d="M2 0 Q38.9 -1.2 75.4 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M15.5 0 Q21.0 -8.7 28.0 -12.5 M15.5 0 Q21.0 8.7 28.0 12.5 M28.0 0 Q33.4 -8.7 40.4 -11.4 M28.0 0 Q33.4 8.7 40.4 11.4 M40.4 0 Q45.8 -8.7 52.8 -10.3 M40.4 0 Q45.8 8.7 52.8 10.3 M52.8 0 Q58.3 -8.7 65.3 -9.2 M52.8 0 Q58.3 8.7 65.3 9.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M9.3 -6.8 Q35.0 -15.1 62.2 -6.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(518.4 136.6) rotate(54.5)"><path d="M0 0 C18.0 -19.6 55.7 -18.3 81.9 0 C57.3 17.1 19.7 20.3 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q40.9 -1.2 79.4 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M16.4 0 Q22.1 -8.7 29.5 -12.5 M16.4 0 Q22.1 8.7 29.5 12.5 M29.5 0 Q35.2 -8.7 42.6 -11.4 M29.5 0 Q35.2 8.7 42.6 11.4 M42.6 0 Q48.3 -8.7 55.7 -10.3 M42.6 0 Q48.3 8.7 55.7 10.3 M55.7 0 Q61.4 -8.7 68.8 -9.2 M55.7 0 Q61.4 8.7 68.8 9.2" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M9.8 -6.8 Q36.8 -15.1 65.5 -6.2" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><g transform="translate(540.0 138.0) rotate(-4.2)"><path d="M0 0 C15.4 -17.6 47.6 -15.2 70.0 0 C49.0 12.8 16.8 16.8 0 0Z" fill="url(#hoja-b)" /><path d="M2 0 Q35.0 -1.0 67.9 0" stroke="#173a20" stroke-width="1.3" fill="none" opacity=".7" /><path d="M14.0 0 Q18.9 -7.2 25.2 -10.4 M14.0 0 Q18.9 7.2 25.2 10.4 M25.2 0 Q30.1 -7.2 36.4 -9.4 M25.2 0 Q30.1 7.2 36.4 9.4 M36.4 0 Q41.3 -7.2 47.6 -8.5 M36.4 0 Q41.3 7.2 47.6 8.5 M47.6 0 Q52.5 -7.2 58.8 -7.6 M47.6 0 Q52.5 7.2 58.8 7.6" stroke="#173a20" stroke-width=".8" fill="none" opacity=".45" /><path d="M8.4 -5.6 Q31.5 -12.5 56.0 -5.1" stroke="#d7f0c4" stroke-width="1.6" fill="none" opacity=".28" /></g><circle cx="292.2" cy="131.9" r="5.0" fill="url(#cereza-roja)" /><circle cx="290.4" cy="129.9" r="1.4" fill="#fff" opacity=".55" /><circle cx="285.9" cy="124.7" r="6.4" fill="url(#cereza-roja)" /><circle cx="283.6" cy="122.1" r="1.8" fill="#fff" opacity=".55" /><circle cx="291.1" cy="134.7" r="6.0" fill="url(#cereza-roja)" /><circle cx="289.0" cy="132.3" r="1.7" fill="#fff" opacity=".55" /><circle cx="291.9" cy="132.4" r="6.4" fill="url(#cereza-roja)" /><circle cx="289.7" cy="129.8" r="1.8" fill="#fff" opacity=".55" /><circle cx="292.7" cy="128.1" r="5.5" fill="url(#cereza-verde)" /><circle cx="290.8" cy="125.9" r="1.5" fill="#fff" opacity=".55" /><circle cx="291.7" cy="132.5" r="6.4" fill="url(#cereza-amarilla)" /><circle cx="289.5" cy="129.9" r="1.8" fill="#fff" opacity=".55" /><circle cx="367.3" cy="127.9" r="5.9" fill="url(#cereza-amarilla)" /><circle cx="365.3" cy="125.5" r="1.7" fill="#fff" opacity=".55" /><circle cx="374.9" cy="137.3" r="6.6" fill="url(#cereza-roja)" /><circle cx="372.6" cy="134.7" r="1.8" fill="#fff" opacity=".55" /><circle cx="366.3" cy="130.2" r="5.7" fill="url(#cereza-roja)" /><circle cx="364.3" cy="127.9" r="1.6" fill="#fff" opacity=".55" /><circle cx="370.3" cy="130.4" r="5.4" fill="url(#cereza-roja)" /><circle cx="368.4" cy="128.2" r="1.5" fill="#fff" opacity=".55" /><circle cx="360.4" cy="135.3" r="6.7" fill="url(#cereza-vino)" /><circle cx="358.1" cy="132.6" r="1.9" fill="#fff" opacity=".55" /><circle cx="364.8" cy="127.9" r="5.2" fill="url(#cereza-roja)" /><circle cx="363.0" cy="125.8" r="1.5" fill="#fff" opacity=".55" /><circle cx="371.6" cy="125.7" r="6.6" fill="url(#cereza-roja)" /><circle cx="369.3" cy="123.1" r="1.8" fill="#fff" opacity=".55" /><circle cx="370.2" cy="127.5" r="6.3" fill="url(#cereza-amarilla)" /><circle cx="368.0" cy="125.0" r="1.8" fill="#fff" opacity=".55" /><circle cx="441.7" cy="126.3" r="5.6" fill="url(#cereza-vino)" /><circle cx="439.8" cy="124.1" r="1.6" fill="#fff" opacity=".55" /><circle cx="443.0" cy="127.0" r="6.8" fill="url(#cereza-verde)" /><circle cx="440.7" cy="124.3" r="1.9" fill="#fff" opacity=".55" /><circle cx="451.3" cy="127.5" r="5.5" fill="url(#cereza-roja)" /><circle cx="449.4" cy="125.4" r="1.5" fill="#fff" opacity=".55" /><circle cx="447.8" cy="129.9" r="5.2" fill="url(#cereza-roja)" /><circle cx="446.0" cy="127.8" r="1.5" fill="#fff" opacity=".55" /><circle cx="450.2" cy="137.5" r="5.5" fill="url(#cereza-roja)" /><circle cx="448.3" cy="135.4" r="1.5" fill="#fff" opacity=".55" /><circle cx="450.3" cy="134.1" r="6.3" fill="url(#cereza-roja)" /><circle cx="448.2" cy="131.6" r="1.8" fill="#fff" opacity=".55" /><circle cx="434.8" cy="135.7" r="5.8" fill="url(#cereza-roja)" /><circle cx="432.8" cy="133.4" r="1.6" fill="#fff" opacity=".55" /><circle cx="450.7" cy="135.0" r="6.4" fill="url(#cereza-roja)" /><circle cx="448.4" cy="132.4" r="1.8" fill="#fff" opacity=".55" /></symbol>
+            </defs>
+        </svg>
+
+        <!-- Fondo: granos, hojas y flores de café dibujados a línea -->
+        <svg class="pointer-events-none absolute inset-0 -z-10 h-full w-full text-espresso-900/[0.2]" aria-hidden="true">
+            <defs>
+                <pattern id="patron-cafe" width="290" height="290" patternUnits="userSpaceOnUse" patternTransform="rotate(-8) scale(1.35)">
+                    <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(62 64) rotate(0) scale(1)"><g transform="translate(0 0) rotate(-150) scale(0.85)"><path d="M0 0C10 -15 34 -17 54 0C34 15 10 13 0 0Z" /><path d="M-7 0L51 0" /><path d="M10 0Q15 -5 19 -8 M10 0Q15 5 19 8 M20 0Q25 -5 29 -8 M20 0Q25 5 29 8 M30 0Q35 -5 39 -8 M30 0Q35 5 39 8 M39 0Q44 -5 48 -8 M39 0Q44 5 48 8" opacity=".7" /></g><g transform="translate(0 0) rotate(-30) scale(0.85)"><path d="M0 0C10 -15 34 -17 54 0C34 15 10 13 0 0Z" /><path d="M-7 0L51 0" /><path d="M10 0Q15 -5 19 -8 M10 0Q15 5 19 8 M20 0Q25 -5 29 -8 M20 0Q25 5 29 8 M30 0Q35 -5 39 -8 M30 0Q35 5 39 8 M39 0Q44 -5 48 -8 M39 0Q44 5 48 8" opacity=".7" /></g><g transform="translate(0 0) rotate(90) scale(0.75)"><path d="M0 0C10 -15 34 -17 54 0C34 15 10 13 0 0Z" /><path d="M-7 0L51 0" /><path d="M10 0Q15 -5 19 -8 M10 0Q15 5 19 8 M20 0Q25 -5 29 -8 M20 0Q25 5 29 8 M30 0Q35 -5 39 -8 M30 0Q35 5 39 8 M39 0Q44 -5 48 -8 M39 0Q44 5 48 8" opacity=".7" /></g><g transform="translate(0 0) rotate(10) scale(0.9)"><path transform="rotate(0)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(72)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(144)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(216)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(288)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(36)" d="M0 -2L0 -9" /><circle transform="rotate(36)" cx="0" cy="-10" r="1" /><path transform="rotate(108)" d="M0 -2L0 -9" /><circle transform="rotate(108)" cx="0" cy="-10" r="1" /><path transform="rotate(180)" d="M0 -2L0 -9" /><circle transform="rotate(180)" cx="0" cy="-10" r="1" /><path transform="rotate(252)" d="M0 -2L0 -9" /><circle transform="rotate(252)" cx="0" cy="-10" r="1" /><path transform="rotate(324)" d="M0 -2L0 -9" /><circle transform="rotate(324)" cx="0" cy="-10" r="1" /><circle r="2.2" /></g></g><g transform="translate(160 38) rotate(32) scale(1)"><path d="M0 -15C9 -15 12 -6 12 0S9 15 0 15-12 6-12 0-9 -15 0 -15Z" /><path d="M-1 -13C5 -6-5 5 1 13" /><path d="M-8 -6C-9 -2-9 3-7 7" opacity=".6" /></g><g transform="translate(222 74) rotate(0) scale(1)"><circle cx="0" cy="0" r="2.3" /><circle cx="5" cy="-3" r="2.3" /><circle cx="-5" cy="-2" r="2.3" /><circle cx="2" cy="5" r="2.3" /><circle cx="-3" cy="6" r="2.3" /><circle cx="7" cy="4" r="2.3" /><circle cx="-1" cy="-7" r="2.3" /></g><g transform="translate(214 150) rotate(-62) scale(1.05)"><path d="M0 0C10 -15 34 -17 54 0C34 15 10 13 0 0Z" /><path d="M-7 0L51 0" /><path d="M10 0Q15 -5 19 -8 M10 0Q15 5 19 8 M20 0Q25 -5 29 -8 M20 0Q25 5 29 8 M30 0Q35 -5 39 -8 M30 0Q35 5 39 8 M39 0Q44 -5 48 -8 M39 0Q44 5 48 8" opacity=".7" /></g><g transform="translate(122 128) rotate(-18) scale(1)"><path d="M0 -15C9 -15 12 -6 12 0S9 15 0 15-12 6-12 0-9 -15 0 -15Z" /><path d="M-1 -13C5 -6-5 5 1 13" /><path d="M-8 -6C-9 -2-9 3-7 7" opacity=".6" /></g><g transform="translate(196 222) rotate(160) scale(0.95)"><g transform="translate(0 0) rotate(-150) scale(0.85)"><path d="M0 0C10 -15 34 -17 54 0C34 15 10 13 0 0Z" /><path d="M-7 0L51 0" /><path d="M10 0Q15 -5 19 -8 M10 0Q15 5 19 8 M20 0Q25 -5 29 -8 M20 0Q25 5 29 8 M30 0Q35 -5 39 -8 M30 0Q35 5 39 8 M39 0Q44 -5 48 -8 M39 0Q44 5 48 8" opacity=".7" /></g><g transform="translate(0 0) rotate(-30) scale(0.85)"><path d="M0 0C10 -15 34 -17 54 0C34 15 10 13 0 0Z" /><path d="M-7 0L51 0" /><path d="M10 0Q15 -5 19 -8 M10 0Q15 5 19 8 M20 0Q25 -5 29 -8 M20 0Q25 5 29 8 M30 0Q35 -5 39 -8 M30 0Q35 5 39 8 M39 0Q44 -5 48 -8 M39 0Q44 5 48 8" opacity=".7" /></g><g transform="translate(0 0) rotate(90) scale(0.75)"><path d="M0 0C10 -15 34 -17 54 0C34 15 10 13 0 0Z" /><path d="M-7 0L51 0" /><path d="M10 0Q15 -5 19 -8 M10 0Q15 5 19 8 M20 0Q25 -5 29 -8 M20 0Q25 5 29 8 M30 0Q35 -5 39 -8 M30 0Q35 5 39 8 M39 0Q44 -5 48 -8 M39 0Q44 5 48 8" opacity=".7" /></g><g transform="translate(0 0) rotate(10) scale(0.9)"><path transform="rotate(0)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(72)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(144)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(216)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(288)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(36)" d="M0 -2L0 -9" /><circle transform="rotate(36)" cx="0" cy="-10" r="1" /><path transform="rotate(108)" d="M0 -2L0 -9" /><circle transform="rotate(108)" cx="0" cy="-10" r="1" /><path transform="rotate(180)" d="M0 -2L0 -9" /><circle transform="rotate(180)" cx="0" cy="-10" r="1" /><path transform="rotate(252)" d="M0 -2L0 -9" /><circle transform="rotate(252)" cx="0" cy="-10" r="1" /><path transform="rotate(324)" d="M0 -2L0 -9" /><circle transform="rotate(324)" cx="0" cy="-10" r="1" /><circle r="2.2" /></g></g><g transform="translate(56 196) rotate(64) scale(1)"><path d="M0 -15C9 -15 12 -6 12 0S9 15 0 15-12 6-12 0-9 -15 0 -15Z" /><path d="M-1 -13C5 -6-5 5 1 13" /><path d="M-8 -6C-9 -2-9 3-7 7" opacity=".6" /></g><g transform="translate(112 248) rotate(0) scale(1)"><circle cx="0" cy="0" r="2.3" /><circle cx="5" cy="-3" r="2.3" /><circle cx="-5" cy="-2" r="2.3" /><circle cx="2" cy="5" r="2.3" /><circle cx="-3" cy="6" r="2.3" /><circle cx="7" cy="4" r="2.3" /><circle cx="-1" cy="-7" r="2.3" /></g><g transform="translate(252 262) rotate(-40) scale(0.9)"><path d="M0 -15C9 -15 12 -6 12 0S9 15 0 15-12 6-12 0-9 -15 0 -15Z" /><path d="M-1 -13C5 -6-5 5 1 13" /><path d="M-8 -6C-9 -2-9 3-7 7" opacity=".6" /></g><g transform="translate(18 128) rotate(48) scale(0.85)"><path d="M0 0C10 -15 34 -17 54 0C34 15 10 13 0 0Z" /><path d="M-7 0L51 0" /><path d="M10 0Q15 -5 19 -8 M10 0Q15 5 19 8 M20 0Q25 -5 29 -8 M20 0Q25 5 29 8 M30 0Q35 -5 39 -8 M30 0Q35 5 39 8 M39 0Q44 -5 48 -8 M39 0Q44 5 48 8" opacity=".7" /></g><g transform="translate(268 22) rotate(0) scale(0.7)"><path transform="rotate(0)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(72)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(144)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(216)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(288)" d="M0 -3C5 -8 5 -18 0 -24C-5 -18-5 -8 0 -3Z" /><path transform="rotate(36)" d="M0 -2L0 -9" /><circle transform="rotate(36)" cx="0" cy="-10" r="1" /><path transform="rotate(108)" d="M0 -2L0 -9" /><circle transform="rotate(108)" cx="0" cy="-10" r="1" /><path transform="rotate(180)" d="M0 -2L0 -9" /><circle transform="rotate(180)" cx="0" cy="-10" r="1" /><path transform="rotate(252)" d="M0 -2L0 -9" /><circle transform="rotate(252)" cx="0" cy="-10" r="1" /><path transform="rotate(324)" d="M0 -2L0 -9" /><circle transform="rotate(324)" cx="0" cy="-10" r="1" /><circle r="2.2" /></g><g transform="translate(150 200) rotate(100) scale(0.85)"><path d="M0 -15C9 -15 12 -6 12 0S9 15 0 15-12 6-12 0-9 -15 0 -15Z" /><path d="M-1 -13C5 -6-5 5 1 13" /><path d="M-8 -6C-9 -2-9 3-7 7" opacity=".6" /></g><circle cx="100" cy="30" r="1.1" /><circle cx="245" cy="120" r="1.1" /><circle cx="30" cy="250" r="1.1" /><circle cx="170" cy="92" r="1.1" /><circle cx="90" cy="175" r="1.1" /><circle cx="268" cy="190" r="1.1" /></g>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#patron-cafe)" />
+        </svg>
+
+        <div class="grid pb-10 lg:min-h-[min(48rem,calc(100svh-6.5rem))] lg:grid-cols-12 lg:pb-0">
+            <!-- Texto -->
+            <div
+                class="relative z-10 flex flex-col justify-center px-6 pb-12 pt-12 sm:pt-16 lg:col-span-6 lg:py-20 lg:pl-[calc(max(0px,(100vw-72rem)/2)+1.5rem)] lg:pr-12">
+                <p class="aparecer flex items-center gap-2.5 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-terracota-600">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" aria-hidden="true">
+                        <ellipse cx="12" cy="12" rx="6.5" ry="9.5" transform="rotate(28 12 12)" />
+                        <path d="M8.4 19.6c3.6-3.4 3.4-9.6 7.2-15.2" />
+                    </svg>
+                    Finca La Escuelita · Iquira, Huila
+                </p>
+
+                <h1 id="hero-titulo"
+                    class="titular aparecer retraso-1 mt-7 font-display text-[clamp(3.1rem,8.4vw,6.3rem)] font-[350] leading-[0.93] tracking-[-0.035em]">
+                    Del corazón<br /> del Huila,
+                    <span class="relative mt-1 block w-fit pl-[0.85em] font-[330] italic text-terracota-600">
+                        a tu taza.
+                        <svg class="absolute -bottom-[0.18em] left-[0.95em] h-[0.22em] w-[88%] text-mostaza-500"
+                            viewBox="0 0 300 18" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                            <path d="M3 12c38-6 70-8 104-5 26 2 44 5 76 2 40-4 74-7 114-4" stroke="currentColor"
+                                stroke-width="5" stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </h1>
+
+                <p class="aparecer retraso-2 mt-9 max-w-[34ch] text-[1.05rem] leading-relaxed text-espresso-800/80 sm:text-lg">
+                    Bourbon Rosado cultivado a mano por nuestra familia, a 1.350 metros, en las montañas cafeteras
+                    de Iquira.
+                </p>
+
+                <div class="aparecer retraso-3 mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+                    <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita"
+                        target="_blank" rel="noopener"
+                        class="group inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white">
+                        Pide tu café
+                        <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </a>
+                    <a href="#cafe"
+                        class="text-sm font-semibold text-espresso-900 underline decoration-espresso-900/30 decoration-1 underline-offset-[6px] transition-colors hover:text-terracota-600 hover:decoration-terracota-600">
+                        Conoce nuestro café
+                    </a>
+                </div>
+            </div>
+
+            <!-- Escena del producto -->
+            <div class="aparecer retraso-2 relative z-10 lg:col-span-6">
+                <div
+                    class="relative mx-4 h-[25rem] overflow-hidden rounded-sm sm:mx-6 sm:h-[34rem] lg:mx-0 lg:h-full lg:rounded-none lg:rounded-bl-[2.25rem]">
+                    <!-- Fondo desenfocado: no necesita alta resolución -->
+                    <img src="https://images.unsplash.com/photo-1737914692097-ac2393eefc03?auto=format&fit=crop&w=1000&q=60"
+                        srcset="https://images.unsplash.com/photo-1737914692097-ac2393eefc03?auto=format&fit=crop&w=640&q=60 640w,
+                                https://images.unsplash.com/photo-1737914692097-ac2393eefc03?auto=format&fit=crop&w=1000&q=60 1000w,
+                                https://images.unsplash.com/photo-1737914692097-ac2393eefc03?auto=format&fit=crop&w=1400&q=60 1400w"
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        alt="" width="1600" height="1100" decoding="async"
+                        class="absolute inset-0 h-full w-full scale-105 object-cover object-[center_30%] blur-[2.5px] saturate-[.85]" />
+                    <div class="absolute inset-0 bg-gradient-to-b from-[#f4e6cf]/25 via-transparent to-[#3a2212]/25"></div>
+
+                    <!-- Matas de café detrás de la mesa -->
+                    <svg class="pointer-events-none absolute inset-x-0 bottom-[22%] h-[72%] w-full blur-[1.5px] saturate-[.9]"
+                        viewBox="0 0 1000 700" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+                        <g transform="translate(90 735) rotate(-32) scale(0.95)"><g class="viento" style="--viento-giro:1.2deg;--viento-dur:7.2s;animation-delay:-6.6s"><use href="#rama-cafe-1" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(90 735) rotate(-68) scale(0.9)"><g class="viento" style="--viento-giro:1.2deg;--viento-dur:7.0s;animation-delay:-4.1s"><use href="#rama-cafe-3" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(90 735) rotate(-104) scale(0.72) scale(1 -1)"><g class="viento" style="--viento-giro:1.0deg;--viento-dur:7.0s;animation-delay:-4.4s"><use href="#rama-cafe-2" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(90 735) rotate(-12) scale(0.78)"><g class="viento" style="--viento-giro:1.5deg;--viento-dur:5.8s;animation-delay:-1.8s"><use href="#rama-cafe-1" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(90 735) rotate(-146) scale(0.66) scale(1 -1)"><g class="viento" style="--viento-giro:1.0deg;--viento-dur:7.9s;animation-delay:-5.5s"><use href="#rama-cafe-3" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(340 745) rotate(-58) scale(0.82)"><g class="viento" style="--viento-giro:0.9deg;--viento-dur:8.4s;animation-delay:-8.1s"><use href="#rama-cafe-2" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(340 745) rotate(-92) scale(0.86)"><g class="viento" style="--viento-giro:1.4deg;--viento-dur:7.3s;animation-delay:-1.2s"><use href="#rama-cafe-1" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(340 745) rotate(-124) scale(0.72) scale(1 -1)"><g class="viento" style="--viento-giro:0.9deg;--viento-dur:7.1s;animation-delay:-0.4s"><use href="#rama-cafe-3" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(940 735) rotate(-150) scale(0.9) scale(1 -1)"><g class="viento" style="--viento-giro:1.0deg;--viento-dur:6.2s;animation-delay:-0.2s"><use href="#rama-cafe-1" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(940 735) rotate(-112) scale(0.86) scale(1 -1)"><g class="viento" style="--viento-giro:1.2deg;--viento-dur:6.8s;animation-delay:-5.7s"><use href="#rama-cafe-3" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(940 735) rotate(-76) scale(0.7)"><g class="viento" style="--viento-giro:1.3deg;--viento-dur:7.4s;animation-delay:-3.7s"><use href="#rama-cafe-2" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(940 735) rotate(-168) scale(0.74) scale(1 -1)"><g class="viento" style="--viento-giro:1.4deg;--viento-dur:6.9s;animation-delay:-1.9s"><use href="#rama-cafe-1" x="-40" y="-190" width="640" height="360" /></g></g>
+                    </svg>
+
+                    <!-- Mesa -->
+                    <div class="mesa absolute inset-x-0 bottom-0 h-[27%]" aria-hidden="true">
+                        <div class="mesa-superficie"></div>
+                    </div>
+
+                    <!-- Bolsas sobre la mesa -->
+                    <div class="absolute bottom-[8%] left-[58%] w-[56%] -translate-x-1/2 sm:left-[60%] sm:w-[min(50%,24rem)] lg:left-[63%] lg:w-[min(52%,24rem)]">
+                        <!-- Sombras de contacto -->
+                        <div class="absolute bottom-[-2.5%] left-[4%] h-[7%] w-[56%] rounded-[50%] bg-[#1d0f06]/45 blur-[10px]" aria-hidden="true"></div>
+                        <div class="absolute bottom-[-0.6%] left-[6%] h-[2.2%] w-[44%] rounded-[50%] bg-[#1d0f06]/60 blur-[3px]" aria-hidden="true"></div>
+                        <div class="absolute bottom-[6.5%] left-[53%] h-[6%] w-[48%] rounded-[50%] bg-[#1d0f06]/35 blur-[9px]" aria-hidden="true"></div>
+                        <div class="absolute bottom-[8.3%] left-[56%] h-[1.8%] w-[40%] rounded-[50%] bg-[#1d0f06]/50 blur-[3px]" aria-hidden="true"></div>
+                        <img src="./assets/images/empaque-hero-800.webp?v=4257b0ed06"
+                            srcset="./assets/images/empaque-hero-480.webp?v=74cd92ebc8 480w, ./assets/images/empaque-hero-800.webp?v=4257b0ed06 800w"
+                            sizes="(min-width: 640px) 24rem, 56vw" width="800" height="1000" fetchpriority="high"
+                            alt="Empaques de Café la Escuelita, variedad Bourbon Rosado de Iquira, Huila, sobre una mesa de madera"
+                            class="relative h-auto w-full [filter:saturate(.96)_contrast(1.02)_drop-shadow(10px_6px_10px_rgba(29,15,6,.18))]" />
+                        <!-- Taza de café -->
+                        <svg class="pointer-events-none absolute bottom-[-8%] right-[80%] w-[68%] overflow-visible sm:right-[84%] sm:w-[80%]"
+                            viewBox="0 0 260 190" aria-hidden="true">
+                            <defs>
+                                <filter id="taza-desenfoque" x="-20%" y="-50%" width="140%" height="200%">
+                                    <feGaussianBlur stdDeviation="6" />
+                                </filter>
+                                <filter id="taza-suave"><feGaussianBlur stdDeviation="2" /></filter>
+                                <linearGradient id="taza-esmalte" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#a8957a" />
+                                    <stop offset=".16" stop-color="#e6d8bf" />
+                                    <stop offset=".34" stop-color="#fbf5e9" />
+                                    <stop offset=".68" stop-color="#e3d3b8" />
+                                    <stop offset="1" stop-color="#9a8466" />
+                                </linearGradient>
+                                <linearGradient id="taza-barro" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#6e2f14" />
+                                    <stop offset=".18" stop-color="#ad5530" />
+                                    <stop offset=".36" stop-color="#cf7a4d" />
+                                    <stop offset=".7" stop-color="#a24d27" />
+                                    <stop offset="1" stop-color="#5f2810" />
+                                </linearGradient>
+                                <linearGradient id="taza-asa" x1="0" x2="1" y1="0" y2="1">
+                                    <stop offset="0" stop-color="#efe3cc" />
+                                    <stop offset="1" stop-color="#9c876a" />
+                                </linearGradient>
+                                <radialGradient id="taza-plato" cx="42%" cy="35%" r="70%">
+                                    <stop offset="0" stop-color="#f8f1e4" />
+                                    <stop offset=".75" stop-color="#e4d5bb" />
+                                    <stop offset="1" stop-color="#c9b597" />
+                                </radialGradient>
+                                <linearGradient id="taza-borde-plato" x1="0" x2="0" y1="0" y2="1">
+                                    <stop offset="0" stop-color="#d6c4a6" />
+                                    <stop offset="1" stop-color="#8a7456" />
+                                </linearGradient>
+                                <radialGradient id="taza-crema" cx="44%" cy="42%" r="62%">
+                                    <stop offset="0" stop-color="#c08550" />
+                                    <stop offset=".5" stop-color="#94562b" />
+                                    <stop offset=".85" stop-color="#4f2812" />
+                                    <stop offset="1" stop-color="#2c1508" />
+                                </radialGradient>
+                                <clipPath id="taza-cuerpo">
+                                    <path d="M62 70 C62 112 80 146 100 151 Q122 156 144 151 C164 146 182 112 182 70 Z" />
+                                </clipPath>
+                            </defs>
+
+                            <!-- Vapor -->
+                            <g fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" opacity=".55" filter="url(#taza-suave)">
+                                <path class="vapor" d="M108 52c-10-10 10-18 0-28s10-18 0-28" />
+                                <path class="vapor vapor-2" d="M134 50c-10-10 10-18 0-28s10-18 0-28" />
+                            </g>
+
+                            <!-- Sombra sobre la mesa -->
+                            <ellipse cx="134" cy="166" rx="108" ry="14" fill="#1d0f06" opacity=".6" filter="url(#taza-desenfoque)" />
+                            <ellipse cx="126" cy="160" rx="100" ry="7" fill="#1d0f06" opacity=".45" filter="url(#taza-suave)" />
+
+                            <!-- Plato -->
+                            <ellipse cx="122" cy="153" rx="104" ry="22" fill="url(#taza-borde-plato)" />
+                            <ellipse cx="122" cy="149" rx="100" ry="19" fill="url(#taza-plato)" />
+                            <ellipse cx="122" cy="149" rx="100" ry="19" fill="none" stroke="#b55a31" stroke-width="2.4" opacity=".85" />
+                            <ellipse cx="122" cy="151" rx="50" ry="9" fill="#cdb998" opacity=".55" />
+                            <ellipse cx="134" cy="152" rx="50" ry="8" fill="#4a2c15" opacity=".35" filter="url(#taza-suave)" />
+
+                            <!-- Asa -->
+                            <path d="M178 86c36-6 44 36-6 44" fill="none" stroke="url(#taza-asa)" stroke-width="11" stroke-linecap="round" />
+
+                            <!-- Cuerpo: esmalte crema con baño de barro terracota -->
+                            <g clip-path="url(#taza-cuerpo)">
+                                <rect x="60" y="60" width="124" height="100" fill="url(#taza-esmalte)" />
+                                <path d="M58 118c22-7 40 5 62-1s42-8 66 2v44H58z" fill="url(#taza-barro)" />
+                                <path d="M92 84c-3 20 0 40 8 58" stroke="#fffaf0" stroke-width="6" stroke-linecap="round" opacity=".45" fill="none" filter="url(#taza-suave)" />
+                            </g>
+
+                            <!-- Boca de la taza y café -->
+                            <ellipse cx="122" cy="70" rx="60" ry="12" fill="#f3e9d6" />
+                            <ellipse cx="122" cy="70.5" rx="55.5" ry="10.2" fill="#c9b694" />
+                            <ellipse cx="122" cy="72.5" rx="53" ry="8.6" fill="url(#taza-crema)" />
+                            <path d="M64 72c14 9 102 9 116 0" fill="none" stroke="#fffaf0" stroke-width="1.6" opacity=".7" />
+                        </svg>
+                    </div>
+
+                    <!-- Ramas en primer plano -->
+                    <svg class="pointer-events-none absolute inset-0 h-full w-full blur-[2.5px]"
+                        viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                        <g transform="translate(-120 1050) rotate(-62) scale(1.0)"><g class="viento" style="--viento-giro:2.4deg;--viento-dur:8.5s;animation-delay:-7.1s"><use href="#rama-cafe-2" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(-120 1050) rotate(-80) scale(0.85)"><g class="viento" style="--viento-giro:2.2deg;--viento-dur:6.4s;animation-delay:-1.5s"><use href="#rama-cafe-1" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(-120 1050) rotate(-40) scale(0.7)"><g class="viento" style="--viento-giro:1.8deg;--viento-dur:5.7s;animation-delay:-4.4s"><use href="#rama-cafe-3" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(1070 -50) rotate(148) scale(0.95) scale(1 -1)"><g class="viento" style="--viento-giro:1.9deg;--viento-dur:8.0s;animation-delay:-3.1s"><use href="#rama-cafe-1" x="-40" y="-190" width="640" height="360" /></g></g>
+                        <g transform="translate(1070 -50) rotate(118) scale(0.8) scale(1 -1)"><g class="viento" style="--viento-giro:2.4deg;--viento-dur:8.0s;animation-delay:-0.0s"><use href="#rama-cafe-3" x="-40" y="-190" width="640" height="360" /></g></g>
+                    </svg>
+
+                    <!-- Sello 100% café colombiano -->
+                    <svg class="absolute right-5 top-0 z-10 w-[68px] drop-shadow-[0_8px_14px_rgba(63,9,4,0.35)] sm:right-8 sm:w-[84px] lg:w-[92px]"
+                        viewBox="0 0 120 150" role="img" aria-label="100% café colombiano">
+                        <defs>
+                            <clipPath id="sello-forma">
+                                <path d="M0 0H120V122Q120 150 92 150H28Q0 150 0 122Z" />
+                            </clipPath>
+                            <linearGradient id="sello-oro" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" stop-color="#ffd36b" />
+                                <stop offset=".5" stop-color="#d48b1c" />
+                                <stop offset="1" stop-color="#8f4a0b" />
+                            </linearGradient>
+                        </defs>
+                        <g clip-path="url(#sello-forma)">
+                            <rect width="120" height="150" fill="#5d201e" />
+                            <rect width="120" height="3" fill="#3f0904" opacity=".6" />
+                            <path d="M30 152c34-6 64-24 92-58v8c-26 32-52 48-80 54z" fill="#fcd116" />
+                            <path d="M42 156c28-6 56-22 80-54v14c-22 26-44 40-66 44z" fill="#ce1126" />
+                            <path d="M56 160c22-4 46-18 66-44v40z" fill="#1f3f9a" />
+                        </g>
+                        <text x="60" y="29" text-anchor="middle" fill="#fff7ee" font-family="Instrument Sans, sans-serif"
+                            font-size="16" font-weight="700">100%</text>
+                        <!-- Corazón de granos -->
+                        <g transform="translate(60 62)">
+                            <ellipse cx="-9" cy="0" rx="10.5" ry="15" transform="rotate(-28 -9 0)" fill="url(#sello-oro)" />
+                            <ellipse cx="9" cy="0" rx="10.5" ry="15" transform="rotate(28 9 0)" fill="url(#sello-oro)" />
+                            <path d="M-14 -11c4 6 2 14 6 22M14 -11c-4 6-2 14-6 22" stroke="#5d201e" stroke-width="1.8"
+                                fill="none" stroke-linecap="round" />
+                        </g>
+                        <text x="60" y="97" text-anchor="middle" fill="#fff7ee" font-family="Instrument Sans, sans-serif"
+                            font-size="13" font-weight="700" letter-spacing=".5">CAFÉ</text>
+                        <text x="60" y="110" text-anchor="middle" fill="#fff7ee" font-family="Instrument Sans, sans-serif"
+                            font-size="9.6" font-weight="700" letter-spacing=".4">COLOMBIANO</text>
+                    </svg>
+
+                    <!-- Granos sueltos -->
+                    <svg class="absolute bottom-[4.5%] right-[5%] w-12 sm:w-16 lg:right-[9%] lg:bottom-[5%]" viewBox="0 0 80 34" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="grano" cx="38%" cy="35%" r="70%">
+                                <stop offset="0" stop-color="#8d5128" />
+                                <stop offset=".65" stop-color="#4a2511" />
+                                <stop offset="1" stop-color="#2a1408" />
+                            </radialGradient>
+                        </defs>
+                        <g>
+                            <ellipse cx="17" cy="25" rx="11" ry="3" fill="#1d0f06" opacity=".35" />
+                            <ellipse cx="16" cy="21" rx="10.5" ry="5.6" fill="url(#grano)" transform="rotate(-14 16 21)" />
+                            <path d="M7 22.5c5-3.2 11 .8 18-3.6" stroke="#1f0e05" stroke-width="1.3" fill="none" stroke-linecap="round" />
+                        </g>
+                        <g>
+                            <ellipse cx="44" cy="30" rx="11" ry="2.8" fill="#1d0f06" opacity=".3" />
+                            <ellipse cx="43" cy="26.5" rx="10" ry="5.2" fill="url(#grano)" transform="rotate(9 43 26.5)" />
+                            <path d="M34 25.5c5 3 11-1.4 18 2" stroke="#1f0e05" stroke-width="1.3" fill="none" stroke-linecap="round" />
+                        </g>
+                        <g>
+                            <ellipse cx="66" cy="22" rx="9" ry="2.4" fill="#1d0f06" opacity=".28" />
+                            <ellipse cx="65" cy="19" rx="8.6" ry="4.6" fill="url(#grano)" transform="rotate(-30 65 19)" />
+                            <path d="M58 22.5c4-2.4 7-5.6 13-7.4" stroke="#1f0e05" stroke-width="1.2" fill="none" stroke-linecap="round" />
+                        </g>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- La finca -->
+    <!-- Fotos temporales de Unsplash (licencia libre): reemplazar por fotos reales de la Finca La Escuelita. -->
+    <section id="finca" aria-labelledby="finca-titulo" class="relative scroll-mt-20 bg-white">
+        <div class="mx-auto flex max-w-6xl flex-col px-6 py-20 md:py-28 lg:pb-24 lg:pt-32">
+            <h2 id="finca-titulo" class="sr-only">Nuestra finca</h2>
+
+            <!-- Pestañas -->
+            <div role="tablist" aria-label="Conoce la finca"
+                class="mx-auto mb-10 flex w-fit rounded-full bg-espresso-950 p-1.5 shadow-[0_20px_40px_-15px_rgba(18,10,6,0.6)] ring-1 ring-oro-500/20 lg:relative lg:z-20 lg:-mt-7 lg:mb-0">
+                <button type="button" role="tab" id="tab-finca" aria-controls="panel-finca" aria-selected="true"
+                    class="pestana rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] transition sm:px-10">
+                    La finca
+                </button>
+                <button type="button" role="tab" id="tab-cosecha" aria-controls="panel-cosecha" aria-selected="false"
+                    tabindex="-1"
+                    class="pestana rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] transition sm:px-10">
+                    La cosecha
+                </button>
+            </div>
+
+            <div class="relative lg:order-first">
+                <!-- Panel: La finca -->
+                <div role="tabpanel" id="panel-finca" aria-labelledby="tab-finca" class="panel grid gap-10 lg:grid-cols-12 lg:gap-0">
+                    <figure class="relative overflow-hidden lg:col-span-7">
+                        <img src="https://images.unsplash.com/photo-1670758611084-e216510c5433?auto=format&fit=crop&w=1000&q=75"
+                            srcset="https://images.unsplash.com/photo-1670758611084-e216510c5433?auto=format&fit=crop&w=640&q=75 640w,
+                                    https://images.unsplash.com/photo-1670758611084-e216510c5433?auto=format&fit=crop&w=1000&q=75 1000w,
+                                    https://images.unsplash.com/photo-1670758611084-e216510c5433?auto=format&fit=crop&w=1400&q=75 1400w"
+                            sizes="(min-width: 1152px) 672px, (min-width: 1024px) 58vw, 100vw"
+                            alt="Mano sosteniendo cerezas de café recién recolectadas" width="1400" height="1600" loading="lazy" decoding="async"
+                            class="foto aspect-[4/5] h-full w-full object-cover lg:aspect-[7/8]" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/20 to-transparent"></div>
+                        <figcaption class="absolute inset-x-0 bottom-0 p-8 text-center sm:p-12 lg:pb-24 lg:pl-12 lg:pr-36 lg:text-left">
+                            <p class="font-display text-3xl font-normal leading-[1.08] text-stone-50 sm:text-4xl lg:text-5xl">
+                                Cultivado entre las <em class="italic text-oro-300">montañas de Iquira.</em>
+                            </p>
+                        </figcaption>
+                    </figure>
+
+                    <div class="flex flex-col lg:col-span-5">
+                        <div class="lg:pl-14 lg:pt-16">
+                            <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-amber-800">
+                                <span class="h-px w-8 bg-amber-800/60"></span>Finca La Escuelita
+                            </p>
+                            <p class="mt-5 text-lg leading-relaxed text-stone-700">
+                                A 1.350 metros sobre el nivel del mar, entre neblina, sombra y tierra fértil, crece
+                                nuestro Bourbon Rosado: una variedad delicada que pide paciencia y que agradece cada
+                                cuidado con una taza dulce y floral.
+                            </p>
+                            <dl class="mt-7 grid grid-cols-2 gap-6 border-t border-stone-300/70 pt-6">
+                                <div>
+                                    <dt class="text-[0.65rem] uppercase tracking-[0.2em] text-stone-500">Ubicación</dt>
+                                    <dd class="mt-1 font-display text-xl text-espresso-900">Iquira, Huila</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-[0.65rem] uppercase tracking-[0.2em] text-stone-500">Altura</dt>
+                                    <dd class="mt-1 font-display text-xl text-espresso-900">1.350 m s. n. m.</dd>
+                                </div>
+                            </dl>
+                            <button type="button" data-ir="cosecha"
+                                class="group mt-8 inline-flex items-center gap-3 text-sm font-semibold text-espresso-900">
+                                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-espresso-950 text-oro-300 transition group-hover:bg-oro-500 group-hover:text-espresso-950">
+                                    <svg class="h-4 w-4 -rotate-45 transition group-hover:rotate-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                                </span>
+                                <span class="border-b border-transparent transition group-hover:border-espresso-900">Así cosechamos</span>
+                            </button>
+                        </div>
+                        <figure class="relative z-10 ml-auto mt-10 w-4/5 shadow-[0_30px_60px_-20px_rgba(18,10,6,0.55)] lg:-ml-24 lg:mr-0 lg:mt-14 lg:w-[calc(100%+6rem)]">
+                            <img src="./assets/images/finca-1280.webp?v=91c8f4c201"
+                                srcset="./assets/images/finca-640.webp?v=1583e50520 640w, ./assets/images/finca-1280.webp?v=91c8f4c201 1280w"
+                                sizes="(min-width: 1152px) 576px, (min-width: 1024px) 50vw, 80vw"
+                                alt="Vista aérea de los cafetales de la Finca La Escuelita" width="1280" height="720" loading="lazy" decoding="async"
+                                class="foto aspect-[4/3] w-full object-cover" />
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Panel: La cosecha -->
+                <div role="tabpanel" id="panel-cosecha" aria-labelledby="tab-cosecha" hidden
+                    class="panel grid gap-10 lg:grid-cols-12 lg:gap-0">
+                    <figure class="relative overflow-hidden lg:col-span-7">
+                        <img src="https://images.unsplash.com/photo-1642613630414-1d9938f4fe02?auto=format&fit=crop&w=1000&q=75"
+                            srcset="https://images.unsplash.com/photo-1642613630414-1d9938f4fe02?auto=format&fit=crop&w=640&q=75 640w,
+                                    https://images.unsplash.com/photo-1642613630414-1d9938f4fe02?auto=format&fit=crop&w=1000&q=75 1000w,
+                                    https://images.unsplash.com/photo-1642613630414-1d9938f4fe02?auto=format&fit=crop&w=1400&q=75 1400w"
+                            sizes="(min-width: 1152px) 672px, (min-width: 1024px) 58vw, 100vw"
+                            alt="Recolección manual de cerezas de café" width="1400" height="1600" loading="lazy" decoding="async"
+                            class="foto aspect-[4/5] h-full w-full object-cover lg:aspect-[7/8]" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/20 to-transparent"></div>
+                        <figcaption class="absolute inset-x-0 bottom-0 p-8 text-center sm:p-12 lg:pb-24 lg:pl-12 lg:pr-36 lg:text-left">
+                            <p class="font-display text-3xl font-normal leading-[1.08] text-stone-50 sm:text-4xl lg:text-5xl">
+                                Cada grano, <em class="italic text-oro-300">recogido a mano.</em>
+                            </p>
+                        </figcaption>
+                    </figure>
+
+                    <div class="flex flex-col lg:col-span-5">
+                        <div class="lg:pl-14 lg:pt-16">
+                            <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-amber-800">
+                                <span class="h-px w-8 bg-amber-800/60"></span>Tradición familiar
+                            </p>
+                            <p class="mt-5 text-lg leading-relaxed text-stone-700">
+                                Recolectamos solo las cerezas en su punto, una por una. Luego viene una fermentación
+                                anaeróbica y un lavado cuidadoso que resaltan su dulzor natural. Es el oficio con el que
+                                empezó esta historia familiar, y el que hoy nos permite llevar el verdadero sabor de
+                                Colombia a tu taza.
+                            </p>
+                            <dl class="mt-7 grid grid-cols-2 gap-6 border-t border-stone-300/70 pt-6">
+                                <div>
+                                    <dt class="text-[0.65rem] uppercase tracking-[0.2em] text-stone-500">Recolección</dt>
+                                    <dd class="mt-1 font-display text-xl text-espresso-900">Manual, selectiva</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-[0.65rem] uppercase tracking-[0.2em] text-stone-500">Proceso</dt>
+                                    <dd class="mt-1 font-display text-xl text-espresso-900">Anaeróbico, lavado</dd>
+                                </div>
+                            </dl>
+                            <button type="button" data-ir="finca"
+                                class="group mt-8 inline-flex items-center gap-3 text-sm font-semibold text-espresso-900">
+                                <span class="flex h-9 w-9 items-center justify-center rounded-full bg-espresso-950 text-oro-300 transition group-hover:bg-oro-500 group-hover:text-espresso-950">
+                                    <svg class="h-4 w-4 -rotate-45 transition group-hover:rotate-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                                </span>
+                                <span class="border-b border-transparent transition group-hover:border-espresso-900">Conoce la finca</span>
+                            </button>
+                        </div>
+                        <figure class="relative z-10 ml-auto mt-10 w-4/5 shadow-[0_30px_60px_-20px_rgba(18,10,6,0.55)] lg:-ml-24 lg:mr-0 lg:mt-14 lg:w-[calc(100%+6rem)]">
+                            <img src="./assets/images/cafe-720.webp?v=c85dee90b2"
+                                srcset="./assets/images/cafe-480.webp?v=fe53fa2d72 480w, ./assets/images/cafe-720.webp?v=c85dee90b2 720w"
+                                sizes="(min-width: 1152px) 576px, (min-width: 1024px) 50vw, 80vw"
+                                alt="Racimos de cerezas de café madurando en la planta" width="720" height="540" loading="lazy" decoding="async"
+                                class="foto aspect-[4/3] w-full object-cover" />
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por qué nuestro café -->
+    <section aria-labelledby="porque-titulo" class="border-y border-espresso-900/10 bg-white font-texto">
+        <div class="mx-auto max-w-6xl px-6 py-20 md:py-24">
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
+                    <span class="h-px w-8 bg-terracota-600/50"></span>La diferencia<span class="h-px w-8 bg-terracota-600/50"></span>
+                </p>
+                <h2 id="porque-titulo" class="mt-5 font-display text-4xl font-normal leading-tight tracking-tight text-espresso-900 md:text-5xl">
+                    ¿Por qué Café <em class="whitespace-nowrap italic text-terracota-600">la Escuelita?</em>
+                </h2>
+                <p class="mt-4 text-base leading-relaxed text-espresso-800/70 md:text-lg">
+                    Lo que separa un café de finca de un café industrial está en los detalles que no se ven en el
+                    empaque.
+                </p>
+            </div>
+
+            <ul class="mt-16 grid gap-12 md:grid-cols-3 md:gap-0 md:divide-x md:divide-espresso-900/10">
+                <li class="px-4 text-center md:px-10">
+                    <svg class="mx-auto h-14 w-14 text-oro-500" viewBox="0 0 48 48" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 40l12-17 7 9 5-6 14 14z" />
+                        <path d="M14 27.5l3-4.5 3 4" />
+                        <path d="M33 6a6 6 0 0 1 6 6c0 4.6-6 10.5-6 10.5S27 16.6 27 12a6 6 0 0 1 6-6z" />
+                        <circle cx="33" cy="12" r="2.1" />
+                    </svg>
+                    <h3 class="mt-6 font-display text-xl text-espresso-900">Origen único y trazable</h3>
+                    <p class="mx-auto mt-3 max-w-[30ch] text-[0.95rem] leading-relaxed text-espresso-800/70">
+                        Cada bolsa viene de una sola finca, La Escuelita, en Iquira, Huila. Sabes quién cultivó tu café
+                        y dónde.
+                    </p>
+                </li>
+                <li class="px-4 text-center md:px-10">
+                    <svg class="mx-auto h-14 w-14 text-oro-500" viewBox="0 0 48 48" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 41c8-5 15-15 19-30" />
+                        <path d="M26 17c5-3.5 12-3 15 1-5 3.2-11.5 2.7-15-1z" />
+                        <path d="M26 17l9 .4" />
+                        <path d="M22 9c1.5-4.5 6-6.5 10-5-.8 4.6-5.4 7-10 5z" />
+                        <circle cx="16" cy="29" r="3.4" />
+                        <circle cx="21.5" cy="32.5" r="3.4" />
+                        <circle cx="14.5" cy="35.5" r="3.4" />
+                    </svg>
+                    <h3 class="mt-6 font-display text-xl text-espresso-900">Recolectado grano a grano</h3>
+                    <p class="mx-auto mt-3 max-w-[30ch] text-[0.95rem] leading-relaxed text-espresso-800/70">
+                        Cosechamos a mano solo las cerezas maduras. Sin granos verdes ni sobremaduros que amarguen la
+                        taza.
+                    </p>
+                </li>
+                <li class="px-4 text-center md:px-10">
+                    <svg class="mx-auto h-14 w-14 text-oro-500" viewBox="0 0 48 48" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <ellipse cx="21" cy="29" rx="10.5" ry="14" transform="rotate(-24 21 29)" />
+                        <path d="M15.5 17.5c6 5.5 1.5 16 10.5 23" />
+                        <circle cx="37" cy="14" r="3" />
+                        <circle cx="31" cy="6.5" r="1.8" />
+                        <circle cx="41" cy="5" r="1.3" />
+                    </svg>
+                    <h3 class="mt-6 font-display text-xl text-espresso-900">Fermentación anaeróbica</h3>
+                    <p class="mx-auto mt-3 max-w-[30ch] text-[0.95rem] leading-relaxed text-espresso-800/70">
+                        Un proceso cuidadoso, con lavado final, que realza el dulzor natural del Bourbon Rosado, una
+                        variedad poco común.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Tradición familiar -->
+    <section aria-labelledby="familia-titulo" class="overflow-hidden bg-white font-texto">
+        <div class="mx-auto grid max-w-6xl items-center gap-16 px-6 py-20 md:py-28 lg:grid-cols-2 lg:gap-20">
+            <!-- Fotos de la familia -->
+            <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+                <figure class="relative w-[68%] -rotate-[1.5deg] overflow-hidden rounded-2xl shadow-[0_24px_50px_-24px_rgba(42,26,16,0.55)]">
+                    <img src="./assets/images/familia-feria.webp?v=60a50393ac" width="890" height="891" loading="lazy"
+                        alt="Parte de la familia de Café la Escuelita en su stand de feria, junto a las bolsas de café"
+                        class="aspect-[4/5] w-full object-cover object-[45%_center]" />
+                </figure>
+                <figure class="relative z-10 -mt-[42%] ml-auto w-[62%] rotate-[1.5deg] overflow-hidden rounded-2xl border-[6px] border-white shadow-[0_28px_60px_-24px_rgba(42,26,16,0.6)]">
+                    <img src="./assets/images/familia-stand.webp?v=10a3fd3016" width="883" height="858" loading="lazy"
+                        alt="La familia de Café la Escuelita, grandes y pequeños, en su stand con métodos de preparación de café"
+                        class="aspect-square w-full object-cover" />
+                </figure>
+                <p class="absolute -bottom-3 left-2 font-display text-sm italic text-espresso-800/60 sm:left-6">
+                    Nuestra familia, en feria.
+                </p>
+            </div>
+
+            <!-- Mensaje -->
+            <div>
+                <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
+                    <span class="h-px w-8 bg-terracota-600/50"></span>Nuestra historia
+                </p>
+                <h2 id="familia-titulo" class="mt-5 font-display text-4xl font-normal leading-[1.05] tracking-tight text-espresso-900 md:text-5xl">
+                    Café de <em class="italic text-terracota-600">tradición familiar</em>
+                </h2>
+                <p class="mt-5 max-w-[46ch] text-lg leading-relaxed text-espresso-800/75">
+                    Detrás de cada bolsa hay una familia. Lo que empezó como el sueño de un recolector de café hoy lo
+                    trabajamos juntos, grandes y pequeños, con el mismo cariño del primer día.
+                </p>
+
+                <ul class="mt-10 space-y-3">
+                    <li class="flex gap-4 rounded-2xl border border-oro-500/30 bg-crema-200/70 p-5">
+                        <svg class="mt-0.5 h-6 w-6 shrink-0 text-oro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 11l9-7 9 7" /><path d="M5 9.5V20h14V9.5" />
+                            <path d="M12 18s-3.5-2.1-3.5-4.4a1.9 1.9 0 0 1 3.5-1 1.9 1.9 0 0 1 3.5 1C15.5 15.9 12 18 12 18z" />
+                        </svg>
+                        <div>
+                            <h3 class="font-display text-lg text-espresso-900">Del cultivo al empaque</h3>
+                            <p class="mt-1 text-[0.95rem] leading-relaxed text-espresso-800/70">Junto a nuestra familia
+                                cultivamos y procesamos cada grano de manera artesanal.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4 rounded-2xl border border-transparent p-5 transition-colors hover:border-oro-500/30 hover:bg-crema-200/70">
+                        <svg class="mt-0.5 h-6 w-6 shrink-0 text-oro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 21V11" /><path d="M12 11c0-4 3-6.5 7-6.5 0 4-3 6.5-7 6.5z" />
+                            <path d="M12 14c0-3-2.3-5-5.5-5 0 3 2.3 5 5.5 5z" /><path d="M7 21h10" />
+                        </svg>
+                        <div>
+                            <h3 class="font-display text-lg text-espresso-900">Un legado que crece</h3>
+                            <p class="mt-1 text-[0.95rem] leading-relaxed text-espresso-800/70">El sueño de tener una finca
+                                propia hoy es un oficio que compartimos con las nuevas generaciones.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4 rounded-2xl border border-transparent p-5 transition-colors hover:border-oro-500/30 hover:bg-crema-200/70">
+                        <svg class="mt-0.5 h-6 w-6 shrink-0 text-oro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z" /><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17" />
+                            <path d="M8.5 3.5c-.8 1 .8 1.8 0 3M12.5 3.5c-.8 1 .8 1.8 0 3" />
+                        </svg>
+                        <div>
+                            <h3 class="font-display text-lg text-espresso-900">Orgullo huilense</h3>
+                            <p class="mt-1 text-[0.95rem] leading-relaxed text-espresso-800/70">Llevamos a cada taza la
+                                tradición cafetera del Huila y el verdadero sabor de Colombia.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <blockquote class="mt-10 border-l-2 border-oro-500 pl-5">
+                    <p class="font-display text-xl italic leading-snug text-espresso-900">“Cada taza lleva el trabajo y
+                        el cariño de toda nuestra familia.”</p>
+                    <footer class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-espresso-800/60">Familia La Escuelita</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paso a paso: cómo prepararlo -->
+    <section aria-labelledby="preparacion-titulo" class="border-t border-espresso-900/10 bg-white font-texto">
+        <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+            <!-- Empaque en 3D con su ficha técnica -->
+            <div class="mx-auto mb-24 flex max-w-sm flex-col items-center text-center">
+                <div class="escena-3d">
+                    <button type="button" class="bolsa-3d" aria-pressed="false"
+                        aria-label="Empaque de Café la Escuelita, Bourbon Rosado. Toca para ver el reverso">
+                        <span class="giro">
+                            <span class="volteo">
+                                <span class="cara cara-frente" style="--mascara: url(/assets/images/empaque-frente.webp?v=e3cea6c623)">
+                                    <img src="./assets/images/empaque-frente.webp?v=e3cea6c623" width="560" height="1331" loading="lazy"
+                                        alt="" />
+                                </span>
+                                <span class="cara cara-reverso" style="--mascara: url(/assets/images/empaque-reverso.webp?v=17f26f6f97)">
+                                    <img src="./assets/images/empaque-reverso.webp?v=17f26f6f97" width="560" height="1447" loading="lazy"
+                                        alt="" />
+                                </span>
+                                <span class="costado costado-izq" aria-hidden="true">
+                                    <svg viewBox="0 0 100 1000" preserveAspectRatio="none">
+                                        <path d="M0 90 L50 165 L100 90" />
+                                        <path d="M50 165 V990" />
+                                        <path d="M0 960 L50 990 L100 960" opacity=".5" />
+                                    </svg>
+                                </span>
+                                <span class="costado costado-der" aria-hidden="true">
+                                    <svg viewBox="0 0 100 1000" preserveAspectRatio="none">
+                                        <path d="M0 90 L50 165 L100 90" />
+                                        <path d="M50 165 V990" />
+                                        <path d="M0 960 L50 990 L100 960" opacity=".5" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+                    </button>
+                    <span class="sombra-3d" aria-hidden="true"></span>
+                </div>
+                <p class="mt-4 text-xs text-espresso-800/50">Toca el empaque para ver el reverso</p>
+
+                <h3 class="mt-8 font-display text-3xl text-espresso-900">Bourbon Rosado</h3>
+                <p class="mt-1 text-sm text-espresso-800/60">Iquira, Huila</p>
+                <dl class="mt-5 w-full text-[0.95rem]">
+                    <div class="flex items-baseline justify-between gap-4 border-b border-espresso-900/10 py-2.5">
+                        <dt class="text-espresso-800/60">Proceso</dt>
+                        <dd class="text-right font-medium text-espresso-900">Fermentación anaeróbica, lavado</dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 border-b border-espresso-900/10 py-2.5">
+                        <dt class="text-espresso-800/60">Altura</dt>
+                        <dd class="text-right font-medium text-espresso-900">1.350 m s. n. m.</dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 border-b border-espresso-900/10 py-2.5">
+                        <dt class="text-espresso-800/60">Tostión</dt>
+                        <dd class="text-right font-medium text-espresso-900">Media</dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 border-b border-espresso-900/10 py-2.5">
+                        <dt class="text-espresso-800/60">Presentación</dt>
+                        <dd class="text-right font-medium text-espresso-900">Molido o en grano</dd>
+                    </div>
+                </dl>
+                <p class="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-terracota-600">Cultivado a mano ·
+                    Tradición familiar</p>
+            </div>
+
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
+                    <span class="h-px w-8 bg-terracota-600/50"></span>Paso a paso<span class="h-px w-8 bg-terracota-600/50"></span>
+                </p>
+                <h2 id="preparacion-titulo" class="mt-5 font-display text-4xl font-normal leading-tight tracking-tight text-espresso-900 md:text-5xl">
+                    Prepáralo <em class="italic text-terracota-600">como en la finca</em>
+                </h2>
+                <p class="mt-4 text-base leading-relaxed text-espresso-800/70 md:text-lg">
+                    Una receta sencilla con filtro de goteo para disfrutar todo el sabor de tu Bourbon Rosado.
+                </p>
+            </div>
+
+            <ol class="relative mt-16 grid gap-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+                <!-- Línea que une los pasos -->
+                <li aria-hidden="true" class="pointer-events-none absolute left-[12.5%] right-[12.5%] top-10 hidden border-t border-dashed border-oro-500/40 lg:block"></li>
+
+                <!-- 1. Agua -->
+                <li class="paso relative text-center">
+                    <div class="relative mx-auto w-fit bg-white px-4">
+                        <svg class="h-20 w-20 text-oro-500" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path class="paso-vapor" d="M9 20c-2-2 2-4 0-6s2-4 0-6" />
+                            <path class="paso-vapor" style="animation-delay:.9s" d="M15 18c-2-2 2-4 0-6s2-4 0-6" />
+                            <path d="M17 48l4-21h22l4 21z" />
+                            <path d="M23 27c0-6 18-6 18 0" />
+                            <circle cx="32" cy="20" r="1.6" />
+                            <path d="M43 31c9-2 10 12 2 14" />
+                            <path d="M20 33l-8-8" />
+                            <path d="M13 48h38" />
+                        </svg>
+                    </div>
+                    <p class="mt-5 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-terracota-600">Paso 01</p>
+                    <h3 class="mt-2 font-display text-xl text-espresso-900">Calienta el agua</h3>
+                    <p class="mx-auto mt-2 max-w-[26ch] text-[0.95rem] leading-relaxed text-espresso-800/70">
+                        Llévala a hervir y déjala reposar 30 segundos. Así queda entre 92 y 96&nbsp;°C.
+                    </p>
+                </li>
+
+                <!-- 2. Medir -->
+                <li class="paso relative text-center">
+                    <div class="relative mx-auto w-fit bg-white px-4">
+                        <svg class="h-20 w-20 text-oro-500" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <g class="paso-grano"><ellipse cx="24" cy="12" rx="2.6" ry="3.6" /><path d="M24 9c1 2-1 4 0 6" /></g>
+                            <g class="paso-grano" style="animation-delay:.8s"><ellipse cx="30" cy="10" rx="2.6" ry="3.6" transform="rotate(30 30 10)" /><path d="M29.5 7c1.4 2-.6 4 .8 6" /></g>
+                            <g class="paso-grano" style="animation-delay:1.6s"><ellipse cx="20" cy="9" rx="2.6" ry="3.6" transform="rotate(-25 20 9)" /><path d="M20 6c1 2-1 4 0 6" /></g>
+                            <ellipse cx="25" cy="42" rx="14" ry="6" />
+                            <path d="M38 40l19-12" />
+                            <path d="M17 41c3-3 13-3 16 0" />
+                        </svg>
+                    </div>
+                    <p class="mt-5 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-terracota-600">Paso 02</p>
+                    <h3 class="mt-2 font-display text-xl text-espresso-900">Mide tu café</h3>
+                    <p class="mx-auto mt-2 max-w-[26ch] text-[0.95rem] leading-relaxed text-espresso-800/70">
+                        Dos cucharadas (unos 10&nbsp;g) por cada taza de 180&nbsp;ml. Si lo tienes en grano, muélelo medio.
+                    </p>
+                </li>
+
+                <!-- 3. Florecer -->
+                <li class="paso relative text-center">
+                    <div class="relative mx-auto w-fit bg-white px-4">
+                        <svg class="h-20 w-20 text-oro-500" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M10 12h44" />
+                            <path d="M14 12l12 22h12l12-22" />
+                            <path d="M18 17q14 6 28 0" />
+                            <circle class="paso-burbuja" cx="26" cy="19" r="1.4" />
+                            <circle class="paso-burbuja" style="animation-delay:.7s" cx="34" cy="20" r="1.2" />
+                            <circle class="paso-burbuja" style="animation-delay:1.3s" cx="40" cy="18.5" r="1" />
+                            <path d="M25 34h14v3H25z" />
+                            <path class="paso-gota" d="M32 39.5c1.2 1.6 1.6 2.4 1.6 3a1.6 1.6 0 0 1-3.2 0c0-.6.4-1.4 1.6-3z" />
+                            <path class="paso-gota" style="animation-delay:.6s" d="M32 39.5c1.2 1.6 1.6 2.4 1.6 3a1.6 1.6 0 0 1-3.2 0c0-.6.4-1.4 1.6-3z" />
+                            <path d="M20 47h24v7a5 5 0 0 1-5 5H25a5 5 0 0 1-5-5z" />
+                        </svg>
+                    </div>
+                    <p class="mt-5 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-terracota-600">Paso 03</p>
+                    <h3 class="mt-2 font-display text-xl text-espresso-900">Déjalo florecer</h3>
+                    <p class="mx-auto mt-2 max-w-[26ch] text-[0.95rem] leading-relaxed text-espresso-800/70">
+                        Moja el café con un poco de agua y espera 30 segundos para que libere sus aromas.
+                    </p>
+                </li>
+
+                <!-- 4. Servir -->
+                <li class="paso relative text-center">
+                    <div class="relative mx-auto w-fit bg-white px-4">
+                        <svg class="h-20 w-20 text-oro-500" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path class="paso-vapor" d="M24 22c-2-2 2-4 0-6s2-4 0-6" />
+                            <path class="paso-vapor" style="animation-delay:.7s" d="M31 21c-2-2 2-4 0-6s2-4 0-6" />
+                            <path class="paso-vapor" style="animation-delay:1.4s" d="M38 22c-2-2 2-4 0-6s2-4 0-6" />
+                            <path d="M15 29h32v8a13 13 0 0 1-13 13h-6a13 13 0 0 1-13-13z" />
+                            <path d="M47 32h3a6 6 0 0 1 0 12h-4" />
+                            <path d="M9 56h44" />
+                        </svg>
+                    </div>
+                    <p class="mt-5 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-terracota-600">Paso 04</p>
+                    <h3 class="mt-2 font-display text-xl text-espresso-900">Vierte y disfruta</h3>
+                    <p class="mx-auto mt-2 max-w-[26ch] text-[0.95rem] leading-relaxed text-espresso-800/70">
+                        Agrega el resto del agua en círculos, despacio, durante unos 3 minutos. ¡Listo para servir!
+                    </p>
+                </li>
+            </ol>
+
+            <p class="mx-auto mt-16 w-fit rounded-full border border-oro-500/30 px-5 py-2 text-center text-sm text-espresso-800/75">
+                <span class="font-semibold text-terracota-600">Tip:</span> guarda tu café bien cerrado, en un lugar
+                fresco y seco.
+            </p>
+        </div>
+    </section>
+
+    <main id="cafe" class="relative z-10 flex flex-1 items-center justify-center px-6 py-12 md:py-16 scroll-mt-20">
+        <div class="w-full max-w-3xl">
+            <div class="flex flex-col items-center gap-10 md:flex-row md:items-start ">
+                <div class="mx-auto w-full max-w-xl text-center">
+                    <span
+                        class="inline-flex items-center gap-2 text-sm font-medium text-amber-900">
+                        <svg class="llave h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                        Página en proceso
+                    </span>
+                    <h2 class="mt-4 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">Café la Escuelita</h2>
+                    <p class="mt-4 text-base text-gray-600">Estamos preparando algo especial. Muy pronto podrás
+                        conocer nuestro café en línea.</p>
+
+                    <!-- Taza con humo -->
+                    <div class="mt-6 flex flex-col items-center gap-2">
+                        <svg class="h-48 w-auto md:h-60" viewBox="0 -30 220 200" aria-hidden="true">
+                            <!-- Humo -->
+                            <g fill="none" stroke="#a8a29e" stroke-width="6" stroke-linecap="round">
+                                <path class="vapor" d="M82 62c-12-12 12-22 0-34s12-22 0-34" />
+                                <path class="vapor vapor-2" d="M105 62c-12-12 12-22 0-34s12-22 0-34" />
+                                <path class="vapor vapor-3" d="M128 62c-12-12 12-22 0-34s12-22 0-34" />
+                            </g>
+                            <!-- Plato -->
+                            <ellipse cx="105" cy="154" rx="88" ry="11" fill="#c8962e" />
+                            <ellipse cx="105" cy="151" rx="80" ry="8" fill="#f5e9d6" />
+                            <!-- Asa -->
+                            <path d="M158 92c30-2 32 40-6 44" fill="none" stroke="#5b2a12" stroke-width="10"
+                                stroke-linecap="round" />
+                            <!-- Taza -->
+                            <path d="M47 76h116v12c0 36-24 62-58 62s-58-26-58-62z" fill="#5b2a12" />
+                            <path d="M52 100q53 12 106 0" fill="none" stroke="#c8962e" stroke-width="4"
+                                stroke-linecap="round" />
+                            <!-- Café -->
+                            <ellipse cx="105" cy="76" rx="58" ry="9" fill="#7a3b17" />
+                            <ellipse cx="105" cy="77" rx="51" ry="6" fill="#3b1d0e" />
+                        </svg>
+                        <p class="text-base font-medium text-amber-900">
+                            Tostando los últimos detalles<span class="punto">.</span><span
+                                class="punto">.</span><span class="punto">.</span>
+                        </p>
+                    </div>
+
+                    <p class="mt-6 text-sm text-gray-500">Déjanos tu correo y te avisamos cuando la página esté
+                        lista.</p>
+                    <!-- El sitio es estático (sin servidor que reciba el formulario): el correo se envía por WhatsApp -->
+                    <form id="form-aviso" class="mt-1 flex flex-col gap-3 sm:flex-row sm:gap-4" action="https://wa.me/573138515152" method="get" target="_blank">
+                        <label for="email" class="sr-only">Correo electrónico</label>
+                        <input id="email" name="email" type="email" required
+                            class="w-full rounded-xl border border-gray-200 px-2 py-1 text-base text-gray-700 shadow-sm transition placeholder:text-gray-400 focus:border-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-800/25"
+                            placeholder="tucorreo@ejemplo.com" />
+                        <button type="submit"
+                            class="rounded-xl bg-amber-900 px-3 py-1 text-base font-medium text-white shadow-sm transition hover:bg-amber-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-900 focus-visible:ring-offset-2">
+                            Enviar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="backdrop-blur-lg">
+        <div
+            class="mx-auto flex max-w-3xl flex-col items-center gap-4 px-6 py-8 text-sm text-gray-600 sm:flex-row sm:justify-between">
+            <div class="text-center sm:text-left">
+                <p class="font-medium text-gray-900">Café la Escuelita</p>
+                <p>Síguenos y escríbenos en nuestras redes</p>
+            </div>
+            <div class="flex items-center gap-4 text-gray-500">
+                <a href="https://www.tiktok.com/@caf.la.escuelita" target="_blank" rel="noopener"
+                    aria-label="TikTok de Café la Escuelita"
+                    class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md">
+                    <img src="./assets/icons/tiktok.svg?v=958935fa8e" alt="" width="20" height="20" loading="lazy" class="h-5 w-5" />
+                </a>
+                <a href="https://www.instagram.com/cafe_laescuelita/" target="_blank" rel="noopener"
+                    aria-label="Instagram de Café la Escuelita"
+                    class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md">
+                    <img src="./assets/icons/instagram.svg?v=c78bb2d101" alt="" width="20" height="20" loading="lazy" class="h-5 w-5" />
+                </a>
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Caf%C3%A9%20la%20Escuelita"
+                    target="_blank" rel="noopener"
+                    aria-label="WhatsApp de Café la Escuelita"
+                    class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md">
+                    <img src="./assets/icons/whatsapp.svg?v=30b026f26d" alt="" width="20" height="20" loading="lazy" class="h-5 w-5" />
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-100">
+            <div class="mx-auto flex max-w-3xl flex-col items-center gap-3 px-6 py-4 text-xs text-gray-500 sm:flex-row">
+                <div class="flex items-center gap-3">
+                    <a href="#" class="transition-colors hover:text-gray-700">Términos y condiciones</a>
+                    <a href="#" class="transition-colors hover:text-gray-700">Política de privacidad</a>
+                </div>
+                <div class="flex items-center gap-2 sm:ml-auto">
+                    <span>Diseño por</span>
+                    <a href="https://www.instagram.com/digital.brainagency1/" target="_blank" rel="noopener"
+                        aria-label="Instagram de Digital Brain" class="transition hover:-translate-y-0.5 hover:opacity-80">
+                        <img src="./assets/images/digital-brain.webp?v=f2ae7af2b7" alt="Digital Brain — Web &amp; Marketing Agency"
+                            width="387" height="144" loading="lazy" class="h-12 w-auto" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Empaque 3D: tocar para ver el reverso
+        document.querySelectorAll('.bolsa-3d').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.setAttribute('aria-pressed', btn.getAttribute('aria-pressed') !== 'true');
+            });
+            // Con mouse o dedo no se muestra el marco de foco, aunque luego se presione otra tecla
+            // (p. ej. el atajo de captura de pantalla). Tab, Enter o Espacio lo vuelven a mostrar.
+            btn.addEventListener('pointerdown', () => { btn.dataset.puntero = ''; });
+            btn.addEventListener('keydown', e => {
+                if (e.key === 'Tab' || e.key === 'Enter' || e.key === ' ') delete btn.dataset.puntero;
+            });
+            btn.addEventListener('blur', () => { delete btn.dataset.puntero; });
+        });
+
+        // Pestañas de la sección "La finca"
+        (() => {
+            const tabs = [...document.querySelectorAll('[role="tab"]')];
+            const activar = (tab, enfocar) => {
+                tabs.forEach(t => {
+                    const activo = t === tab;
+                    t.setAttribute('aria-selected', activo);
+                    t.tabIndex = activo ? 0 : -1;
+                    document.getElementById(t.getAttribute('aria-controls')).hidden = !activo;
+                });
+                if (enfocar) tab.focus();
+            };
+            tabs.forEach((tab, i) => {
+                tab.addEventListener('click', () => activar(tab));
+                tab.addEventListener('keydown', e => {
+                    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+                    const paso = e.key === 'ArrowRight' ? 1 : -1;
+                    activar(tabs[(i + paso + tabs.length) % tabs.length], true);
+                });
+            });
+            document.querySelectorAll('[data-ir]').forEach(btn => btn.addEventListener('click', () => {
+                activar(document.getElementById('tab-' + btn.dataset.ir));
+                document.getElementById('finca').scrollIntoView({ behavior: 'smooth' });
+            }));
+        })();
+
+        // Formulario "te avisamos": abre WhatsApp con el correo ya escrito
+        document.getElementById('form-aviso').addEventListener('submit', e => {
+            e.preventDefault();
+            const correo = e.target.email.value.trim();
+            const texto = `Hola, quiero que me avisen cuando la página de Café la Escuelita esté lista. Mi correo es: ${correo}`;
+            window.open(`https://wa.me/573138515152?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+        });
+    </script>
+</body>
+
+</html>

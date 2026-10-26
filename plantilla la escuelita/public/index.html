@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- CSS compilado con Tailwind (fuente: src/estilos.css → python construir.py) -->
-    <link rel="stylesheet" href="./assets/css/estilos.css?v=0f53936875" />
+    <link rel="stylesheet" href="./assets/css/estilos.css?v=dbef0aba31" />
 
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -317,7 +317,7 @@
     </section>
 
     <!-- Por qué nuestro café -->
-    <section aria-labelledby="porque-titulo" class="border-y border-espresso-900/10 bg-white font-texto">
+    <section aria-labelledby="porque-titulo" class="bg-white font-texto">
         <div class="mx-auto max-w-6xl px-6 py-20 md:py-24">
             <div class="mx-auto max-w-2xl text-center">
                 <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
@@ -465,7 +465,7 @@
     </section>
 
     <!-- Nuestro café: empaque en 3D con su ficha técnica -->
-    <section id="nuestro-cafe" aria-labelledby="nuestro-cafe-titulo" class="scroll-mt-20 border-t border-espresso-900/10 bg-white font-texto">
+    <section id="nuestro-cafe" aria-labelledby="nuestro-cafe-titulo" class="scroll-mt-20 bg-white font-texto">
         <div class="mx-auto grid max-w-6xl items-center gap-x-16 gap-y-12 px-6 py-20 md:py-28 lg:grid-cols-2">
             <div class="mx-auto max-w-xl text-center lg:col-start-2 lg:mx-0 lg:self-end lg:text-left">
                 <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
@@ -543,7 +543,7 @@
     </section>
 
     <!-- Paso a paso: cómo prepararlo -->
-    <section aria-labelledby="preparacion-titulo" class="border-t border-espresso-900/10 bg-white font-texto">
+    <section aria-labelledby="preparacion-titulo" class="bg-white font-texto">
         <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
             <div class="mx-auto max-w-2xl text-center">
                 <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
@@ -656,7 +656,7 @@
     </section>
 
     <!-- Recetas -->
-    <section id="recetas" aria-labelledby="recetas-titulo" class="scroll-mt-20 border-t border-espresso-900/10 bg-white font-texto">
+    <section id="recetas" aria-labelledby="recetas-titulo" class="scroll-mt-20 bg-white font-texto">
         <div class="mx-auto max-w-6xl px-6 pb-12 pt-20 md:pt-24">
             <div class="mx-auto max-w-2xl text-center">
                 <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
@@ -816,7 +816,7 @@
 
     <!-- Contáctanos: el sitio es estático, así que el formulario arma el mensaje y abre WhatsApp -->
     <!-- Foto temporal de Unsplash (licencia libre, autora: Ashlyn Ciara): reemplazar por una foto real de la familia en la finca. -->
-    <section id="contacto" aria-labelledby="contacto-titulo" class="scroll-mt-20 border-t border-espresso-900/10 bg-white font-texto">
+    <section id="contacto" aria-labelledby="contacto-titulo" class="scroll-mt-20 bg-white font-texto">
         <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:gap-10 md:py-28 lg:gap-20">
             <div>
                 <div class="text-center md:text-left">
@@ -1602,7 +1602,7 @@
                     const datos = await r.json().catch(() => ({}));
                     if (!r.ok || !datos.ok) throw Object.assign(new Error('envío fallido'), { detalle: datos.error });
                     form.reset();
-                    avisar('¡Mensaje enviado! Te responderemos pronto a tu correo.', 'ok');
+                    avisar('¡Mensaje enviado! Te llegará una confirmación a tu correo y te responderemos pronto.', 'ok');
                 } catch (err) {
                     // Si el servidor explicó el problema (p. ej. demasiados mensajes), se muestra; si no, el genérico
                     const detalle = err.detalle ? ` (${err.detalle})` : '';

@@ -13,7 +13,7 @@ REMOTO=/opt/cafelaescuelita-correo
 
 echo "1) Subiendo el programa..."
 ssh hostinger-vps "mkdir -p $REMOTO && chmod 700 $REMOTO"
-scp -q correo/servidor.py hostinger-vps:$REMOTO/servidor.py
+scp -q correo/servidor.py correo/logo-correo.jpg hostinger-vps:$REMOTO/
 
 echo "2) Configuración (correo.env)..."
 if ssh hostinger-vps "test -f $REMOTO/correo.env"; then
@@ -38,7 +38,7 @@ fi
 docker rm -f cafelaescuelita-correo >/dev/null 2>&1 || true
 docker run -d --name cafelaescuelita-correo --restart unless-stopped \
   --network "$RED" --env-file "$REMOTO/correo.env" \
-  -v "$REMOTO/servidor.py:/app/servidor.py:ro" \
+  -v "$REMOTO/servidor.py:/app/servidor.py:ro" -v "$REMOTO/logo-correo.jpg:/app/logo-correo.jpg:ro" \
   --memory 64m --read-only --cap-drop ALL --security-opt no-new-privileges \
   python:3.12-alpine python -u /app/servidor.py >/dev/null
 sleep 3

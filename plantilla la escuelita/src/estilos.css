@@ -187,4 +187,14 @@ html { scroll-behavior: smooth; }
     .panel .foto { transition: none; }
 }
 
+/* Recetas: carrusel sin barra de desplazamiento y ventana con la receta */
+.sin-barra { scrollbar-width: none; }
+.sin-barra::-webkit-scrollbar { display: none; }
+.receta[open] { animation: fundido .35s cubic-bezier(.2, .7, .2, 1); }
+html:has(.receta[open]) { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+    .receta[open] { animation: none; }
+    #recetas-lista { scroll-behavior: auto; }
+}
+
 @tailwind utilities;

@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- CSS compilado con Tailwind (fuente: src/estilos.css → python construir.py) -->
-    <link rel="stylesheet" href="./assets/css/estilos.css?v=239719a79c" />
+    <link rel="stylesheet" href="./assets/css/estilos.css?v=358242c59f" />
 
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -634,6 +634,550 @@
         </div>
     </section>
 
+    <!-- Recetas -->
+    <section id="recetas" aria-labelledby="recetas-titulo" class="scroll-mt-20 border-t border-espresso-900/10 bg-crema-100/60 font-texto">
+        <div class="mx-auto max-w-6xl px-6 pb-12 pt-20 md:pt-24">
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
+                    <span class="h-px w-8 bg-terracota-600/50"></span>Hazlo tú mismo<span class="h-px w-8 bg-terracota-600/50"></span>
+                </p>
+                <h2 id="recetas-titulo" class="mt-5 font-display text-4xl font-normal leading-tight tracking-tight text-espresso-900 md:text-5xl">
+                    Recetas con <em class="italic text-terracota-600">nuestro café</em>
+                </h2>
+                <p class="mt-4 text-base leading-relaxed text-espresso-800/70 md:text-lg">
+                    Ideas fáciles para preparar en casa con tu Bourbon Rosado: calientes, heladas o con un toque especial.
+                </p>
+            </div>
+        </div>
+
+        <!-- Carrusel: se desliza con el dedo; en computador, con las flechas -->
+        <div class="relative pb-20 md:pb-24">
+            <button type="button" data-carrusel="ant" aria-label="Recetas anteriores" aria-controls="recetas-lista"
+                class="absolute left-3 lg:left-5 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/95 text-espresso-900 shadow-lg transition hover:bg-white disabled:pointer-events-none disabled:opacity-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 md:grid">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
+            </button>
+            <ul id="recetas-lista" class="sin-barra flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto scroll-smooth px-6 lg:scroll-px-[calc(max(0px,(100vw-72rem)/2)+1.5rem)] lg:px-[calc(max(0px,(100vw-72rem)/2)+1.5rem)]">
+                <li class="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-2rem)/3)]">
+                    <button type="button" data-receta="receta-capuchino-arequipe" aria-haspopup="dialog"
+                        class="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-espresso-900 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 focus-visible:ring-offset-2">
+                        <img src="./assets/images/recetas/capuchino-arequipe-960.webp?v=91b3753ad8" srcset="./assets/images/recetas/capuchino-arequipe-480.webp?v=de134871f5 480w, ./assets/images/recetas/capuchino-arequipe-960.webp?v=91b3753ad8 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 46vw, 82vw"
+                            alt="Capuchino de arequipe en taza de vidrio junto a una bolsa de Café la Escuelita y una cuchara con arequipe" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                        <span class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/10 to-transparent" aria-hidden="true"></span>
+                        <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[0.7rem] font-semibold text-espresso-900 backdrop-blur-sm"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>5 min</span>
+                        <span class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                            <span class="font-display text-xl leading-tight text-white md:text-2xl">Capuchino de arequipe</span>
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mostaza-500 text-espresso-900 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-2rem)/3)]">
+                    <button type="button" data-receta="receta-frappe-avellana" aria-haspopup="dialog"
+                        class="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-espresso-900 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 focus-visible:ring-offset-2">
+                        <img src="./assets/images/recetas/frappe-avellana-960.webp?v=2edae78f40" srcset="./assets/images/recetas/frappe-avellana-480.webp?v=7a22a8cd3b 480w, ./assets/images/recetas/frappe-avellana-960.webp?v=2edae78f40 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 46vw, 82vw"
+                            alt="Frappé de avellana con crema y chocolate junto a una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                        <span class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/10 to-transparent" aria-hidden="true"></span>
+                        <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[0.7rem] font-semibold text-espresso-900 backdrop-blur-sm"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>10 min</span>
+                        <span class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                            <span class="font-display text-xl leading-tight text-white md:text-2xl">Frappé de avellana</span>
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mostaza-500 text-espresso-900 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-2rem)/3)]">
+                    <button type="button" data-receta="receta-affogato" aria-haspopup="dialog"
+                        class="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-espresso-900 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 focus-visible:ring-offset-2">
+                        <img src="./assets/images/recetas/affogato-960.webp?v=ba4c08a09f" srcset="./assets/images/recetas/affogato-480.webp?v=4c84a1cbe5 480w, ./assets/images/recetas/affogato-960.webp?v=ba4c08a09f 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 46vw, 82vw"
+                            alt="Café caliente vertido sobre helado en un vaso, junto a una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                        <span class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/10 to-transparent" aria-hidden="true"></span>
+                        <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[0.7rem] font-semibold text-espresso-900 backdrop-blur-sm"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>3 min</span>
+                        <span class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                            <span class="font-display text-xl leading-tight text-white md:text-2xl">Affogato</span>
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mostaza-500 text-espresso-900 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-2rem)/3)]">
+                    <button type="button" data-receta="receta-latte-helado" aria-haspopup="dialog"
+                        class="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-espresso-900 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 focus-visible:ring-offset-2">
+                        <img src="./assets/images/recetas/latte-helado-960.webp?v=71203dc6cd" srcset="./assets/images/recetas/latte-helado-480.webp?v=afde9db608 480w, ./assets/images/recetas/latte-helado-960.webp?v=71203dc6cd 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 46vw, 82vw"
+                            alt="Latte helado con hielo junto a una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                        <span class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/10 to-transparent" aria-hidden="true"></span>
+                        <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[0.7rem] font-semibold text-espresso-900 backdrop-blur-sm"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>5 min</span>
+                        <span class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                            <span class="font-display text-xl leading-tight text-white md:text-2xl">Latte helado</span>
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mostaza-500 text-espresso-900 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-2rem)/3)]">
+                    <button type="button" data-receta="receta-cafe-naranja" aria-haspopup="dialog"
+                        class="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-espresso-900 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 focus-visible:ring-offset-2">
+                        <img src="./assets/images/recetas/cafe-naranja-960.webp?v=de58aad03d" srcset="./assets/images/recetas/cafe-naranja-480.webp?v=024dbd5573 480w, ./assets/images/recetas/cafe-naranja-960.webp?v=de58aad03d 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 46vw, 82vw"
+                            alt="Vaso de café frío con hielo junto a una bolsa de Café la Escuelita y media naranja" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                        <span class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/10 to-transparent" aria-hidden="true"></span>
+                        <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[0.7rem] font-semibold text-espresso-900 backdrop-blur-sm"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>5 min</span>
+                        <span class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                            <span class="font-display text-xl leading-tight text-white md:text-2xl">Café frío con naranja</span>
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mostaza-500 text-espresso-900 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-2rem)/3)]">
+                    <button type="button" data-receta="receta-latte-clasico" aria-haspopup="dialog"
+                        class="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-espresso-900 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 focus-visible:ring-offset-2">
+                        <img src="./assets/images/recetas/latte-clasico-960.webp?v=168cb39df2" srcset="./assets/images/recetas/latte-clasico-480.webp?v=7e8e7db625 480w, ./assets/images/recetas/latte-clasico-960.webp?v=168cb39df2 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 46vw, 82vw"
+                            alt="Latte con un corazón dibujado en la espuma junto a una bolsa de Café la Escuelita y granos de café" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                        <span class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/10 to-transparent" aria-hidden="true"></span>
+                        <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[0.7rem] font-semibold text-espresso-900 backdrop-blur-sm"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>5 min</span>
+                        <span class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                            <span class="font-display text-xl leading-tight text-white md:text-2xl">Latte clásico</span>
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mostaza-500 text-espresso-900 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-2rem)/3)]">
+                    <button type="button" data-receta="receta-cafe-panela" aria-haspopup="dialog"
+                        class="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-espresso-900 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 focus-visible:ring-offset-2">
+                        <img src="./assets/images/recetas/cafe-panela-960.webp?v=b6f435c517" srcset="./assets/images/recetas/cafe-panela-480.webp?v=976b0c15be 480w, ./assets/images/recetas/cafe-panela-960.webp?v=b6f435c517 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 46vw, 82vw"
+                            alt="Dos tazas de café con leche espumoso sobre una mesa de madera junto a una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                        <span class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/10 to-transparent" aria-hidden="true"></span>
+                        <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[0.7rem] font-semibold text-espresso-900 backdrop-blur-sm"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>8 min</span>
+                        <span class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                            <span class="font-display text-xl leading-tight text-white md:text-2xl">Café con leche y panela</span>
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mostaza-500 text-espresso-900 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-2rem)/3)]">
+                    <button type="button" data-receta="receta-latte-irlandes" aria-haspopup="dialog"
+                        class="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-espresso-900 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 focus-visible:ring-offset-2">
+                        <img src="./assets/images/recetas/latte-irlandes-960.webp?v=bec9502636" srcset="./assets/images/recetas/latte-irlandes-480.webp?v=4b87a6a6e3 480w, ./assets/images/recetas/latte-irlandes-960.webp?v=bec9502636 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 46vw, 82vw"
+                            alt="Latte visto desde arriba junto a una botella de crema irlandesa y una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                        <span class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/10 to-transparent" aria-hidden="true"></span>
+                        <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[0.7rem] font-semibold text-espresso-900 backdrop-blur-sm"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>5 min</span>
+                        <span class="absolute right-3 top-3 rounded-full bg-espresso-900/75 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-crema-100 backdrop-blur-sm">Con licor</span>
+                        <span class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                            <span class="font-display text-xl leading-tight text-white md:text-2xl">Latte irlandés</span>
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mostaza-500 text-espresso-900 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span>
+                        </span>
+                    </button>
+                </li>
+                <li class="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-2rem)/3)]">
+                    <button type="button" data-receta="receta-helado-irlandes" aria-haspopup="dialog"
+                        class="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-espresso-900 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 focus-visible:ring-offset-2">
+                        <img src="./assets/images/recetas/helado-irlandes-960.webp?v=bf63e555ee" srcset="./assets/images/recetas/helado-irlandes-480.webp?v=563b24ee5f 480w, ./assets/images/recetas/helado-irlandes-960.webp?v=bf63e555ee 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 46vw, 82vw"
+                            alt="Café helado con crema chantilly y caramelo junto a una bolsa de Café la Escuelita y una botella de crema irlandesa" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                        <span class="absolute inset-0 bg-gradient-to-t from-espresso-950/85 via-espresso-950/10 to-transparent" aria-hidden="true"></span>
+                        <span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[0.7rem] font-semibold text-espresso-900 backdrop-blur-sm"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>10 min</span>
+                        <span class="absolute right-3 top-3 rounded-full bg-espresso-900/75 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-crema-100 backdrop-blur-sm">Con licor</span>
+                        <span class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
+                            <span class="font-display text-xl leading-tight text-white md:text-2xl">Café helado irlandés</span>
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mostaza-500 text-espresso-900 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></span>
+                        </span>
+                    </button>
+                </li>
+            </ul>
+            <button type="button" data-carrusel="sig" aria-label="Más recetas" aria-controls="recetas-lista"
+                class="absolute right-3 lg:right-5 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/95 text-espresso-900 shadow-lg transition hover:bg-white disabled:pointer-events-none disabled:opacity-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500 md:grid">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Ventanas con cada receta (se abren desde las tarjetas) -->
+    <dialog id="receta-capuchino-arequipe" aria-labelledby="receta-capuchino-arequipe-titulo"
+        class="receta m-auto max-h-[calc(100dvh-2rem)] w-[min(60rem,calc(100%-2rem))] overflow-hidden rounded-2xl bg-white p-0 font-texto text-espresso-900 shadow-2xl backdrop:bg-espresso-950/70 backdrop:backdrop-blur-sm">
+        <div class="grid max-h-[calc(100dvh-2rem)] overflow-y-auto md:grid-cols-[5fr_6fr] md:overflow-visible">
+            <div class="relative h-52 sm:h-64 md:h-auto">
+                        <img src="./assets/images/recetas/capuchino-arequipe-960.webp?v=91b3753ad8" srcset="./assets/images/recetas/capuchino-arequipe-480.webp?v=de134871f5 480w, ./assets/images/recetas/capuchino-arequipe-960.webp?v=91b3753ad8 960w" sizes="(min-width: 768px) 28rem, 100vw"
+                            alt="Capuchino de arequipe en taza de vidrio junto a una bolsa de Café la Escuelita y una cuchara con arequipe" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <div class="px-6 pb-8 pt-7 sm:px-10 sm:pt-10 md:max-h-[calc(100dvh-2rem)] md:overflow-y-auto">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-espresso-800/60">5 min · 1 taza</p>
+                <h3 id="receta-capuchino-arequipe-titulo" class="mt-3 font-display text-3xl leading-tight md:text-4xl">Capuchino de arequipe</h3>
+                <p class="mt-3 leading-relaxed text-espresso-800/75">Café bien cargado, leche espumosa y el dulce de arequipe de toda la vida.</p>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Ingredientes</h4>
+                <ul class="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>60 ml de café bien cargado (o un espresso doble)</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>150 ml de leche entera</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>2 cucharadas de arequipe</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Canela en polvo (opcional)</li>
+                </ul>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Preparación</h4>
+                <ol class="mt-4 space-y-4 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">1</span><span class="pt-0.5">Prepara el café bien cargado.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">2</span><span class="pt-0.5">Pon el arequipe en el fondo de la taza y mézclalo con el café caliente hasta que se disuelva.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">3</span><span class="pt-0.5">Calienta la leche sin dejarla hervir y espúmala con un espumador o batiéndola en un frasco cerrado.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">4</span><span class="pt-0.5">Vierte la leche sobre el café, corona con la espuma y espolvorea canela si quieres.</span></li>
+                </ol>
+
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita%20para%20preparar%20capuchino%20de%20arequipe" target="_blank" rel="noopener"
+                    class="mt-9 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    Pide tu café para prepararla <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+            </div>
+        </div>
+        <form method="dialog">
+            <button class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-espresso-900 shadow-md backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500"
+                aria-label="Cerrar receta" autofocus>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
+        </form>
+    </dialog>
+
+    <dialog id="receta-frappe-avellana" aria-labelledby="receta-frappe-avellana-titulo"
+        class="receta m-auto max-h-[calc(100dvh-2rem)] w-[min(60rem,calc(100%-2rem))] overflow-hidden rounded-2xl bg-white p-0 font-texto text-espresso-900 shadow-2xl backdrop:bg-espresso-950/70 backdrop:backdrop-blur-sm">
+        <div class="grid max-h-[calc(100dvh-2rem)] overflow-y-auto md:grid-cols-[5fr_6fr] md:overflow-visible">
+            <div class="relative h-52 sm:h-64 md:h-auto">
+                        <img src="./assets/images/recetas/frappe-avellana-960.webp?v=2edae78f40" srcset="./assets/images/recetas/frappe-avellana-480.webp?v=7a22a8cd3b 480w, ./assets/images/recetas/frappe-avellana-960.webp?v=2edae78f40 960w" sizes="(min-width: 768px) 28rem, 100vw"
+                            alt="Frappé de avellana con crema y chocolate junto a una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <div class="px-6 pb-8 pt-7 sm:px-10 sm:pt-10 md:max-h-[calc(100dvh-2rem)] md:overflow-y-auto">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-espresso-800/60">10 min · 1 vaso</p>
+                <h3 id="receta-frappe-avellana-titulo" class="mt-3 font-display text-3xl leading-tight md:text-4xl">Frappé de avellana</h3>
+                <p class="mt-3 leading-relaxed text-espresso-800/75">Helado, cremoso y con el sabor tostado de la avellana y el cacao.</p>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Ingredientes</h4>
+                <ul class="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>100 ml de café cargado, frío</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>100 ml de leche fría</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>1 taza de hielo</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>2 cucharadas de crema de avellanas con cacao</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Crema chantilly</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Avellanas picadas y salsa de chocolate para decorar</li>
+                </ul>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Preparación</h4>
+                <ol class="mt-4 space-y-4 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">1</span><span class="pt-0.5">Prepara el café y déjalo enfriar por completo.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">2</span><span class="pt-0.5">Licúa el café, la leche, el hielo y la crema de avellanas hasta que quede espeso y frappé.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">3</span><span class="pt-0.5">Sirve en un vaso alto.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">4</span><span class="pt-0.5">Termina con crema chantilly, avellanas picadas y un hilo de chocolate.</span></li>
+                </ol>
+
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita%20para%20preparar%20frapp%C3%A9%20de%20avellana" target="_blank" rel="noopener"
+                    class="mt-9 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    Pide tu café para prepararla <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+            </div>
+        </div>
+        <form method="dialog">
+            <button class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-espresso-900 shadow-md backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500"
+                aria-label="Cerrar receta" autofocus>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
+        </form>
+    </dialog>
+
+    <dialog id="receta-affogato" aria-labelledby="receta-affogato-titulo"
+        class="receta m-auto max-h-[calc(100dvh-2rem)] w-[min(60rem,calc(100%-2rem))] overflow-hidden rounded-2xl bg-white p-0 font-texto text-espresso-900 shadow-2xl backdrop:bg-espresso-950/70 backdrop:backdrop-blur-sm">
+        <div class="grid max-h-[calc(100dvh-2rem)] overflow-y-auto md:grid-cols-[5fr_6fr] md:overflow-visible">
+            <div class="relative h-52 sm:h-64 md:h-auto">
+                        <img src="./assets/images/recetas/affogato-960.webp?v=ba4c08a09f" srcset="./assets/images/recetas/affogato-480.webp?v=4c84a1cbe5 480w, ./assets/images/recetas/affogato-960.webp?v=ba4c08a09f 960w" sizes="(min-width: 768px) 28rem, 100vw"
+                            alt="Café caliente vertido sobre helado en un vaso, junto a una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <div class="px-6 pb-8 pt-7 sm:px-10 sm:pt-10 md:max-h-[calc(100dvh-2rem)] md:overflow-y-auto">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-espresso-800/60">3 min · 1 vaso</p>
+                <h3 id="receta-affogato-titulo" class="mt-3 font-display text-3xl leading-tight md:text-4xl">Affogato</h3>
+                <p class="mt-3 leading-relaxed text-espresso-800/75">El postre italiano más fácil: helado “ahogado” en café recién hecho.</p>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Ingredientes</h4>
+                <ul class="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>2 bolas de helado de vainilla o de chocolate</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>60 ml de café recién hecho, bien cargado</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Trozos de chocolate o galleta (opcional)</li>
+                </ul>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Preparación</h4>
+                <ol class="mt-4 space-y-4 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">1</span><span class="pt-0.5">Sirve el helado en un vaso o copa que aguante el calor.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">2</span><span class="pt-0.5">Prepara el café justo antes de servir, para que esté bien caliente.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">3</span><span class="pt-0.5">Viértelo sobre el helado y llévalo a la mesa de inmediato.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">4</span><span class="pt-0.5">Si quieres, agrega trozos de chocolate o galleta por encima.</span></li>
+                </ol>
+
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita%20para%20preparar%20affogato" target="_blank" rel="noopener"
+                    class="mt-9 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    Pide tu café para prepararla <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+            </div>
+        </div>
+        <form method="dialog">
+            <button class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-espresso-900 shadow-md backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500"
+                aria-label="Cerrar receta" autofocus>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
+        </form>
+    </dialog>
+
+    <dialog id="receta-latte-helado" aria-labelledby="receta-latte-helado-titulo"
+        class="receta m-auto max-h-[calc(100dvh-2rem)] w-[min(60rem,calc(100%-2rem))] overflow-hidden rounded-2xl bg-white p-0 font-texto text-espresso-900 shadow-2xl backdrop:bg-espresso-950/70 backdrop:backdrop-blur-sm">
+        <div class="grid max-h-[calc(100dvh-2rem)] overflow-y-auto md:grid-cols-[5fr_6fr] md:overflow-visible">
+            <div class="relative h-52 sm:h-64 md:h-auto">
+                        <img src="./assets/images/recetas/latte-helado-960.webp?v=71203dc6cd" srcset="./assets/images/recetas/latte-helado-480.webp?v=afde9db608 480w, ./assets/images/recetas/latte-helado-960.webp?v=71203dc6cd 960w" sizes="(min-width: 768px) 28rem, 100vw"
+                            alt="Latte helado con hielo junto a una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <div class="px-6 pb-8 pt-7 sm:px-10 sm:pt-10 md:max-h-[calc(100dvh-2rem)] md:overflow-y-auto">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-espresso-800/60">5 min · 1 vaso</p>
+                <h3 id="receta-latte-helado-titulo" class="mt-3 font-display text-3xl leading-tight md:text-4xl">Latte helado</h3>
+                <p class="mt-3 leading-relaxed text-espresso-800/75">Para las tardes de calor: café, leche fría y mucho hielo.</p>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Ingredientes</h4>
+                <ul class="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>80 ml de café cargado, frío</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>150 ml de leche fría</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Hielo</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Azúcar o panela al gusto</li>
+                </ul>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Preparación</h4>
+                <ol class="mt-4 space-y-4 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">1</span><span class="pt-0.5">Prepara el café y, si lo quieres dulce, endúlzalo mientras está caliente (se disuelve mejor).</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">2</span><span class="pt-0.5">Déjalo enfriar.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">3</span><span class="pt-0.5">Llena un vaso con hielo y agrega la leche.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">4</span><span class="pt-0.5">Vierte el café despacio para que forme nubes en la leche. Mezcla antes de tomar.</span></li>
+                </ol>
+
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita%20para%20preparar%20latte%20helado" target="_blank" rel="noopener"
+                    class="mt-9 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    Pide tu café para prepararla <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+            </div>
+        </div>
+        <form method="dialog">
+            <button class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-espresso-900 shadow-md backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500"
+                aria-label="Cerrar receta" autofocus>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
+        </form>
+    </dialog>
+
+    <dialog id="receta-cafe-naranja" aria-labelledby="receta-cafe-naranja-titulo"
+        class="receta m-auto max-h-[calc(100dvh-2rem)] w-[min(60rem,calc(100%-2rem))] overflow-hidden rounded-2xl bg-white p-0 font-texto text-espresso-900 shadow-2xl backdrop:bg-espresso-950/70 backdrop:backdrop-blur-sm">
+        <div class="grid max-h-[calc(100dvh-2rem)] overflow-y-auto md:grid-cols-[5fr_6fr] md:overflow-visible">
+            <div class="relative h-52 sm:h-64 md:h-auto">
+                        <img src="./assets/images/recetas/cafe-naranja-960.webp?v=de58aad03d" srcset="./assets/images/recetas/cafe-naranja-480.webp?v=024dbd5573 480w, ./assets/images/recetas/cafe-naranja-960.webp?v=de58aad03d 960w" sizes="(min-width: 768px) 28rem, 100vw"
+                            alt="Vaso de café frío con hielo junto a una bolsa de Café la Escuelita y media naranja" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <div class="px-6 pb-8 pt-7 sm:px-10 sm:pt-10 md:max-h-[calc(100dvh-2rem)] md:overflow-y-auto">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-espresso-800/60">5 min · 1 vaso</p>
+                <h3 id="receta-cafe-naranja-titulo" class="mt-3 font-display text-3xl leading-tight md:text-4xl">Café frío con naranja</h3>
+                <p class="mt-3 leading-relaxed text-espresso-800/75">Refrescante y cítrico: las notas del Bourbon Rosado brillan con la naranja.</p>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Ingredientes</h4>
+                <ul class="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>60 ml de café cargado, frío</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>100 ml de jugo de naranja recién exprimido y colado</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Hielo</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Cáscara o rodaja de naranja para decorar</li>
+                </ul>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Preparación</h4>
+                <ol class="mt-4 space-y-4 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">1</span><span class="pt-0.5">Prepara el café y déjalo enfriar.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">2</span><span class="pt-0.5">Llena un vaso con hielo y sirve el jugo de naranja.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">3</span><span class="pt-0.5">Vierte el café despacio sobre el dorso de una cuchara para que quede en capas.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">4</span><span class="pt-0.5">Decora con la cáscara de naranja y mezcla antes de tomar.</span></li>
+                </ol>
+
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita%20para%20preparar%20caf%C3%A9%20fr%C3%ADo%20con%20naranja" target="_blank" rel="noopener"
+                    class="mt-9 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    Pide tu café para prepararla <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+            </div>
+        </div>
+        <form method="dialog">
+            <button class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-espresso-900 shadow-md backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500"
+                aria-label="Cerrar receta" autofocus>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
+        </form>
+    </dialog>
+
+    <dialog id="receta-latte-clasico" aria-labelledby="receta-latte-clasico-titulo"
+        class="receta m-auto max-h-[calc(100dvh-2rem)] w-[min(60rem,calc(100%-2rem))] overflow-hidden rounded-2xl bg-white p-0 font-texto text-espresso-900 shadow-2xl backdrop:bg-espresso-950/70 backdrop:backdrop-blur-sm">
+        <div class="grid max-h-[calc(100dvh-2rem)] overflow-y-auto md:grid-cols-[5fr_6fr] md:overflow-visible">
+            <div class="relative h-52 sm:h-64 md:h-auto">
+                        <img src="./assets/images/recetas/latte-clasico-960.webp?v=168cb39df2" srcset="./assets/images/recetas/latte-clasico-480.webp?v=7e8e7db625 480w, ./assets/images/recetas/latte-clasico-960.webp?v=168cb39df2 960w" sizes="(min-width: 768px) 28rem, 100vw"
+                            alt="Latte con un corazón dibujado en la espuma junto a una bolsa de Café la Escuelita y granos de café" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <div class="px-6 pb-8 pt-7 sm:px-10 sm:pt-10 md:max-h-[calc(100dvh-2rem)] md:overflow-y-auto">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-espresso-800/60">5 min · 1 taza</p>
+                <h3 id="receta-latte-clasico-titulo" class="mt-3 font-display text-3xl leading-tight md:text-4xl">Latte clásico</h3>
+                <p class="mt-3 leading-relaxed text-espresso-800/75">Suave y sedoso, con un corazón en la espuma si te animas.</p>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Ingredientes</h4>
+                <ul class="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>60 ml de café bien cargado (o un espresso doble)</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>200 ml de leche entera</li>
+                </ul>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Preparación</h4>
+                <ol class="mt-4 space-y-4 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">1</span><span class="pt-0.5">Sirve el café en una taza grande.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">2</span><span class="pt-0.5">Calienta la leche hasta que esté tibia, sin que queme (unos 60 °C).</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">3</span><span class="pt-0.5">Espúmala hasta que quede brillante y sedosa, y golpea la jarra para quitar las burbujas grandes.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">4</span><span class="pt-0.5">Vierte desde arriba y, al final, acerca la jarra a la taza para dibujar un corazón.</span></li>
+                </ol>
+
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita%20para%20preparar%20latte%20cl%C3%A1sico" target="_blank" rel="noopener"
+                    class="mt-9 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    Pide tu café para prepararla <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+            </div>
+        </div>
+        <form method="dialog">
+            <button class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-espresso-900 shadow-md backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500"
+                aria-label="Cerrar receta" autofocus>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
+        </form>
+    </dialog>
+
+    <dialog id="receta-cafe-panela" aria-labelledby="receta-cafe-panela-titulo"
+        class="receta m-auto max-h-[calc(100dvh-2rem)] w-[min(60rem,calc(100%-2rem))] overflow-hidden rounded-2xl bg-white p-0 font-texto text-espresso-900 shadow-2xl backdrop:bg-espresso-950/70 backdrop:backdrop-blur-sm">
+        <div class="grid max-h-[calc(100dvh-2rem)] overflow-y-auto md:grid-cols-[5fr_6fr] md:overflow-visible">
+            <div class="relative h-52 sm:h-64 md:h-auto">
+                        <img src="./assets/images/recetas/cafe-panela-960.webp?v=b6f435c517" srcset="./assets/images/recetas/cafe-panela-480.webp?v=976b0c15be 480w, ./assets/images/recetas/cafe-panela-960.webp?v=b6f435c517 960w" sizes="(min-width: 768px) 28rem, 100vw"
+                            alt="Dos tazas de café con leche espumoso sobre una mesa de madera junto a una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <div class="px-6 pb-8 pt-7 sm:px-10 sm:pt-10 md:max-h-[calc(100dvh-2rem)] md:overflow-y-auto">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-espresso-800/60">8 min · 2 tazas</p>
+                <h3 id="receta-cafe-panela-titulo" class="mt-3 font-display text-3xl leading-tight md:text-4xl">Café con leche y panela</h3>
+                <p class="mt-3 leading-relaxed text-espresso-800/75">El de la casa del abuelo: café de filtro, leche y panela.</p>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Ingredientes</h4>
+                <ul class="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>300 ml de café de filtro (mira el paso a paso de arriba)</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>200 ml de leche</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>2 cucharadas de panela rallada</li>
+                </ul>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Preparación</h4>
+                <ol class="mt-4 space-y-4 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">1</span><span class="pt-0.5">Prepara el café en tu filtro de goteo.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">2</span><span class="pt-0.5">Calienta la leche con la panela, revolviendo hasta que se disuelva.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">3</span><span class="pt-0.5">Bate la leche unos segundos para que haga espuma.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">4</span><span class="pt-0.5">Reparte el café en dos tazas y completa con la leche espumosa.</span></li>
+                </ol>
+
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita%20para%20preparar%20caf%C3%A9%20con%20leche%20y%20panela" target="_blank" rel="noopener"
+                    class="mt-9 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    Pide tu café para prepararla <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+            </div>
+        </div>
+        <form method="dialog">
+            <button class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-espresso-900 shadow-md backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500"
+                aria-label="Cerrar receta" autofocus>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
+        </form>
+    </dialog>
+
+    <dialog id="receta-latte-irlandes" aria-labelledby="receta-latte-irlandes-titulo"
+        class="receta m-auto max-h-[calc(100dvh-2rem)] w-[min(60rem,calc(100%-2rem))] overflow-hidden rounded-2xl bg-white p-0 font-texto text-espresso-900 shadow-2xl backdrop:bg-espresso-950/70 backdrop:backdrop-blur-sm">
+        <div class="grid max-h-[calc(100dvh-2rem)] overflow-y-auto md:grid-cols-[5fr_6fr] md:overflow-visible">
+            <div class="relative h-52 sm:h-64 md:h-auto">
+                        <img src="./assets/images/recetas/latte-irlandes-960.webp?v=bec9502636" srcset="./assets/images/recetas/latte-irlandes-480.webp?v=4b87a6a6e3 480w, ./assets/images/recetas/latte-irlandes-960.webp?v=bec9502636 960w" sizes="(min-width: 768px) 28rem, 100vw"
+                            alt="Latte visto desde arriba junto a una botella de crema irlandesa y una bolsa de Café la Escuelita" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <div class="px-6 pb-8 pt-7 sm:px-10 sm:pt-10 md:max-h-[calc(100dvh-2rem)] md:overflow-y-auto">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-espresso-800/60">5 min · 1 taza · <span class="text-terracota-600">Con licor, solo para mayores de edad</span></p>
+                <h3 id="receta-latte-irlandes-titulo" class="mt-3 font-display text-3xl leading-tight md:text-4xl">Latte irlandés</h3>
+                <p class="mt-3 leading-relaxed text-espresso-800/75">Un latte para la sobremesa, con el toque dulce de la crema irlandesa.</p>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Ingredientes</h4>
+                <ul class="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>60 ml de café bien cargado</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>30 ml de crema irlandesa (tipo Baileys)</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>150 ml de leche entera</li>
+                </ul>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Preparación</h4>
+                <ol class="mt-4 space-y-4 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">1</span><span class="pt-0.5">Prepara el café y mézclalo en la taza con la crema irlandesa.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">2</span><span class="pt-0.5">Calienta la leche sin que hierva y espúmala.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">3</span><span class="pt-0.5">Vierte la leche sobre el café y corona con la espuma.</span></li>
+                </ol>
+
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita%20para%20preparar%20latte%20irland%C3%A9s" target="_blank" rel="noopener"
+                    class="mt-9 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    Pide tu café para prepararla <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+            </div>
+        </div>
+        <form method="dialog">
+            <button class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-espresso-900 shadow-md backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500"
+                aria-label="Cerrar receta" autofocus>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
+        </form>
+    </dialog>
+
+    <dialog id="receta-helado-irlandes" aria-labelledby="receta-helado-irlandes-titulo"
+        class="receta m-auto max-h-[calc(100dvh-2rem)] w-[min(60rem,calc(100%-2rem))] overflow-hidden rounded-2xl bg-white p-0 font-texto text-espresso-900 shadow-2xl backdrop:bg-espresso-950/70 backdrop:backdrop-blur-sm">
+        <div class="grid max-h-[calc(100dvh-2rem)] overflow-y-auto md:grid-cols-[5fr_6fr] md:overflow-visible">
+            <div class="relative h-52 sm:h-64 md:h-auto">
+                        <img src="./assets/images/recetas/helado-irlandes-960.webp?v=bf63e555ee" srcset="./assets/images/recetas/helado-irlandes-480.webp?v=563b24ee5f 480w, ./assets/images/recetas/helado-irlandes-960.webp?v=bf63e555ee 960w" sizes="(min-width: 768px) 28rem, 100vw"
+                            alt="Café helado con crema chantilly y caramelo junto a una bolsa de Café la Escuelita y una botella de crema irlandesa" width="960" height="640" loading="lazy" decoding="async"
+                            class="absolute inset-0 h-full w-full object-cover" />
+            </div>
+            <div class="px-6 pb-8 pt-7 sm:px-10 sm:pt-10 md:max-h-[calc(100dvh-2rem)] md:overflow-y-auto">
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-espresso-800/60">10 min · 1 vaso · <span class="text-terracota-600">Con licor, solo para mayores de edad</span></p>
+                <h3 id="receta-helado-irlandes-titulo" class="mt-3 font-display text-3xl leading-tight md:text-4xl">Café helado irlandés</h3>
+                <p class="mt-3 leading-relaxed text-espresso-800/75">Frío, cremoso y con caramelo: un postre para compartir entre adultos.</p>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Ingredientes</h4>
+                <ul class="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>80 ml de café cargado, frío</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>40 ml de crema irlandesa (tipo Baileys)</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>100 ml de leche fría</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Hielo</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Crema chantilly</li>
+                            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mostaza-500"></span>Salsa de caramelo</li>
+                </ul>
+
+                <h4 class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">Preparación</h4>
+                <ol class="mt-4 space-y-4 text-[0.95rem] leading-relaxed text-espresso-800/85">
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">1</span><span class="pt-0.5">Prepara el café y déjalo enfriar.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">2</span><span class="pt-0.5">En un vaso con hielo, mezcla la leche, la crema irlandesa y el café.</span></li>
+                            <li class="flex gap-4"><span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-terracota-600/40 text-xs font-semibold text-terracota-600">3</span><span class="pt-0.5">Corona con crema chantilly y un hilo de salsa de caramelo.</span></li>
+                </ol>
+
+                <a href="https://wa.me/573138515152?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita%20para%20preparar%20caf%C3%A9%20helado%20irland%C3%A9s" target="_blank" rel="noopener"
+                    class="mt-9 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-6 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    Pide tu café para prepararla <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+            </div>
+        </div>
+        <form method="dialog">
+            <button class="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-espresso-900 shadow-md backdrop-blur-sm transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mostaza-500"
+                aria-label="Cerrar receta" autofocus>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+            </button>
+        </form>
+    </dialog>
+
     <main id="cafe" class="relative z-10 flex flex-1 items-center justify-center px-6 py-12 md:py-16 scroll-mt-20">
         <div class="w-full max-w-3xl">
             <div class="flex flex-col items-center gap-10 md:flex-row md:items-start ">
@@ -791,6 +1335,36 @@
             document.querySelectorAll('[data-ir]').forEach(btn => btn.addEventListener('click', () => {
                 activar(document.getElementById('tab-' + btn.dataset.ir));
                 document.getElementById('finca').scrollIntoView({ behavior: 'smooth' });
+            }));
+        })();
+
+        // Recetas: flechas del carrusel y ventana de cada receta
+        (() => {
+            const lista = document.getElementById('recetas-lista');
+            const ant = document.querySelector('[data-carrusel="ant"]');
+            const sig = document.querySelector('[data-carrusel="sig"]');
+            const actualizar = () => {
+                ant.disabled = lista.scrollLeft < 4;
+                sig.disabled = lista.scrollLeft + lista.clientWidth > lista.scrollWidth - 4;
+            };
+            const mover = dir => {
+                const tarjeta = lista.querySelector('li');
+                const paso = tarjeta.offsetWidth + parseFloat(getComputedStyle(lista).columnGap);
+                const visibles = Math.max(1, Math.floor((lista.clientWidth + 1) / paso));
+                lista.scrollBy({ left: dir * paso * visibles });
+            };
+            ant.addEventListener('click', () => mover(-1));
+            sig.addEventListener('click', () => mover(1));
+            lista.addEventListener('scroll', actualizar, { passive: true });
+            addEventListener('resize', actualizar);
+            actualizar();
+
+            document.querySelectorAll('[data-receta]').forEach(btn => btn.addEventListener('click', () => {
+                document.getElementById(btn.dataset.receta).showModal();
+            }));
+            // Clic fuera de la ventana (en el fondo oscuro) la cierra
+            document.querySelectorAll('dialog.receta').forEach(d => d.addEventListener('click', e => {
+                if (e.target === d) d.close();
             }));
         })();
 

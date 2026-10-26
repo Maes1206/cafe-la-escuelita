@@ -233,6 +233,12 @@ html:has(.carrito[open]) { overflow: hidden; }
 /* Recetas: carrusel sin barra de desplazamiento y ventana con la receta */
 .sin-barra { scrollbar-width: none; }
 .sin-barra::-webkit-scrollbar { display: none; }
+/* El deslizamiento horizontal no activa el gesto de "atrás" del navegador; la página sigue bajando con el dedo */
+#recetas-lista { overscroll-behavior-x: contain; touch-action: pan-x pan-y; -webkit-overflow-scrolling: touch; cursor: grab; }
+#recetas-lista img { -webkit-user-drag: none; user-select: none; }
+/* Mientras avanza solo o se arrastra con el mouse, sin imán ni suavizado (el JS mueve píxel a píxel) */
+#recetas-lista.avanzando, #recetas-lista.arrastrando { scroll-snap-type: none; scroll-behavior: auto; }
+#recetas-lista.arrastrando { cursor: grabbing; }
 .receta[open] { animation: fundido .35s cubic-bezier(.2, .7, .2, 1); }
 html:has(.receta[open]) { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {

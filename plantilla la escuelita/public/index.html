@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- CSS compilado con Tailwind (fuente: src/estilos.css → python construir.py) -->
-    <link rel="stylesheet" href="./assets/css/estilos.css?v=3a7af548ba" />
+    <link rel="stylesheet" href="./assets/css/estilos.css?v=bdeff08b38" />
 
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1562,26 +1562,135 @@
             }));
         })();
 
-        // Recetas: flechas del carrusel y ventana de cada receta
+        // Recetas: carrusel sin fin que avanza despacio solo, se arrastra con el dedo o el mouse,
+        // tiene flechas en computador y abre la ventana de cada receta
         (() => {
             const lista = document.getElementById('recetas-lista');
             const ant = document.querySelector('[data-carrusel="ant"]');
             const sig = document.querySelector('[data-carrusel="sig"]');
-            const actualizar = () => {
-                ant.disabled = lista.scrollLeft < 4;
-                sig.disabled = lista.scrollLeft + lista.clientWidth > lista.scrollWidth - 4;
+            const VELOCIDAD = 28; // píxeles por segundo
+            const ESPERA = 3500;  // ms quieto tras tocarlo antes de volver a avanzar
+
+            // Copia de las tarjetas al final: al llegar a ellas se salta al inicio sin que se note.
+            // Las copias se pueden tocar, pero los lectores de pantalla y el tabulador las ignoran.
+            const originales = [...lista.children];
+            originales.forEach(li => {
+                const copia = li.cloneNode(true);
+                copia.setAttribute('aria-hidden', 'true');
+                copia.querySelector('button').tabIndex = -1;
+                lista.append(copia);
+            });
+            const anchoSet = () => lista.children[originales.length].offsetLeft - originales[0].offsetLeft;
+            const saltar = x => {
+                lista.style.scrollBehavior = 'auto';
+                lista.scrollLeft = x;
+                lista.style.scrollBehavior = '';
             };
+            const envolver = () => {
+                const set = anchoSet();
+                if (lista.scrollLeft >= set) saltar(lista.scrollLeft - set);
+            };
+
+            // Avance automático
+            const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let enPantalla = false, pausas = new Set(), reanudar, cuadro, ultimo, pos;
+            const paso = t => {
+                const dt = Math.min(t - ultimo, 64) / 1000;
+                ultimo = t;
+                pos += VELOCIDAD * dt;
+                const set = anchoSet();
+                if (pos >= set) pos -= set;
+                lista.scrollLeft = pos;
+                cuadro = requestAnimationFrame(paso);
+            };
+            const revisar = () => {
+                const andar = !quieto && enPantalla && !pausas.size && !document.hidden;
+                if (andar && !cuadro) {
+                    lista.classList.add('avanzando');
+                    pos = lista.scrollLeft;
+                    ultimo = performance.now();
+                    cuadro = requestAnimationFrame(paso);
+                } else if (!andar && cuadro) {
+                    cancelAnimationFrame(cuadro);
+                    cuadro = null;
+                    lista.classList.remove('avanzando');
+                }
+            };
+            const pausar = motivo => { clearTimeout(reanudar); pausas.add(motivo); revisar(); };
+            const soltar = (motivo, ms = 0) => {
+                clearTimeout(reanudar);
+                reanudar = setTimeout(() => { pausas.delete(motivo); revisar(); }, ms);
+            };
+
+            new IntersectionObserver(([e]) => { enPantalla = e.isIntersecting; revisar(); }).observe(lista);
+            document.addEventListener('visibilitychange', revisar);
+            lista.addEventListener('touchstart', () => pausar('toque'), { passive: true });
+            lista.addEventListener('touchend', () => soltar('toque', ESPERA), { passive: true });
+            lista.addEventListener('focusin', () => pausar('foco'));
+            lista.addEventListener('focusout', () => soltar('foco'));
+            lista.parentElement.addEventListener('mouseenter', () => pausar('mouse'));
+            lista.parentElement.addEventListener('mouseleave', () => soltar('mouse', 600));
+
+            // Arrastre con mouse (el dedo usa el desplazamiento nativo del navegador)
+            let arrastre = null, arrastro = false;
+            lista.addEventListener('pointerdown', e => {
+                if (e.pointerType !== 'mouse' || e.button !== 0) return;
+                arrastre = { x: e.clientX, inicio: lista.scrollLeft, id: e.pointerId };
+                arrastro = false;
+            });
+            lista.addEventListener('pointermove', e => {
+                if (!arrastre) return;
+                const dx = e.clientX - arrastre.x;
+                if (!arrastro && Math.abs(dx) > 6) {
+                    arrastro = true;
+                    lista.classList.add('arrastrando');
+                    lista.setPointerCapture(arrastre.id);
+                }
+                if (arrastro) {
+                    let x = arrastre.inicio - dx;
+                    const set = anchoSet();
+                    if (x < 0) { x += set; arrastre.inicio += set; }
+                    else if (x >= set) { x -= set; arrastre.inicio -= set; }
+                    lista.scrollLeft = x;
+                }
+            });
+            const terminar = () => {
+                if (!arrastre) return;
+                arrastre = null;
+                lista.classList.remove('arrastrando');
+            };
+            lista.addEventListener('pointerup', terminar);
+            lista.addEventListener('pointercancel', terminar);
+            lista.addEventListener('dragstart', e => e.preventDefault());
+            // Si fue un arrastre, no abrir la receta al soltar
+            lista.addEventListener('click', e => {
+                if (arrastro) { e.preventDefault(); e.stopPropagation(); arrastro = false; }
+            }, true);
+
+            // Al terminar de deslizar (dedo, flechas o inercia), si quedó en las copias vuelve al original
+            let fin;
+            lista.addEventListener('scroll', () => {
+                if (cuadro || arrastre) return;
+                clearTimeout(fin);
+                fin = setTimeout(envolver, 160);
+            }, { passive: true });
+
+            // Flechas
             const mover = dir => {
+                pausar('flecha');
                 const tarjeta = lista.querySelector('li');
-                const paso = tarjeta.offsetWidth + parseFloat(getComputedStyle(lista).columnGap);
-                const visibles = Math.max(1, Math.floor((lista.clientWidth + 1) / paso));
-                lista.scrollBy({ left: dir * paso * visibles });
+                const ancho = tarjeta.offsetWidth + parseFloat(getComputedStyle(lista).columnGap);
+                const visibles = Math.max(1, Math.floor((lista.clientWidth + 1) / ancho));
+                if (dir < 0 && lista.scrollLeft < ancho * visibles) saltar(lista.scrollLeft + anchoSet());
+                lista.scrollBy({ left: dir * ancho * visibles });
+                soltar('flecha', ESPERA);
             };
             ant.addEventListener('click', () => mover(-1));
             sig.addEventListener('click', () => mover(1));
-            lista.addEventListener('scroll', actualizar, { passive: true });
-            addEventListener('resize', actualizar);
-            actualizar();
+
+            // Quieto mientras hay una receta abierta
+            document.querySelectorAll('dialog.receta').forEach(d => d.addEventListener('close', () => soltar('receta', ESPERA)));
+            document.querySelectorAll('[data-receta]').forEach(btn => btn.addEventListener('click', () => pausar('receta')));
 
             document.querySelectorAll('[data-receta]').forEach(btn => btn.addEventListener('click', () => {
                 document.getElementById(btn.dataset.receta).showModal();

@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- CSS compilado con Tailwind (fuente: src/estilos.css → python construir.py) -->
-    <link rel="stylesheet" href="./assets/css/estilos.css?v=7f5fb044f6" />
+    <link rel="stylesheet" href="./assets/css/estilos.css?v=701c5d5f1a" />
 
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,17 +45,24 @@
         <!-- Franja dorada, como la del empaque -->
         <div class="franja-dorada absolute inset-x-0 bottom-0 h-1" aria-hidden="true"></div>
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
-            <a href="./" class="flex items-center gap-3" aria-label="Café la Escuelita, inicio">
+            <a href="index.html" class="flex items-center gap-3" aria-label="Café la Escuelita, inicio">
                 <img src="./assets/images/logo-web.webp?v=3f88972a7d" width="160" height="160" alt="Logo de Café la Escuelita"
                     class="h-14 w-14 object-contain mix-blend-multiply md:h-16 md:w-16" />
                 <span class="hidden text-lg font-bold tracking-tight text-amber-950 sm:block">Café la Escuelita</span>
             </a>
             <div class="flex items-center gap-2 md:gap-8">
                 <ul class="hidden items-center gap-8 md:flex">
+                    <li><a href="tienda.html" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Comprar</a></li>
                     <li><a href="#nuestro-cafe" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Nuestro café</a></li>
                     <li><a href="#recetas" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Recetas</a></li>
                     <li><a href="#contacto" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Contáctanos</a></li>
                 </ul>
+                <button type="button" data-abrir-carrito aria-haspopup="dialog" aria-label="Abrir carrito"
+                    class="relative grid h-10 w-10 place-items-center rounded-md text-amber-950 transition-colors hover:bg-crema-100">
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9z" /><path d="M9 8V6.5a3 3 0 0 1 6 0V8" /></svg>
+                    <span data-contador hidden
+                        class="contador absolute -right-0.5 -top-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-terracota-600 px-1 text-[0.65rem] font-bold text-white">0</span>
+                </button>
                 <a href="https://wa.me/573157343753?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Caf%C3%A9%20la%20Escuelita"
                     target="_blank" rel="noopener"
                     class="inline-flex items-center gap-2 rounded-md bg-amber-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-espresso-900">
@@ -77,6 +84,7 @@
         <!-- Menú en celular: se despliega con el botón ☰ -->
         <div id="menu-movil" hidden class="border-t border-espresso-900/10 bg-white md:hidden">
             <ul class="mx-auto max-w-6xl px-6 pb-4 pt-2">
+                <li><a href="tienda.html" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Comprar</a></li>
                 <li><a href="#nuestro-cafe" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Nuestro café</a></li>
                 <li><a href="#recetas" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Recetas</a></li>
                 <li><a href="#contacto" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Contáctanos</a></li>
@@ -593,6 +601,12 @@
                 </div>
                 <p class="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-terracota-600">Cultivado a mano ·
                     Tradición familiar</p>
+                <a href="tienda.html"
+                    class="group mt-8 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-7 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9z" /><path d="M9 8V6.5a3 3 0 0 1 6 0V8" /></svg>
+                    Comprar
+                    <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </a>
             </div>
         </div>
     </section>
@@ -1461,6 +1475,7 @@
 
     </main>
 
+
     <footer class="backdrop-blur-lg">
         <div
             class="mx-auto flex max-w-3xl flex-col items-center gap-4 px-6 py-8 text-sm text-gray-600 sm:flex-row sm:justify-between">
@@ -1504,25 +1519,10 @@
         </div>
     </footer>
 
+    <script src="./assets/js/sitio.js?v=64bce03747"></script>
+    <script src="./assets/datos/catalogo.js?v=84f6827b68"></script>
+    <script src="./assets/js/tienda.js?v=cf6d8f0d41"></script>
     <script>
-        // Menú en celular: abre y cierra con el botón ☰; se cierra al elegir una sección o con Escape
-        (() => {
-            const boton = document.querySelector('[data-menu]');
-            const menu = document.getElementById('menu-movil');
-            const poner = abierto => {
-                menu.hidden = !abierto;
-                boton.setAttribute('aria-expanded', abierto);
-                boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
-                boton.querySelector('[data-icono="abrir"]').classList.toggle('hidden', abierto);
-                boton.querySelector('[data-icono="cerrar"]').classList.toggle('hidden', !abierto);
-            };
-            boton.addEventListener('click', () => poner(menu.hidden));
-            menu.addEventListener('click', e => { if (e.target.closest('a')) poner(false); });
-            document.addEventListener('keydown', e => {
-                if (e.key === 'Escape' && !menu.hidden) { poner(false); boton.focus(); }
-            });
-        })();
-
         // Video del banner: quieto (imagen fija) si el dispositivo pide menos animaciones
         (() => {
             const video = document.querySelector('section[aria-labelledby="hero-titulo"] video');
@@ -1531,20 +1531,6 @@
                 video.pause();
             }
         })();
-
-        // Empaque 3D: tocar para ver el reverso
-        document.querySelectorAll('.bolsa-3d').forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.setAttribute('aria-pressed', btn.getAttribute('aria-pressed') !== 'true');
-            });
-            // Con mouse o dedo no se muestra el marco de foco, aunque luego se presione otra tecla
-            // (p. ej. el atajo de captura de pantalla). Tab, Enter o Espacio lo vuelven a mostrar.
-            btn.addEventListener('pointerdown', () => { btn.dataset.puntero = ''; });
-            btn.addEventListener('keydown', e => {
-                if (e.key === 'Tab' || e.key === 'Enter' || e.key === ' ') delete btn.dataset.puntero;
-            });
-            btn.addEventListener('blur', () => { delete btn.dataset.puntero; });
-        });
 
         // Pestañas de la sección "La finca"
         (() => {
@@ -1570,20 +1556,6 @@
                 activar(document.getElementById('tab-' + btn.dataset.ir));
                 document.getElementById('finca').scrollIntoView({ behavior: 'smooth' });
             }));
-        })();
-
-        // Entrada al aparecer en pantalla: la clase .listo esconde los elementos solo si hay JS y animaciones
-        (() => {
-            if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const observador = new IntersectionObserver(entradas => entradas.forEach(e => {
-                if (!e.isIntersecting) return;
-                e.target.classList.add('visible');
-                observador.unobserve(e.target);
-            }), { threshold: 0.25 });
-            document.querySelectorAll('.revelar').forEach(el => {
-                el.classList.add('listo');
-                observador.observe(el);
-            });
         })();
 
         // Recetas: flechas del carrusel y ventana de cada receta

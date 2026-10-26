@@ -1,6 +1,6 @@
 /** Configuración de Tailwind (antes estaba en el <script> del CDN dentro de index.html). */
 module.exports = {
-    content: ['./public/**/*.html'],
+    content: ['./public/**/*.html', './public/assets/js/**/*.js'],
     theme: {
         extend: {
             fontFamily: {

@@ -6,7 +6,7 @@ Prepara la página para producción.
 
 Qué hace:
   1. Compila src/estilos.css con Tailwind -> public/assets/css/estilos.css (solo las clases usadas).
-  2. Agrega ?v=<huella> a cada ./assets/... de las páginas de public/ (*.html). Así el servidor puede guardar
+  2. Agrega ?v=<huella> a cada ./assets/... de las páginas (*.html) y del catálogo (assets/datos/*.js). Así el servidor puede guardar
      esos archivos en caché un año y, cuando cambies una imagen o el CSS, los navegadores
      descargan la versión nueva (la huella cambia sola).
 
@@ -22,7 +22,8 @@ import sys
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 PUBLIC = os.path.join(AQUI, 'public')
-PAGINAS = sorted(glob.glob(os.path.join(PUBLIC, '*.html')))
+# Páginas y datos (el catálogo también referencia imágenes de ./assets)
+PAGINAS = sorted(glob.glob(os.path.join(PUBLIC, '*.html')) + glob.glob(os.path.join(PUBLIC, 'assets', 'datos', '*.js')))
 CSS_SALIDA = os.path.join(PUBLIC, 'assets', 'css', 'estilos.css')
 
 

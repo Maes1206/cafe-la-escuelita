@@ -16,11 +16,11 @@ if grep -q "cdn.tailwindcss.com" "$SITIO/public/index.html"; then
   echo "   ERROR: index.html todavía usa cdn.tailwindcss.com"; exit 1
 fi
 # Textos de ejemplo pendientes (notas de cata, envíos, pagos, datos del responsable): no se publican
-pendientes=$(grep -l "data-por-confirmar" "$SITIO"/public/*.html || true)
+pendientes=$( { grep -l "data-por-confirmar" "$SITIO"/public/*.html; grep -l '"porConfirmar": true' "$SITIO"/public/assets/datos/*.js; } || true)
 if [ -n "$pendientes" ]; then
-  echo "   ERROR: hay datos por confirmar con el cliente (marcados con borde rojo punteado) en:"
+  echo "   ERROR: hay datos de ejemplo por confirmar con el cliente en:"
   echo "$pendientes" | sed 's|.*/|     - |'
-  echo "   Reemplázalos por los datos reales y quita el atributo data-por-confirmar."
+  echo "   Reemplázalos por los datos reales y quita data-por-confirmar (o pon \"porConfirmar\": false en el catálogo)."
   exit 1
 fi
 

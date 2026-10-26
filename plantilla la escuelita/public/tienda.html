@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tienda — Café la Escuelita</title>
+    <meta name="description"
+        content="Compra Bourbon Rosado de la Finca La Escuelita, Iquira, Huila: 250 g, 500 g o 1 kg, molido o en grano, con envío a toda Colombia." />
+    <meta name="theme-color" content="#78350f" />
+    <link rel="canonical" href="https://cafelaescuelita.site/tienda.html" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png?v=e731b4c83d" />
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png?v=aecf07cb11" />
+
+    <!-- Vista previa al compartir el enlace (WhatsApp, Facebook, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Café la Escuelita" />
+    <meta property="og:title" content="Café la Escuelita — Del corazón del Huila, a tu taza" />
+    <meta property="og:description"
+        content="Bourbon Rosado cultivado a mano por nuestra familia, a 1.350 metros, en las montañas cafeteras de Iquira, Huila." />
+    <meta property="og:url" content="https://cafelaescuelita.site/tienda.html" />
+    <meta property="og:image" content="https://cafelaescuelita.site/assets/images/compartir.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- CSS compilado con Tailwind (fuente: src/estilos.css → python construir.py) -->
+    <link rel="stylesheet" href="./assets/css/estilos.css?v=701c5d5f1a" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..600,0..100,0..1&family=Instrument+Sans:wght@400..700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body
+    class="antialiased text-stone-900 min-h-screen flex flex-col relative overflow-x-hidden bg-white">
+    <!-- Barra de navegación -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md">
+        <!-- Franja dorada, como la del empaque -->
+        <div class="franja-dorada absolute inset-x-0 bottom-0 h-1" aria-hidden="true"></div>
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
+            <a href="index.html" class="flex items-center gap-3" aria-label="Café la Escuelita, inicio">
+                <img src="./assets/images/logo-web.webp?v=3f88972a7d" width="160" height="160" alt="Logo de Café la Escuelita"
+                    class="h-14 w-14 object-contain mix-blend-multiply md:h-16 md:w-16" />
+                <span class="hidden text-lg font-bold tracking-tight text-amber-950 sm:block">Café la Escuelita</span>
+            </a>
+            <div class="flex items-center gap-2 md:gap-8">
+                <ul class="hidden items-center gap-8 md:flex">
+                    <li><a href="tienda.html" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Comprar</a></li>
+                    <li><a href="index.html#nuestro-cafe" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Nuestro café</a></li>
+                    <li><a href="index.html#recetas" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Recetas</a></li>
+                    <li><a href="index.html#contacto" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Contáctanos</a></li>
+                </ul>
+                <button type="button" data-abrir-carrito aria-haspopup="dialog" aria-label="Abrir carrito"
+                    class="relative grid h-10 w-10 place-items-center rounded-md text-amber-950 transition-colors hover:bg-crema-100">
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9z" /><path d="M9 8V6.5a3 3 0 0 1 6 0V8" /></svg>
+                    <span data-contador hidden
+                        class="contador absolute -right-0.5 -top-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-terracota-600 px-1 text-[0.65rem] font-bold text-white">0</span>
+                </button>
+                <a href="https://wa.me/573157343753?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Caf%C3%A9%20la%20Escuelita"
+                    target="_blank" rel="noopener"
+                    class="inline-flex items-center gap-2 rounded-md bg-amber-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-espresso-900">
+                    <svg class="h-4 w-4" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                    </svg>
+                    Escríbenos
+                </a>
+                <button type="button" data-menu aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú"
+                    class="grid h-10 w-10 place-items-center rounded-md text-amber-950 transition-colors hover:bg-crema-100 md:hidden">
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                        <path data-icono="abrir" d="M4 7h16M4 12h16M4 17h16" />
+                        <path data-icono="cerrar" class="hidden" d="M6 6l12 12M18 6 6 18" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Menú en celular: se despliega con el botón ☰ -->
+        <div id="menu-movil" hidden class="border-t border-espresso-900/10 bg-white md:hidden">
+            <ul class="mx-auto max-w-6xl px-6 pb-4 pt-2">
+                <li><a href="tienda.html" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Comprar</a></li>
+                <li><a href="index.html#nuestro-cafe" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Nuestro café</a></li>
+                <li><a href="index.html#recetas" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Recetas</a></li>
+                <li><a href="index.html#contacto" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Contáctanos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="contenido">
+    <!-- Compra tu café: las tarjetas las arma assets/js/tienda.js con assets/datos/catalogo.json -->
+    <section id="comprar" aria-labelledby="comprar-titulo" class="scroll-mt-20 bg-white font-texto">
+        <div class="mx-auto max-w-6xl px-6 pb-20 pt-10 md:pb-28 md:pt-14">
+            <nav aria-label="Ruta" class="mb-10 text-xs text-espresso-800/55">
+                <a href="index.html" class="transition-colors hover:text-terracota-600">Inicio</a>
+                <span class="mx-2" aria-hidden="true">›</span><span aria-current="page" class="text-espresso-900">Tienda</span>
+            </nav>
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
+                    <span class="h-px w-8 bg-terracota-600/50"></span>Tienda<span class="h-px w-8 bg-terracota-600/50"></span>
+                </p>
+                <h1 id="comprar-titulo" class="mt-5 font-display text-4xl font-normal leading-tight tracking-tight text-espresso-900 md:text-5xl">
+                    Compra tu <em class="italic text-terracota-600">café</em>
+                </h1>
+                <p class="mt-4 text-base leading-relaxed text-espresso-800/70 md:text-lg">
+                    Bourbon Rosado de tostión media, empacado en la finca. Elige el tamaño y si lo quieres molido o en grano.
+                </p>
+            </div>
+
+            <div id="productos" class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+            <noscript>
+                <p class="mt-10 text-center text-espresso-800/70">Para comprar desde la página activa JavaScript, o
+                    <a class="underline" href="https://wa.me/573157343753">escríbenos por WhatsApp</a>.</p>
+            </noscript>
+            <p class="mt-8 text-center text-sm text-espresso-800/55" data-envio-texto></p>
+        </div>
+    </section>
+
+    <!-- Nuestro café: empaque en 3D con su ficha técnica -->
+    <section id="nuestro-cafe" aria-labelledby="nuestro-cafe-titulo" class="scroll-mt-20 bg-white font-texto">
+        <div class="mx-auto grid max-w-6xl items-center gap-x-16 gap-y-12 px-6 py-20 md:py-28 lg:grid-cols-2">
+            <div class="mx-auto max-w-xl text-center lg:col-start-2 lg:mx-0 lg:self-end lg:text-left">
+                <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
+                    <span class="h-px w-8 bg-terracota-600/50"></span>Nuestro café<span class="h-px w-8 bg-terracota-600/50 lg:hidden"></span>
+                </p>
+                <h2 id="nuestro-cafe-titulo" class="mt-5 font-display text-4xl font-normal leading-tight tracking-tight text-espresso-900 md:text-5xl">
+                    Un solo origen, <em class="italic text-terracota-600">una sola variedad</em>
+                </h2>
+                <p class="mt-4 text-base leading-relaxed text-espresso-800/70 md:text-lg">
+                    Bourbon Rosado de la Finca La Escuelita, tostado medio, molido o en grano.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center text-center lg:col-start-1 lg:row-span-2 lg:row-start-1">
+                <div class="escena-3d">
+                    <button type="button" class="bolsa-3d" aria-pressed="false"
+                        aria-label="Empaque de Café la Escuelita, Bourbon Rosado. Toca para ver el reverso">
+                        <span class="giro">
+                            <span class="volteo">
+                                <span class="cara cara-frente" style="--mascara: url(/assets/images/empaque-frente.webp?v=e3cea6c623)">
+                                    <img src="./assets/images/empaque-frente.webp?v=e3cea6c623" width="560" height="1331" loading="lazy"
+                                        alt="" />
+                                </span>
+                                <span class="cara cara-reverso" style="--mascara: url(/assets/images/empaque-reverso.webp?v=17f26f6f97)">
+                                    <img src="./assets/images/empaque-reverso.webp?v=17f26f6f97" width="560" height="1447" loading="lazy"
+                                        alt="" />
+                                </span>
+                                <span class="costado costado-izq" aria-hidden="true">
+                                    <svg viewBox="0 0 100 1000" preserveAspectRatio="none">
+                                        <path d="M0 90 L50 165 L100 90" />
+                                        <path d="M50 165 V990" />
+                                        <path d="M0 960 L50 990 L100 960" opacity=".5" />
+                                    </svg>
+                                </span>
+                                <span class="costado costado-der" aria-hidden="true">
+                                    <svg viewBox="0 0 100 1000" preserveAspectRatio="none">
+                                        <path d="M0 90 L50 165 L100 90" />
+                                        <path d="M50 165 V990" />
+                                        <path d="M0 960 L50 990 L100 960" opacity=".5" />
+                                    </svg>
+                                </span>
+                            </span>
+                        </span>
+                    </button>
+                    <span class="sombra-3d" aria-hidden="true"></span>
+                    <!-- Código de barras del empaque (Code 128 de 19383480925), de pie junto a la bolsa; solo en pantallas grandes -->
+                    <div class="pointer-events-none absolute left-full top-1/2 hidden w-48 -translate-x-20 -translate-y-1/2 -rotate-90 text-espresso-900 lg:block">
+                        <svg viewBox="0 0 112 60" class="h-auto w-full" role="img" aria-label="Código de barras 1 938348092-5">
+                            <path fill="currentColor" d="M0 0h2v46h-2zM3 0h1v46h-1zM6 0h3v46h-3zM11 0h2v46h-2zM15 0h1v46h-1zM17 0h3v46h-3zM22 0h1v46h-1zM26 0h2v46h-2zM31 0h1v46h-1zM33 0h1v46h-1zM37 0h1v46h-1zM39 0h2v46h-2zM44 0h1v46h-1zM46 0h1v46h-1zM49 0h4v46h-4zM55 0h1v46h-1zM57 0h1v46h-1zM59 0h4v46h-4zM66 0h1v46h-1zM68 0h4v46h-4zM73 0h3v46h-3zM77 0h2v46h-2zM80 0h3v46h-3zM85 0h1v46h-1zM88 0h2v46h-2zM94 0h1v46h-1zM96 0h1v46h-1zM99 0h2v46h-2zM104 0h3v46h-3zM108 0h1v46h-1zM110 0h2v46h-2z" />
+                            <text x="56" y="58.5" text-anchor="middle" fill="currentColor" font-family="Instrument Sans, Arial, sans-serif"
+                                font-size="11" font-weight="600" letter-spacing=".6">1 938348092-5</text>
+                        </svg>
+                    </div>
+                </div>
+                <p class="mt-4 text-xs text-espresso-800/50">Toca el empaque para ver el reverso</p>
+            </div>
+
+            <div class="mx-auto w-full max-w-sm text-center lg:col-start-2 lg:mx-0 lg:max-w-md lg:self-start lg:text-left">
+                <h3 class="font-display text-3xl text-espresso-900">Bourbon Rosado</h3>
+                <p class="mt-1 text-sm text-espresso-800/60">Iquira, Huila</p>
+                <dl class="mt-5 w-full text-[0.95rem]">
+                    <div class="flex items-baseline justify-between gap-4 border-b border-espresso-900/10 py-2.5">
+                        <dt class="text-espresso-800/60">Proceso</dt>
+                        <dd class="text-right font-medium text-espresso-900">Fermentación anaeróbica, lavado</dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 border-b border-espresso-900/10 py-2.5">
+                        <dt class="text-espresso-800/60">Altura</dt>
+                        <dd class="text-right font-medium text-espresso-900">1.350 m s. n. m.</dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 border-b border-espresso-900/10 py-2.5">
+                        <dt class="text-espresso-800/60">Tostión</dt>
+                        <dd class="text-right font-medium text-espresso-900">Media</dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 border-b border-espresso-900/10 py-2.5">
+                        <dt class="text-espresso-800/60">Presentación</dt>
+                        <dd class="text-right font-medium text-espresso-900">Molido o en grano</dd>
+                    </div>
+                </dl>
+                <!-- Perfil de taza: valores de EJEMPLO, confirmar con el cliente (notas de cata, acidez, cuerpo, dulzor y, si lo tienen, puntaje SCA) -->
+                <div class="revelar mt-8 rounded-2xl border border-espresso-900/10 p-5 text-left" data-por-confirmar>
+                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-terracota-600">Perfil de taza</p>
+                    <ul class="mt-3 flex flex-wrap gap-2" aria-label="Notas de sabor">
+                        <li style="--j:0" class="nota rounded-full border border-oro-500/30 bg-crema-100 px-3.5 py-1 text-sm text-espresso-900">Frutos rojos</li>
+                        <li style="--j:1" class="nota rounded-full border border-oro-500/30 bg-crema-100 px-3.5 py-1 text-sm text-espresso-900">Panela</li>
+                        <li style="--j:2" class="nota rounded-full border border-oro-500/30 bg-crema-100 px-3.5 py-1 text-sm text-espresso-900">Floral</li>
+                        <li style="--j:3" class="nota rounded-full border border-oro-500/30 bg-crema-100 px-3.5 py-1 text-sm text-espresso-900">Cítricos</li>
+                    </ul>
+                    <dl class="mt-5 space-y-3 text-sm">
+                        <div style="--fila:0" class="grid grid-cols-[4.5rem_1fr_4.5rem] items-center gap-3">
+                            <dt class="text-left text-espresso-800/60">Acidez</dt>
+                            <dd class="flex gap-1" role="img" aria-label="Acidez: 4 de 5"><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:0" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:1" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:2" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:3" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"></span></dd>
+                            <dd class="valor text-right font-medium text-espresso-900">Brillante</dd>
+                        </div>
+                        <div style="--fila:1" class="grid grid-cols-[4.5rem_1fr_4.5rem] items-center gap-3">
+                            <dt class="text-left text-espresso-800/60">Cuerpo</dt>
+                            <dd class="flex gap-1" role="img" aria-label="Cuerpo: 3 de 5"><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:0" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:1" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:2" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"></span></dd>
+                            <dd class="valor text-right font-medium text-espresso-900">Medio</dd>
+                        </div>
+                        <div style="--fila:2" class="grid grid-cols-[4.5rem_1fr_4.5rem] items-center gap-3">
+                            <dt class="text-left text-espresso-800/60">Dulzor</dt>
+                            <dd class="flex gap-1" role="img" aria-label="Dulzor: 4 de 5"><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:0" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:1" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:2" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"><span style="--j:3" class="llenado block h-full rounded-full bg-mostaza-500"></span></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"></span></dd>
+                            <dd class="valor text-right font-medium text-espresso-900">Alto</dd>
+                        </div>
+                    </dl>
+                </div>
+                <p class="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-terracota-600">Cultivado a mano ·
+                    Tradición familiar</p>
+                <a href="#comprar"
+                    class="group mt-8 inline-flex items-center gap-2.5 rounded-md bg-mostaza-500 px-7 py-3.5 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2">
+                    <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9z" /><path d="M9 8V6.5a3 3 0 0 1 6 0V8" /></svg>
+                    Elegir presentación
+                    <svg class="h-4 w-4 transition-transform group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" /></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="backdrop-blur-lg">
+        <div
+            class="mx-auto flex max-w-3xl flex-col items-center gap-4 px-6 py-8 text-sm text-gray-600 sm:flex-row sm:justify-between">
+            <div class="text-center sm:text-left">
+                <p class="font-medium text-gray-900">Café la Escuelita</p>
+                <p>Síguenos y escríbenos en nuestras redes</p>
+            </div>
+            <div class="flex items-center gap-4 text-gray-500">
+                <a href="https://www.tiktok.com/@caf.la.escuelita" target="_blank" rel="noopener"
+                    aria-label="TikTok de Café la Escuelita"
+                    class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md">
+                    <img src="./assets/icons/tiktok.svg?v=958935fa8e" alt="" width="20" height="20" loading="lazy" class="h-5 w-5" />
+                </a>
+                <a href="https://www.instagram.com/cafe_laescuelita/" target="_blank" rel="noopener"
+                    aria-label="Instagram de Café la Escuelita"
+                    class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md">
+                    <img src="./assets/icons/instagram.svg?v=c78bb2d101" alt="" width="20" height="20" loading="lazy" class="h-5 w-5" />
+                </a>
+                <a href="https://wa.me/573157343753?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Caf%C3%A9%20la%20Escuelita"
+                    target="_blank" rel="noopener"
+                    aria-label="WhatsApp de Café la Escuelita"
+                    class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md">
+                    <img src="./assets/icons/whatsapp.svg?v=30b026f26d" alt="" width="20" height="20" loading="lazy" class="h-5 w-5" />
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-100">
+            <div class="mx-auto flex max-w-3xl flex-col items-center gap-3 px-6 py-4 text-xs text-gray-500 sm:flex-row">
+                <div class="flex items-center gap-3">
+                    <a href="politica-de-privacidad.html" class="transition-colors hover:text-gray-700">Política de tratamiento de datos</a>
+                </div>
+                <div class="flex items-center gap-2 sm:ml-auto">
+                    <span>Diseño por</span>
+                    <a href="https://www.instagram.com/digital.brainagency1/" target="_blank" rel="noopener"
+                        aria-label="Instagram de Digital Brain" class="transition hover:-translate-y-0.5 hover:opacity-80">
+                        <img src="./assets/images/digital-brain.webp?v=f2ae7af2b7" alt="Digital Brain — Web &amp; Marketing Agency"
+                            width="387" height="144" loading="lazy" class="h-12 w-auto" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/sitio.js?v=64bce03747"></script>
+    <script src="./assets/datos/catalogo.js?v=84f6827b68"></script>
+    <script src="./assets/js/tienda.js?v=cf6d8f0d41"></script>
+</body>
+
+</html>

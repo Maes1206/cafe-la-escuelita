@@ -212,6 +212,24 @@ html { scroll-behavior: smooth; }
     transition-delay: calc(.95s + var(--fila, 0) * .3s);
 }
 
+/* Tienda: panel del carrito que se desliza desde la derecha; .cerrando anima la salida antes de cerrarlo */
+.carrito::backdrop { background: rgb(18 10 6 / .5); backdrop-filter: blur(2px); }
+.carrito[open] { animation: carrito-entrar .38s cubic-bezier(.2, .7, .2, 1); }
+.carrito[open]::backdrop { animation: fondo-entrar .38s ease; }
+.carrito.cerrando { animation: carrito-salir .26s cubic-bezier(.4, 0, 1, 1) forwards; }
+.carrito.cerrando::backdrop { animation: fondo-salir .26s ease forwards; }
+@keyframes carrito-entrar { from { transform: translateX(100%); } }
+@keyframes carrito-salir { to { transform: translateX(100%); } }
+@keyframes fondo-entrar { from { opacity: 0; } }
+@keyframes fondo-salir { to { opacity: 0; } }
+.carrito .vista:not([hidden]) { animation: vista-entrar .3s cubic-bezier(.2, .7, .2, 1); }
+@keyframes vista-entrar { from { opacity: 0; transform: translateX(16px); } }
+.barra-envio { transition: width .5s cubic-bezier(.2, .7, .2, 1); }
+html:has(.carrito[open]) { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+    .carrito[open], .carrito[open]::backdrop, .carrito .vista:not([hidden]) { animation: none; }
+}
+
 /* Recetas: carrusel sin barra de desplazamiento y ventana con la receta */
 .sin-barra { scrollbar-width: none; }
 .sin-barra::-webkit-scrollbar { display: none; }

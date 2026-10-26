@@ -141,7 +141,8 @@ const PANEL = `
                     <input id="ck-datos" name="datos" type="checkbox" required
                         class="mt-0.5 h-5 w-5 cursor-pointer rounded-[5px] border-espresso-900/25 text-mostaza-500 focus:ring-mostaza-500/40" />
                     <label for="ck-datos" class="cursor-pointer text-sm leading-relaxed text-espresso-800/70">
-                        Autorizo el uso de mis datos para procesar y enviar mi pedido, según la
+                        Acepto los <a href="terminos.html" target="_blank" class="underline underline-offset-2 hover:text-terracota-600">términos de venta</a>
+                        y autorizo el uso de mis datos para procesar y enviar mi pedido, según la
                         <a href="politica-de-privacidad.html" target="_blank" class="underline underline-offset-2 hover:text-terracota-600">política de tratamiento de datos</a>.
                     </label>
                 </div>
@@ -153,15 +154,17 @@ const PANEL = `
             </footer>
         </form>
 
-        <!-- Vista 3: pedido enviado -->
+        <!-- Vista 3: pedido listo (por WhatsApp, pago aprobado o pago en proceso; los textos los pone mostrarListo) -->
         <div data-vista="listo" hidden class="vista flex flex-1 flex-col items-center justify-center px-8 text-center">
-            <span class="grid h-16 w-16 place-items-center rounded-full bg-emerald-50 text-emerald-700">
+            <span data-listo-icono="ok" class="grid h-16 w-16 place-items-center rounded-full bg-emerald-50 text-emerald-700">
                 <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
             </span>
-            <p class="mt-6 font-display text-2xl">¡Pedido <span data-pedido-id></span> listo!</p>
-            <p class="mt-3 text-sm leading-relaxed text-espresso-800/70">Te abrimos WhatsApp con el detalle. Envíalo y te
-                confirmamos el envío y la forma de pago.</p>
-            <a data-reabrir target="_blank" rel="noopener" class="mt-6 text-sm font-semibold text-terracota-600 underline underline-offset-4">¿No se abrió WhatsApp? Toca aquí</a>
+            <span data-listo-icono="reloj" hidden class="grid h-16 w-16 place-items-center rounded-full bg-amber-50 text-amber-700">
+                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+            </span>
+            <p data-listo-titulo class="mt-6 font-display text-2xl"></p>
+            <p data-listo-texto class="mt-3 text-sm leading-relaxed text-espresso-800/70"></p>
+            <a data-reabrir hidden target="_blank" rel="noopener" class="mt-6 text-sm font-semibold text-terracota-600 underline underline-offset-4">¿No se abrió WhatsApp? Toca aquí</a>
             <button type="button" data-cerrar class="mt-8 rounded-lg border border-espresso-900/20 px-5 py-2.5 text-sm font-semibold transition hover:border-espresso-900/40">Seguir en la página</button>
         </div>
     </div>
@@ -270,6 +273,16 @@ const PANEL = `
         $('[data-volver]').hidden = vista !== 'checkout';
         $$('[data-paso]').forEach(p => p.classList.toggle('text-terracota-600', p.dataset.paso === vista));
         if (vista === 'checkout') $('#ck-nombre').focus();
+    };
+
+    const mostrarListo = ({ titulo, texto, enlace = '', icono = 'ok' }) => {
+        $('[data-listo-titulo]').textContent = titulo;
+        $('[data-listo-texto]').textContent = texto;
+        $('[data-reabrir]').hidden = !enlace;
+        if (enlace) $('[data-reabrir]').href = enlace;
+        $$('[data-listo-icono]').forEach(i => { i.hidden = i.dataset.listoIcono !== icono; });
+        panel.dataset.ultima = 'listo';
+        mostrar('listo');
     };
 
     const pintar = () => {
@@ -422,7 +435,7 @@ const PANEL = `
         new window.BoldCheckout({
             ...firma,
             description: `Pedido ${firma.orderId} · Café la Escuelita`,
-            redirectionUrl: `${location.origin}/?pedido=${encodeURIComponent(firma.orderId)}`,
+            redirectionUrl: `${location.origin}/tienda.html`, // Bold agrega ?bold-order-id=...&bold-tx-status=...
             customerData: JSON.stringify({
                 email: c.correo, fullName: c.nombre, phone: c.celular.replace(/\D/g, ''), dialCode: '+57',
                 documentNumber: c.documento, documentType: c.tipoDocumento,
@@ -456,15 +469,42 @@ const PANEL = `
 
         const enlace = `https://wa.me/573157343753?text=${encodeURIComponent(mensajeWhatsApp(pedido))}`;
         window.open(enlace, '_blank', 'noopener');
-        $('[data-pedido-id]').textContent = pedido.id;
-        $('[data-reabrir]').href = enlace;
         carrito = [];
         guardar();
         pintar();
         form.reset();
-        panel.dataset.ultima = 'listo';
-        mostrar('listo');
+        mostrarListo({
+            titulo: `¡Pedido ${pedido.id} listo!`,
+            texto: 'Te abrimos WhatsApp con el detalle. Envíalo y te confirmamos el envío y la forma de pago.',
+            enlace,
+        });
     });
+
+    // Regreso desde Bold: Bold agrega ?bold-order-id=...&bold-tx-status=... a la dirección de regreso.
+    // Solo sirve para avisarle al comprador; el pago real lo confirma el webhook en el servidor.
+    const regreso = new URLSearchParams(location.search);
+    const estadoBold = regreso.get('bold-tx-status');
+    if (estadoBold) {
+        const orden = regreso.get('bold-order-id') || '';
+        regreso.delete('bold-tx-status');
+        regreso.delete('bold-order-id');
+        const resto = regreso.toString();
+        history.replaceState(null, '', location.pathname + (resto ? `?${resto}` : '') + location.hash);
+        panel.showModal();
+        if (estadoBold === 'approved' || estadoBold === 'pending' || estadoBold === 'processing') {
+            carrito = []; // el pedido ya existe en el servidor: no se debe volver a pagar
+            guardar();
+            pintar();
+            mostrarListo(estadoBold === 'approved'
+                ? { titulo: '¡Pago aprobado!', texto: `Tu pedido ${orden} está pagado. Te enviamos la confirmación a tu correo y te avisaremos cuando salga de la finca.` }
+                : { titulo: 'Pago en proceso', icono: 'reloj', texto: `Bold está confirmando el pago del pedido ${orden}. Te escribiremos a tu correo en cuanto se apruebe.` });
+        } else {
+            // Rechazado, fallido o cancelado: el carrito se conserva para intentarlo de nuevo
+            mostrar('checkout');
+            error.textContent = 'El pago no se completó. Revisa los datos o elige otro medio de pago e inténtalo de nuevo.';
+            error.hidden = false;
+        }
+    }
 
     pintar();
 })();

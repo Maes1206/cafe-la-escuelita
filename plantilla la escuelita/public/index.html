@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- CSS compilado con Tailwind (fuente: src/estilos.css → python construir.py) -->
-    <link rel="stylesheet" href="./assets/css/estilos.css?v=701c5d5f1a" />
+    <link rel="stylesheet" href="./assets/css/estilos.css?v=3a7af548ba" />
 
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,19 +50,16 @@
                     class="h-14 w-14 object-contain mix-blend-multiply md:h-16 md:w-16" />
                 <span class="hidden text-lg font-bold tracking-tight text-amber-950 sm:block">Café la Escuelita</span>
             </a>
-            <div class="flex items-center gap-2 md:gap-8">
-                <ul class="hidden items-center gap-8 md:flex">
-                    <li><a href="tienda.html" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Comprar</a></li>
+            <div class="flex items-center gap-2 md:gap-3">
+                <ul class="hidden items-center gap-8 md:mr-5 md:flex">
                     <li><a href="#nuestro-cafe" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Nuestro café</a></li>
                     <li><a href="#recetas" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Recetas</a></li>
                     <li><a href="#contacto" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Contáctanos</a></li>
                 </ul>
-                <button type="button" data-abrir-carrito aria-haspopup="dialog" aria-label="Abrir carrito"
-                    class="relative grid h-10 w-10 place-items-center rounded-md text-amber-950 transition-colors hover:bg-crema-100">
-                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9z" /><path d="M9 8V6.5a3 3 0 0 1 6 0V8" /></svg>
-                    <span data-contador hidden
-                        class="contador absolute -right-0.5 -top-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-terracota-600 px-1 text-[0.65rem] font-bold text-white">0</span>
-                </button>
+                <a href="tienda.html"
+                    class="hidden items-center rounded-md bg-mostaza-500 px-4 py-2 text-sm font-semibold text-espresso-900 transition-colors hover:bg-mostaza-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-espresso-900 focus-visible:ring-offset-2 md:inline-flex">
+                    Comprar
+                </a>
                 <a href="https://wa.me/573157343753?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Caf%C3%A9%20la%20Escuelita"
                     target="_blank" rel="noopener"
                     class="inline-flex items-center gap-2 rounded-md bg-amber-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-espresso-900">
@@ -72,6 +69,12 @@
                     </svg>
                     Escríbenos
                 </a>
+                <button type="button" data-abrir-carrito aria-haspopup="dialog" aria-label="Abrir carrito"
+                    class="relative grid h-10 w-10 place-items-center rounded-md text-amber-950 transition-colors hover:bg-crema-100">
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9z" /><path d="M9 8V6.5a3 3 0 0 1 6 0V8" /></svg>
+                    <span data-contador hidden
+                        class="contador absolute -right-0.5 -top-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-terracota-600 px-1 text-[0.65rem] font-bold text-white">0</span>
+                </button>
                 <button type="button" data-menu aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú"
                     class="grid h-10 w-10 place-items-center rounded-md text-amber-950 transition-colors hover:bg-crema-100 md:hidden">
                     <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
@@ -445,7 +448,7 @@
                 </p>
 
                 <ul class="mt-10 space-y-3">
-                    <li class="flex gap-4 rounded-2xl border border-oro-500/30 bg-crema-200/70 p-5">
+                    <li class="flex gap-4 p-5">
                         <svg class="mt-0.5 h-6 w-6 shrink-0 text-oro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M3 11l9-7 9 7" /><path d="M5 9.5V20h14V9.5" />
@@ -457,7 +460,7 @@
                                 cultivamos y procesamos cada grano de manera artesanal.</p>
                         </div>
                     </li>
-                    <li class="flex gap-4 rounded-2xl border border-transparent p-5 transition-colors hover:border-oro-500/30 hover:bg-crema-200/70">
+                    <li class="flex gap-4 p-5">
                         <svg class="mt-0.5 h-6 w-6 shrink-0 text-oro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M12 21V11" /><path d="M12 11c0-4 3-6.5 7-6.5 0 4-3 6.5-7 6.5z" />
@@ -469,7 +472,7 @@
                                 propia hoy es un oficio que compartimos con las nuevas generaciones.</p>
                         </div>
                     </li>
-                    <li class="flex gap-4 rounded-2xl border border-transparent p-5 transition-colors hover:border-oro-500/30 hover:bg-crema-200/70">
+                    <li class="flex gap-4 p-5">
                         <svg class="mt-0.5 h-6 w-6 shrink-0 text-oro-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z" /><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17" />
@@ -1505,6 +1508,7 @@
         <div class="border-t border-gray-100">
             <div class="mx-auto flex max-w-3xl flex-col items-center gap-3 px-6 py-4 text-xs text-gray-500 sm:flex-row">
                 <div class="flex items-center gap-3">
+                    <a href="terminos.html" class="transition-colors hover:text-gray-700">Términos de venta</a>
                     <a href="politica-de-privacidad.html" class="transition-colors hover:text-gray-700">Política de tratamiento de datos</a>
                 </div>
                 <div class="flex items-center gap-2 sm:ml-auto">
@@ -1521,7 +1525,7 @@
 
     <script src="./assets/js/sitio.js?v=64bce03747"></script>
     <script src="./assets/datos/catalogo.js?v=84f6827b68"></script>
-    <script src="./assets/js/tienda.js?v=cf6d8f0d41"></script>
+    <script src="./assets/js/tienda.js?v=968f775129"></script>
     <script>
         // Video del banner: quieto (imagen fija) si el dispositivo pide menos animaciones
         (() => {

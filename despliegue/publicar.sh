@@ -18,10 +18,17 @@ fi
 # Textos de ejemplo pendientes (notas de cata, envíos, pagos, datos del responsable): no se publican
 pendientes=$( { grep -l "data-por-confirmar" "$SITIO"/public/*.html; grep -l '"porConfirmar": true' "$SITIO"/public/assets/datos/*.js; } || true)
 if [ -n "$pendientes" ]; then
-  echo "   ERROR: hay datos de ejemplo por confirmar con el cliente en:"
-  echo "$pendientes" | sed 's|.*/|     - |'
-  echo "   Reemplázalos por los datos reales y quita data-por-confirmar (o pon \"porConfirmar\": false en el catálogo)."
-  exit 1
+  if [ "${DEMO:-}" = 1 ]; then
+    # Solo para mostrarle avances al cliente: DEMO=1 bash publicar.sh
+    echo "   AVISO: se publica CON datos de ejemplo (DEMO=1) en:"
+    echo "$pendientes" | sed 's|.*/|     - |'
+  else
+    echo "   ERROR: hay datos de ejemplo por confirmar con el cliente en:"
+    echo "$pendientes" | sed 's|.*/|     - |'
+    echo "   Reemplázalos por los datos reales y quita data-por-confirmar (o pon \"porConfirmar\": false en el catálogo)."
+    echo "   Para publicar una demo de todos modos: DEMO=1 bash publicar.sh"
+    exit 1
+  fi
 fi
 
 echo "3) Subiendo archivos a $DESTINO ..."

@@ -15,6 +15,14 @@ echo "2) Revisando que no quede nada del CDN de desarrollo..."
 if grep -q "cdn.tailwindcss.com" "$SITIO/public/index.html"; then
   echo "   ERROR: index.html todavía usa cdn.tailwindcss.com"; exit 1
 fi
+# Textos de ejemplo pendientes (notas de cata, envíos, pagos, datos del responsable): no se publican
+pendientes=$(grep -l "data-por-confirmar" "$SITIO"/public/*.html || true)
+if [ -n "$pendientes" ]; then
+  echo "   ERROR: hay datos por confirmar con el cliente (marcados con borde rojo punteado) en:"
+  echo "$pendientes" | sed 's|.*/|     - |'
+  echo "   Reemplázalos por los datos reales y quita el atributo data-por-confirmar."
+  exit 1
+fi
 
 echo "3) Subiendo archivos a $DESTINO ..."
 tar -C "$SITIO/public" -czf - . | ssh hostinger-vps "mkdir -p $DESTINO && tar -xzf - -C $DESTINO --no-same-owner && chmod -R a+rX $DESTINO"

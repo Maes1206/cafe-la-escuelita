@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Café la Escuelita — Página en proceso</title>
+    <title>Café la Escuelita — Café de origen de Iquira, Huila</title>
     <meta name="description"
-        content="Café la Escuelita. Nuestra página está en proceso, muy pronto estaremos en línea." />
+        content="Bourbon Rosado cultivado a mano por nuestra familia, a 1.350 metros, en las montañas cafeteras de Iquira, Huila. Pide tu café por WhatsApp." />
     <meta name="theme-color" content="#78350f" />
     <link rel="canonical" href="https://cafelaescuelita.site/" />
     <link rel="icon" type="image/png" href="./assets/images/favicon.png?v=e731b4c83d" />
@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- CSS compilado con Tailwind (fuente: src/estilos.css → python construir.py) -->
-    <link rel="stylesheet" href="./assets/css/estilos.css?v=dbef0aba31" />
+    <link rel="stylesheet" href="./assets/css/estilos.css?v=b13555b68b" />
 
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,8 +50,12 @@
                     class="h-14 w-14 object-contain mix-blend-multiply md:h-16 md:w-16" />
                 <span class="hidden text-lg font-bold tracking-tight text-amber-950 sm:block">Café la Escuelita</span>
             </a>
-            <div class="flex items-center gap-5 sm:gap-8">
-                <a href="#contacto" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Contáctanos</a>
+            <div class="flex items-center gap-2 md:gap-8">
+                <ul class="hidden items-center gap-8 md:flex">
+                    <li><a href="#nuestro-cafe" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Nuestro café</a></li>
+                    <li><a href="#recetas" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Recetas</a></li>
+                    <li><a href="#contacto" class="text-sm font-medium text-amber-950 transition-colors hover:text-terracota-600">Contáctanos</a></li>
+                </ul>
                 <a href="https://wa.me/573157343753?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Caf%C3%A9%20la%20Escuelita"
                     target="_blank" rel="noopener"
                     class="inline-flex items-center gap-2 rounded-md bg-amber-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-espresso-900">
@@ -61,10 +65,26 @@
                     </svg>
                     Escríbenos
                 </a>
+                <button type="button" data-menu aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú"
+                    class="grid h-10 w-10 place-items-center rounded-md text-amber-950 transition-colors hover:bg-crema-100 md:hidden">
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                        <path data-icono="abrir" d="M4 7h16M4 12h16M4 17h16" />
+                        <path data-icono="cerrar" class="hidden" d="M6 6l12 12M18 6 6 18" />
+                    </svg>
+                </button>
             </div>
         </nav>
+        <!-- Menú en celular: se despliega con el botón ☰ -->
+        <div id="menu-movil" hidden class="border-t border-espresso-900/10 bg-white md:hidden">
+            <ul class="mx-auto max-w-6xl px-6 pb-4 pt-2">
+                <li><a href="#nuestro-cafe" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Nuestro café</a></li>
+                <li><a href="#recetas" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Recetas</a></li>
+                <li><a href="#contacto" class="block border-b border-espresso-900/5 py-3.5 text-base font-medium text-amber-950 transition-colors hover:text-terracota-600">Contáctanos</a></li>
+            </ul>
+        </div>
     </header>
 
+    <main id="contenido">
     <!-- Banner principal -->
     <section aria-labelledby="hero-titulo" class="relative isolate overflow-hidden bg-white font-texto text-espresso-900">
         <!-- Fondo: granos, hojas y flores de café dibujados a línea -->
@@ -536,6 +556,33 @@
                         <dd class="text-right font-medium text-espresso-900">Molido o en grano</dd>
                     </div>
                 </dl>
+                <!-- Perfil de taza: valores de EJEMPLO, confirmar con el cliente (notas de cata, acidez, cuerpo, dulzor y, si lo tienen, puntaje SCA) -->
+                <div class="mt-8 rounded-2xl border border-espresso-900/10 p-5 text-left" data-por-confirmar>
+                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-terracota-600">Perfil de taza</p>
+                    <ul class="mt-3 flex flex-wrap gap-2" aria-label="Notas de sabor">
+                        <li class="rounded-full border border-oro-500/30 bg-crema-100 px-3.5 py-1 text-sm text-espresso-900">Frutos rojos</li>
+                        <li class="rounded-full border border-oro-500/30 bg-crema-100 px-3.5 py-1 text-sm text-espresso-900">Panela</li>
+                        <li class="rounded-full border border-oro-500/30 bg-crema-100 px-3.5 py-1 text-sm text-espresso-900">Floral</li>
+                        <li class="rounded-full border border-oro-500/30 bg-crema-100 px-3.5 py-1 text-sm text-espresso-900">Cítricos</li>
+                    </ul>
+                    <dl class="mt-5 space-y-3 text-sm">
+                        <div class="grid grid-cols-[4.5rem_1fr_4.5rem] items-center gap-3">
+                            <dt class="text-left text-espresso-800/60">Acidez</dt>
+                            <dd class="flex gap-1" role="img" aria-label="Acidez: 4 de 5"><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"></span></dd>
+                            <dd class="text-right font-medium text-espresso-900">Brillante</dd>
+                        </div>
+                        <div class="grid grid-cols-[4.5rem_1fr_4.5rem] items-center gap-3">
+                            <dt class="text-left text-espresso-800/60">Cuerpo</dt>
+                            <dd class="flex gap-1" role="img" aria-label="Cuerpo: 3 de 5"><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"></span></dd>
+                            <dd class="text-right font-medium text-espresso-900">Medio</dd>
+                        </div>
+                        <div class="grid grid-cols-[4.5rem_1fr_4.5rem] items-center gap-3">
+                            <dt class="text-left text-espresso-800/60">Dulzor</dt>
+                            <dd class="flex gap-1" role="img" aria-label="Dulzor: 4 de 5"><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-mostaza-500"></span><span class="h-1.5 flex-1 rounded-full bg-espresso-900/10"></span></dd>
+                            <dd class="text-right font-medium text-espresso-900">Alto</dd>
+                        </div>
+                    </dl>
+                </div>
                 <p class="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-terracota-600">Cultivado a mano ·
                     Tradición familiar</p>
             </div>
@@ -814,6 +861,72 @@
         </div>
     </section>
 
+    <!-- Preguntas frecuentes (envíos y pagos: confirmar con el cliente; van marcadas hasta entonces) -->
+    <section id="preguntas" aria-labelledby="preguntas-titulo" class="scroll-mt-20 bg-white font-texto">
+        <div class="mx-auto max-w-3xl px-6 pb-8 pt-20 md:pt-24">
+            <div class="text-center">
+                <p class="inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-terracota-600">
+                    <span class="h-px w-8 bg-terracota-600/50"></span>Preguntas frecuentes<span class="h-px w-8 bg-terracota-600/50"></span>
+                </p>
+                <h2 id="preguntas-titulo" class="mt-5 font-display text-4xl font-normal leading-tight tracking-tight text-espresso-900 md:text-5xl">
+                    Lo que más nos <em class="italic text-terracota-600">preguntan</em>
+                </h2>
+            </div>
+
+            <div class="mt-12 border-t border-espresso-900/10">
+                <details class="pregunta border-b border-espresso-900/10">
+                    <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-display text-lg text-espresso-900 transition-colors hover:text-terracota-600">
+                        ¿Cómo hago un pedido?
+                        <svg class="mas h-5 w-5 shrink-0 text-oro-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                    </summary>
+                    <p class="pb-6 pr-10 leading-relaxed text-espresso-800/75">Escríbenos por <a href="https://wa.me/573157343753?text=Hola%2C%20quiero%20pedir%20Caf%C3%A9%20la%20Escuelita" target="_blank" rel="noopener">WhatsApp al 315 734 3753</a> o usa el <a href="#contacto">formulario de contacto</a>. Te confirmamos disponibilidad, el valor total y la forma de pago.</p>
+                </details>
+                <details class="pregunta border-b border-espresso-900/10" data-por-confirmar>
+                    <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-display text-lg text-espresso-900 transition-colors hover:text-terracota-600">
+                        ¿A qué ciudades envían y cuánto tarda?
+                        <svg class="mas h-5 w-5 shrink-0 text-oro-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                    </summary>
+                    <p class="pb-6 pr-10 leading-relaxed text-espresso-800/75">Enviamos a toda Colombia. El pedido llega entre 2 y 5 días hábiles según la ciudad.</p>
+                </details>
+                <details class="pregunta border-b border-espresso-900/10" data-por-confirmar>
+                    <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-display text-lg text-espresso-900 transition-colors hover:text-terracota-600">
+                        ¿Cómo puedo pagar?
+                        <svg class="mas h-5 w-5 shrink-0 text-oro-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                    </summary>
+                    <p class="pb-6 pr-10 leading-relaxed text-espresso-800/75">Por transferencia bancaria, Nequi o Daviplata. Te enviamos los datos al confirmar tu pedido.</p>
+                </details>
+                <details class="pregunta border-b border-espresso-900/10">
+                    <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-display text-lg text-espresso-900 transition-colors hover:text-terracota-600">
+                        ¿Lo pido molido o en grano?
+                        <svg class="mas h-5 w-5 shrink-0 text-oro-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                    </summary>
+                    <p class="pb-6 pr-10 leading-relaxed text-espresso-800/75">En grano, si tienes molino: conserva mejor el aroma y lo mueles justo antes de preparar. Molido, si no tienes molino. Al hacer tu pedido cuéntanos con qué lo preparas (filtro, prensa francesa, moka o espresso).</p>
+                </details>
+                <details class="pregunta border-b border-espresso-900/10">
+                    <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-display text-lg text-espresso-900 transition-colors hover:text-terracota-600">
+                        ¿Cuánto dura el café y cómo lo guardo?
+                        <svg class="mas h-5 w-5 shrink-0 text-oro-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                    </summary>
+                    <p class="pb-6 pr-10 leading-relaxed text-espresso-800/75">Guárdalo bien cerrado en su bolsa, en un lugar fresco y seco, lejos del sol y fuera de la nevera. Una vez abierto, disfrútalo en las siguientes 3 a 4 semanas, que es cuando mejor conserva su aroma.</p>
+                </details>
+                <details class="pregunta border-b border-espresso-900/10">
+                    <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-display text-lg text-espresso-900 transition-colors hover:text-terracota-600">
+                        ¿Venden para negocios o al por mayor?
+                        <svg class="mas h-5 w-5 shrink-0 text-oro-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                    </summary>
+                    <p class="pb-6 pr-10 leading-relaxed text-espresso-800/75">Sí. Si tienes una cafetería, restaurante o tienda, <a href="#contacto">escríbenos</a> y te contamos las opciones por volumen.</p>
+                </details>
+                <details class="pregunta border-b border-espresso-900/10">
+                    <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-display text-lg text-espresso-900 transition-colors hover:text-terracota-600">
+                        ¿Puedo visitar la finca?
+                        <svg class="mas h-5 w-5 shrink-0 text-oro-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                    </summary>
+                    <p class="pb-6 pr-10 leading-relaxed text-espresso-800/75"><a href="#contacto">Escríbenos</a> con la fecha que te interesa y te contamos si es posible recibirte.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Contáctanos: el sitio es estático, así que el formulario arma el mensaje y abre WhatsApp -->
     <!-- Foto temporal de Unsplash (licencia libre, autora: Ashlyn Ciara): reemplazar por una foto real de la familia en la finca. -->
     <section id="contacto" aria-labelledby="contacto-titulo" class="scroll-mt-20 bg-white font-texto">
@@ -897,7 +1010,8 @@
                         <input id="contacto-datos" name="datos" type="checkbox" required
                             class="mt-0.5 h-5 w-5 cursor-pointer rounded-[5px] border-espresso-900/25 text-mostaza-500 focus:ring-mostaza-500/40" />
                         <label for="contacto-datos" class="cursor-pointer text-sm leading-relaxed text-espresso-800/70">
-                            Autorizo a Café la Escuelita a usar mis datos solo para responder mi mensaje.
+                            Autorizo a Café la Escuelita a usar mis datos solo para responder mi mensaje, según su
+                            <a href="politica-de-privacidad.html" target="_blank" class="underline decoration-espresso-900/30 underline-offset-2 hover:text-terracota-600">política de tratamiento de datos</a>.
                         </label>
                     </div>
 
@@ -1337,70 +1451,6 @@
         </form>
     </dialog>
 
-    <main id="cafe" class="relative z-10 flex flex-1 items-center justify-center px-6 py-12 md:py-16 scroll-mt-20">
-        <div class="w-full max-w-3xl">
-            <div class="flex flex-col items-center gap-10 md:flex-row md:items-start ">
-                <div class="mx-auto w-full max-w-xl text-center">
-                    <span
-                        class="inline-flex items-center gap-2 text-sm font-medium text-amber-900">
-                        <svg class="llave h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            aria-hidden="true">
-                            <path
-                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                        </svg>
-                        Página en proceso
-                    </span>
-                    <h2 class="mt-4 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">Café la Escuelita</h2>
-                    <p class="mt-4 text-base text-gray-600">Estamos preparando algo especial. Muy pronto podrás
-                        conocer nuestro café en línea.</p>
-
-                    <!-- Taza con humo -->
-                    <div class="mt-6 flex flex-col items-center gap-2">
-                        <svg class="h-48 w-auto md:h-60" viewBox="0 -30 220 200" aria-hidden="true">
-                            <!-- Humo -->
-                            <g fill="none" stroke="#a8a29e" stroke-width="6" stroke-linecap="round">
-                                <path class="vapor" d="M82 62c-12-12 12-22 0-34s12-22 0-34" />
-                                <path class="vapor vapor-2" d="M105 62c-12-12 12-22 0-34s12-22 0-34" />
-                                <path class="vapor vapor-3" d="M128 62c-12-12 12-22 0-34s12-22 0-34" />
-                            </g>
-                            <!-- Plato -->
-                            <ellipse cx="105" cy="154" rx="88" ry="11" fill="#c8962e" />
-                            <ellipse cx="105" cy="151" rx="80" ry="8" fill="#f5e9d6" />
-                            <!-- Asa -->
-                            <path d="M158 92c30-2 32 40-6 44" fill="none" stroke="#5b2a12" stroke-width="10"
-                                stroke-linecap="round" />
-                            <!-- Taza -->
-                            <path d="M47 76h116v12c0 36-24 62-58 62s-58-26-58-62z" fill="#5b2a12" />
-                            <path d="M52 100q53 12 106 0" fill="none" stroke="#c8962e" stroke-width="4"
-                                stroke-linecap="round" />
-                            <!-- Café -->
-                            <ellipse cx="105" cy="76" rx="58" ry="9" fill="#7a3b17" />
-                            <ellipse cx="105" cy="77" rx="51" ry="6" fill="#3b1d0e" />
-                        </svg>
-                        <p class="text-base font-medium text-amber-900">
-                            Tostando los últimos detalles<span class="punto">.</span><span
-                                class="punto">.</span><span class="punto">.</span>
-                        </p>
-                    </div>
-
-                    <p class="mt-6 text-sm text-gray-500">Déjanos tu correo y te avisamos cuando la página esté
-                        lista.</p>
-                    <!-- El sitio es estático (sin servidor que reciba el formulario): el correo se envía por WhatsApp -->
-                    <form id="form-aviso" class="mt-1 flex flex-col gap-3 sm:flex-row sm:gap-4" action="https://wa.me/573157343753" method="get" target="_blank">
-                        <label for="email" class="sr-only">Correo electrónico</label>
-                        <input id="email" name="email" type="email" required
-                            class="w-full rounded-xl border border-gray-200 px-2 py-1 text-base text-gray-700 shadow-sm transition placeholder:text-gray-400 focus:border-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-800/25"
-                            placeholder="tucorreo@ejemplo.com" />
-                        <button type="submit"
-                            class="rounded-xl bg-amber-900 px-3 py-1 text-base font-medium text-white shadow-sm transition hover:bg-amber-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-900 focus-visible:ring-offset-2">
-                            Enviar
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
     </main>
 
     <footer class="backdrop-blur-lg">
@@ -1432,8 +1482,7 @@
         <div class="border-t border-gray-100">
             <div class="mx-auto flex max-w-3xl flex-col items-center gap-3 px-6 py-4 text-xs text-gray-500 sm:flex-row">
                 <div class="flex items-center gap-3">
-                    <a href="#" class="transition-colors hover:text-gray-700">Términos y condiciones</a>
-                    <a href="#" class="transition-colors hover:text-gray-700">Política de privacidad</a>
+                    <a href="politica-de-privacidad.html" class="transition-colors hover:text-gray-700">Política de tratamiento de datos</a>
                 </div>
                 <div class="flex items-center gap-2 sm:ml-auto">
                     <span>Diseño por</span>
@@ -1448,6 +1497,24 @@
     </footer>
 
     <script>
+        // Menú en celular: abre y cierra con el botón ☰; se cierra al elegir una sección o con Escape
+        (() => {
+            const boton = document.querySelector('[data-menu]');
+            const menu = document.getElementById('menu-movil');
+            const poner = abierto => {
+                menu.hidden = !abierto;
+                boton.setAttribute('aria-expanded', abierto);
+                boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+                boton.querySelector('[data-icono="abrir"]').classList.toggle('hidden', abierto);
+                boton.querySelector('[data-icono="cerrar"]').classList.toggle('hidden', !abierto);
+            };
+            boton.addEventListener('click', () => poner(menu.hidden));
+            menu.addEventListener('click', e => { if (e.target.closest('a')) poner(false); });
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && !menu.hidden) { poner(false); boton.focus(); }
+            });
+        })();
+
         // Video del banner: quieto (imagen fija) si el dispositivo pide menos animaciones
         (() => {
             const video = document.querySelector('section[aria-labelledby="hero-titulo"] video');
@@ -1613,14 +1680,6 @@
                 }
             });
         })();
-
-        // Formulario "te avisamos": abre WhatsApp con el correo ya escrito
-        document.getElementById('form-aviso').addEventListener('submit', e => {
-            e.preventDefault();
-            const correo = e.target.email.value.trim();
-            const texto = `Hola, quiero que me avisen cuando la página de Café la Escuelita esté lista. Mi correo es: ${correo}`;
-            window.open(`https://wa.me/573157343753?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
-        });
     </script>
 </body>
 

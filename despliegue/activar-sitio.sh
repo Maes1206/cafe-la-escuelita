@@ -56,7 +56,7 @@ EOF
 echo "4) Verificando..."
 sleep 2
 code=$(curl -s -o /dev/null -w "%{http_code}" https://cafelaescuelita.site/)
-if curl -s https://cafelaescuelita.site/ | grep -q "Tostando los últimos detalles"; then
+if curl -s https://cafelaescuelita.site/ | grep -q "Del corazón"; then
   echo "   OK: https://cafelaescuelita.site responde $code con la página del café."
 else
   echo "   Atención: respondió $code pero no se encontró el texto de la página."

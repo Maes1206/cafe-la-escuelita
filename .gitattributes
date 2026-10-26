@@ -1,0 +1,2 @@
+# Los scripts y archivos que van al servidor Linux siempre con saltos de línea Unix (LF)
+despliegue/** text eol=lf

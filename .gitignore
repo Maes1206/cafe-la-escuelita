@@ -15,3 +15,6 @@ __pycache__/
 
 # Video original del dron (380 MB): GitHub no acepta archivos de más de 100 MB
 plantilla la escuelita/originales/finca-drone-original.mp4
+
+# Configuración real del envío de correos (tiene la contraseña): vive solo en el servidor
+despliegue/correo/correo.env

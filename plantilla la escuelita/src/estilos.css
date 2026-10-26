@@ -8,6 +8,10 @@
 @tailwind components;
 
 /* Estilos propios (van antes de las utilidades para que las clases de Tailwind puedan sobrescribirlos) */
+
+/* El atributo hidden siempre esconde, aunque el elemento tenga clases como flex o inline-flex */
+[hidden] { display: none !important; }
+
 /* ===== Banner principal ===== */
 @keyframes subir {
     from { opacity: 0; transform: translateY(14px); }

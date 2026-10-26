@@ -12,3 +12,6 @@ desktop.ini
 __pycache__/
 *.pyc
 *.pyo
+
+# Video original del dron (380 MB): GitHub no acepta archivos de más de 100 MB
+plantilla la escuelita/originales/finca-drone-original.mp4

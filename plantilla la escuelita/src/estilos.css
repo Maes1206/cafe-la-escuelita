@@ -21,16 +21,10 @@
 
 .titular { font-variation-settings: "SOFT" 100, "WONK" 1; }
 
-/* Mesa de madera en perspectiva */
-.mesa { perspective: 700px; perspective-origin: 50% -40%; }
-.mesa-superficie {
-    position: absolute; left: -35%; right: -35%; bottom: 0; height: 230%;
-    background: url("https://images.unsplash.com/photo-1737098137073-45954f30e290?auto=format&fit=crop&w=1400&q=70") center / cover;
-    transform: rotateX(64deg); transform-origin: 50% 100%;
-}
-.mesa-superficie::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(58, 34, 18, .45), rgba(58, 34, 18, .05) 45%, rgba(255, 240, 215, .12));
+/* Halo blanco detrás del texto: el patrón de fondo se desvanece ahí y solo queda en los bordes */
+.velo-texto::before {
+    content: ""; position: absolute; inset: -4rem -2rem; z-index: -1; pointer-events: none;
+    background: radial-gradient(ellipse 60% 55% at 55% 50%, #fff 45%, rgba(255, 255, 255, .85) 65%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* Íconos animados del paso a paso */
@@ -130,18 +124,6 @@
     50% { transform: translateX(6%) scaleX(.86); opacity: .7; }
 }
 
-/* Viento en las matas de café: cada rama gira levemente desde su base */
-@keyframes viento {
-    0%, 100% { transform: rotate(0deg); }
-    30% { transform: rotate(var(--viento-giro)); }
-    55% { transform: rotate(calc(var(--viento-giro) * -0.35)); }
-    75% { transform: rotate(calc(var(--viento-giro) * 0.5)); }
-}
-.viento {
-    transform-origin: 0 0;
-    animation: viento var(--viento-dur, 7s) ease-in-out infinite;
-}
-
 /* Franja dorada (colores tomados del empaque) */
 .franja-dorada {
     background:
@@ -151,7 +133,6 @@
 
 @media (prefers-reduced-motion: reduce) {
     .aparecer { animation: none; opacity: 1; }
-    .viento { animation: none; }
     .bolsa-3d .giro, .bolsa-3d .cara::after, .sombra-3d, .bolsa-3d .costado::after { animation: none; }
     .bolsa-3d .giro { transform: rotateY(-16deg); }
     .paso-vapor, .paso-grano, .paso-gota, .paso-burbuja { animation: none; opacity: 1; }
